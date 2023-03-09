@@ -1,0 +1,84 @@
+.product {
+  display: block;
+  width: calc(100% / 5 - 12px);
+  background-color: #ff0000;
+  margin: 3px 6px;
+  border-radius: 3px;
+}
+.product__img {
+  height: 205px;
+}
+.product__img--src {
+  height: 205px;
+}
+.product__name--link {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 8px;
+  overflow: hidden;
+  display: block;
+}
+.product__name--link:hover {
+  color: #f8ab40;
+}
+.product__CPU,
+.product__RAM,
+.product__SSD,
+.product__Card {
+  display: flex;
+  justify-content: left;
+  padding: 0 12px;
+}
+
+.product__CPU--name,
+.product__RAM--name,
+.product__SSD--name,
+.product__Card--name {
+  min-width: 60px;
+  font-size: 14px;
+  color: #fff;
+}
+.product__CPU--des,
+.product__RAM--des,
+.product__SSD--des,
+.product__Card--des {
+  font-size: 14px;
+  color: #fff;
+}
+.price-top {
+  display: flex;
+  justify-content: center;
+  padding: 0 12px;
+}
+.oldPrice {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: line-through;
+}
+.sale {
+  background-color: #fff;
+  color: #000;
+  padding: 1px 3px;
+  border-radius: 4px;
+}
+
+.price-bottom {
+  display: flex;
+  justify-content: center;
+  margin: 7px 20px;
+
+  background-color: #ff9300;
+  border-radius: 16px;
+}
+.price-bottom:hover {
+  opacity: 0.9;
+}
+.price-link {
+  padding: 2px 12px;
+  font-size: 23px;
+  font-weight: 600;
+  color: #fff;
+}
