@@ -89,24 +89,24 @@
 
       <div class="product__detail">
         <div class="detail__container">
-          <div class="detail__video">
-            <div class="detail__video--src">
-              <script type="text/javascript">
-                document.write(
-                  "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/kT3j7VjHgqw' frameborder='0' allowfullscreen></iframe>"
-                );
-              </script>
-            </div>
+          <div class="detail__media">
+            <div class="detail__media--src">                
+                    <iframe class="detail-img 1 active" width='100%' height='100%' src='https://www.youtube.com/embed/kT3j7VjHgqw' frameborder='0' allowfullscreen></iframe>
+                <img src="./App_Data/2463-laptopaz-hp-victus-15-1s-1.webp" alt="img" class="detail-img 2 active">          
+                <img src="./App_Data/2463-laptopaz-hp-victus-15-3.webp" alt="img" class="detail-img 3">             
+                <img src="./App_Data/2463-laptopaz-hp-victus-15-1s-1.webp" alt="img" class="detail-img 4">           
+                <img src="./App_Data/2463-laptopaz-hp-victus-15-3.webp" alt="img" class="detail-img 5">           
+            </div>         
             <div class="detail__select">
               <div class="select__wrapper">
-                <div class="select-item active">
+                <div onclick="handleChangeImg(this)" data-index="1" class="select-item">
                   <img
                     src="./App_Data/iconVideo.png"
                     alt="videoimg"
                     class="select-item--img"
                   />
                 </div>
-                <div class="select-item">
+                <div onclick="handleChangeImg(this)" data-index="2" class="select-item active">
 
                 <img
                     src="./App_Data/2463-laptopaz-hp-victus-15-1s-1.webp"
@@ -114,7 +114,7 @@
                     class="select-item--img"
                   />
                   </div>
-                <div class="select-item">
+                <div onclick="handleChangeImg(this)" data-index="3" class="select-item">
                     <img
                     src="./App_Data/2463-laptopaz-hp-victus-15-3.webp"
                     alt=""
@@ -122,14 +122,14 @@
                   />
                   </div>
                   
-                <div class="select-item">
+                <div onclick="handleChangeImg(this)" data-index="4" class="select-item">
                     <img
                     src="./App_Data/2463-laptopaz-hp-victus-15-1s-1.webp"
                     alt=""
                     class="select-item--img"
                   />
                   </div>
-                  <div class="select-item">
+                  <div onclick="handleChangeImg(this)" data-index="5" class="select-item">
                     <img
                     src="./App_Data/2463-laptopaz-hp-victus-15-3.webp"
                     alt=""
@@ -155,15 +155,15 @@
                 <div class="warrant">
                     <span class="warrant-title">CHỌN BẢO HÀNH:</span>
                     <div class="warrant-list">
-                        <span class="wrarrant-item active">BH 12 THÁNG</span>
-                        <span class="wrarrant-item">BH 24 THÁNG</span>
+                        <span onclick="handleWarrant(event)" class="warrant-item active">BH 12 THÁNG</span>
+                        <span onclick="handleWarrant(event)" class="warrant-item">BH 24 THÁNG</span>
                     </div>
                 </div>
                 <div class="quan">
                     <div class="quan__select">
-                        <span class="quan__select-sub">-</span>
+                        <span onclick="handleSub()" class="quan__select-sub">-</span>
                         <input type="text" class="quan__select-value" value="1"/>
-                        <span class="quan__select-add">+</span>
+                        <span  onclick="handleAdd()" class="quan__select-add">+</span>
                     </div>
                     <div class="addToCart">
                         <button class="btnAddToCart">Mua Ngay</button>
@@ -204,7 +204,77 @@
                    <a class="contact-hotline--tel" href="tel:+8439929922">0963.446.199</a>
                 </div>
             </div>
+            
           </div>
+          <div class="detail__des">
+            <div class="detail__des-content">
+              <div class="tab-title">
+                <span class="tab-title--text">MÔ TẢ</span>
+              </div>
+              <div class="des-contents">
+                <div class="des-item">
+                  <p class="des-item--title">Đánh giá chi tiết Laptop Gaming HP Victus 15</p>
+                  <p class="des-item--text">Với thiết kế tinh tế, phần cứng hoàn thiện tuyệt vời, cấu hình hấp dẫn cùng mức giá chỉ ở ngưỡng tầm trung; HP Victus 15 sẽ phù hợp với game thủ, người làm multimedia,… với hầu bao vừa phải nhưng vẫn muốn có được trải nghiệm sát nhất có thể so với các sản phẩm cao cấp. </p>
+                </div>
+                <div class="des-item">
+                  <p class="des-item--title">Thiết kế đơn giản, mang âm hưởng từ dòng Omen cao cấp </p>
+                  <p class="des-item--text">Với vẻ ngoài vuông vắn cùng lớp sơn nhám Đen quen thuộc; HP Victus 15 dễ khiến người ta liên tưởng tới các sản phẩm Omen ở phân khúc cao cấp. Nhưng nếu nhìn kỹ, không khó để thấy rằng sản phẩm của chúng ta còn thú vị hơn vậy nhiều. Chẳng hạn như ở nắp máy, HP đã có một logo chữ V bóng bẩy, tinh tế dành riêng cho dòng Victus. Hay phần khe thoát gió phía sau cũng được thiết kế lại, tràn hẳn ra hai bên để tăng cường lưu thông khí.</p>
+                </div>
+                <div class="des-item">
+                  <p class="des-item--title">Thiết kế đơn giản, mang âm hưởng từ dòng Omen cao cấp </p>
+                  <p class="des-item--text">Với vẻ ngoài vuông vắn cùng lớp sơn nhám Đen quen thuộc; HP Victus 15 dễ khiến người ta liên tưởng tới các sản phẩm Omen ở phân khúc cao cấp. Nhưng nếu nhìn kỹ, không khó để thấy rằng sản phẩm của chúng ta còn thú vị hơn vậy nhiều. Chẳng hạn như ở nắp máy, HP đã có một logo chữ V bóng bẩy, tinh tế dành riêng cho dòng Victus. Hay phần khe thoát gió phía sau cũng được thiết kế lại, tràn hẳn ra hai bên để tăng cường lưu thông khí.</p>
+                </div>
+                <div class="des-item">
+                  <p class="des-item--title">Thiết kế đơn giản, mang âm hưởng từ dòng Omen cao cấp </p>
+                  <p class="des-item--text">Với vẻ ngoài vuông vắn cùng lớp sơn nhám Đen quen thuộc; HP Victus 15 dễ khiến người ta liên tưởng tới các sản phẩm Omen ở phân khúc cao cấp. Nhưng nếu nhìn kỹ, không khó để thấy rằng sản phẩm của chúng ta còn thú vị hơn vậy nhiều. Chẳng hạn như ở nắp máy, HP đã có một logo chữ V bóng bẩy, tinh tế dành riêng cho dòng Victus. Hay phần khe thoát gió phía sau cũng được thiết kế lại, tràn hẳn ra hai bên để tăng cường lưu thông khí.</p>
+                </div>
+
+                <div class="des-conclude">
+                  <span class="des-conclude--title">Kết luận: </span>
+                  <span class="des-conclude--text">HP Victus 15 là một trong những sự lựa chọn hàng đầu của dòng máy Gaming. Sở hữu thiết kế mạnh mẽ nhưng cũng không kém phần tinh tế, kết hợp cùng cấu hình mạnh mẽ và tản nhiệt mát mẻ, HP Victus 15 tự tin có thể chinh phục được đa số các Game Online, Offline thời thượng hiện nay. Hơn thế nữa HP Victus 15 cũng đủ sức đáp ứng các tác vụ thiết kế đồ họa, công việc, giải trí một cách mượt mà nhất. Hiện tại Game đang có những chương trình ưu đãi vô cùng tuyệt vời khi khách hàng đặt mua HP Victus 15 ngay từ ngày hôm nay!</span>
+                </div>
+
+              </div>
+            </div>
+            <div class="detail__des-parameter">
+              <div class="parameter-title">
+                <span class="parameter-title--text">THÔNG SỐ KỸ THUẬT</span>
+              </div>
+              <div class="parameter-content">
+                <table class="parameter-table" border="1px" >
+                  <tr>
+                    <td class="td-title">CPU</td>
+                    <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                  </tr>
+                  <tr>
+                    <td class="td-title">CPU</td>
+                    <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                  </tr>
+                  <tr>
+                    <td class="td-title">CPU</td>
+                    <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                  </tr>
+                  <tr>
+                    <td class="td-title">CPU</td>
+                    <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                  </tr>
+                  <tr>
+                    <td class="td-title">CPU</td>
+                    <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                  </tr>
+                  <tr>
+                    <td class="td-title">CPU</td>
+                    <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                  </tr>
+                  <tr>
+                    <td class="td-title">CPU</td>
+                    <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                  </tr>
+                  
+                </table>
+              </div>
+            </div>
+        </div>
         </div>
       </div>
     </div>
@@ -278,5 +348,6 @@
         </div>
       </div>
     </footer>
+    <script src="./productDetailJs.js"></script>
   </body>
 </html>
