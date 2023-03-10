@@ -5,6 +5,10 @@
   margin: 3px 6px;
   border-radius: 3px;
 }
+
+.product:hover {
+  background-color: #e10101;
+}
 .product__img {
   height: 205px;
 }
@@ -24,27 +28,27 @@
 .product__name--link:hover {
   color: #f8ab40;
 }
-.product__CPU,
-.product__RAM,
-.product__SSD,
-.product__Card {
+.product__cpu,
+.product__ram,
+.product__ssd,
+.product__card {
   display: flex;
   justify-content: left;
   padding: 0 12px;
 }
 
-.product__CPU--name,
-.product__RAM--name,
-.product__SSD--name,
-.product__Card--name {
+.product__cpu--name,
+.product__ram--name,
+.product__ssd--name,
+.product__card--name {
   min-width: 60px;
   font-size: 14px;
   color: #fff;
 }
-.product__CPU--des,
-.product__RAM--des,
-.product__SSD--des,
-.product__Card--des {
+.product__cpu--des,
+.product__ram--des,
+.product__ssd--des,
+.product__card--des {
   font-size: 14px;
   color: #fff;
 }
