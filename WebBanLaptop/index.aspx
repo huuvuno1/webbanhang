@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebBanLaptop.index" %>
+
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./product.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/product.css" />
   </head>
+
   <body>
     <header class="bg-white">
-      <div
-        class="header__wrapper w-1200 flex justify-between flex justify-between mx-auto"
-      >
+      <div class="header__wrapper w-1200 flex justify-between flex justify-between mx-auto">
         <div class="header__logo">logo</div>
         <div class="header__search flex item-center relative">
           <input />
-          <img
-            class="header__search--icon absolute cursor-pointer"
-            src="./App_Data/search.svg"
-          />
+          <img class="header__search--icon absolute cursor-pointer" src="/assets/images/search.svg" />
         </div>
         <div class="header__contact flex justify-center flex-col">
           <div class="bold text-red">HOTLINE: 0945.364.296 - 0910.101.101</div>
@@ -38,51 +37,27 @@
     <div class="container w-1200 mx-auto">
       <nav class="flex justify-between bg-red">
         <div class="nav__item flex flex-col">
-          <img
-            src="./App_Data/laptop_white_new.webp"
-            alt=""
-            class="nav__item--image mx-auto"
-          />
+          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
           <a href="#" class="nav__item--link">LAPTOP MỚI</a>
         </div>
         <div class="nav__item flex flex-col">
-          <img
-            src="./App_Data/laptop_white_new.webp"
-            alt=""
-            class="nav__item--image mx-auto"
-          />
+          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
           <a href="#" class="nav__item--link">LAPTOP GAMING</a>
         </div>
         <div class="nav__item flex flex-col">
-          <img
-            src="./App_Data/laptop_white_new.webp"
-            alt=""
-            class="nav__item--image mx-auto"
-          />
+          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
           <a href="#" class="nav__item--link">LAPTOP ĐỒ HỌA</a>
         </div>
         <div class="nav__item flex flex-col">
-          <img
-            src="./App_Data/laptop_white_new.webp"
-            alt=""
-            class="nav__item--image mx-auto"
-          />
+          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
           <a href="#" class="nav__item--link">LAPTOP MỎNG NHẸ</a>
         </div>
         <div class="nav__item flex flex-col">
-          <img
-            src="./App_Data/laptop_white_new.webp"
-            alt=""
-            class="nav__item--image mx-auto"
-          />
+          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
           <a href="#" class="nav__item--link">LAPTOP VĂN PHÒNG </a>
         </div>
         <div class="nav__item flex flex-col">
-          <img
-            src="./App_Data/laptop_white_new.webp"
-            alt=""
-            class="nav__item--image mx-auto"
-          />
+          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
           <a href="#" class="nav__item--link">LAPTOP SURFACE </a>
         </div>
       </nav>
@@ -91,67 +66,35 @@
         <div class="trademark__title">THƯƠNG HIỆU LAPTOP</div>
         <div class="flex justify-between">
           <div class="trademark__item flex flex-col item-center">
-            <img
-              src="./App_Data/brand1.webp"
-              alt=""
-              class="trademark__item--image"
-            />
+            <img src="/assets/images/brand1.webp" alt="" class="trademark__item--image" />
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
-            <img
-              src="./App_Data/brand1.webp"
-              alt=""
-              class="trademark__item--image"
-            />
+            <img src="/assets/images/brand1.webp" alt="" class="trademark__item--image" />
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
-            <img
-              src="./App_Data/brand1.webp"
-              alt=""
-              class="trademark__item--image"
-            />
+            <img src="/assets/images/brand1.webp" alt="" class="trademark__item--image" />
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
-            <img
-              src="./App_Data/brand1.webp"
-              alt=""
-              class="trademark__item--image"
-            />
+            <img src="/assets/images/brand1.webp" alt="" class="trademark__item--image" />
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
-            <img
-              src="./App_Data/brand1.webp"
-              alt=""
-              class="trademark__item--image"
-            />
+            <img src="/assets/images/brand1.webp" alt="" class="trademark__item--image" />
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
-            <img
-              src="./App_Data/brand1.webp"
-              alt=""
-              class="trademark__item--image"
-            />
+            <img src="/assets/images/brand1.webp" alt="" class="trademark__item--image" />
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
-            <img
-              src="./App_Data/brand1.webp"
-              alt=""
-              class="trademark__item--image"
-            />
+            <img src="/assets/images/brand1.webp" alt="" class="trademark__item--image" />
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
-            <img
-              src="./App_Data/brand1.webp"
-              alt=""
-              class="trademark__item--image"
-            />
+            <img src="/assets/images/brand1.webp" alt="" class="trademark__item--image" />
             <h1 class="trademark__item--Dellname">Dell</h1>
           </div>
         </div>
@@ -162,81 +105,49 @@
         <div class="flex justify-between">
           <div class="trademark__item flex flex-col item-center">
             <div class="trademark__item--image-wrapper round-full border-1">
-              <img
-                src="./App_Data/laptop1.webp"
-                alt=""
-                class="trademark__item--image"
-              />
+              <img src="/assets/images/laptop1.webp" alt="" class="trademark__item--image" />
             </div>
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
             <div class="trademark__item--image-wrapper round-full border-1">
-              <img
-                src="./App_Data/laptop1.webp"
-                alt=""
-                class="trademark__item--image"
-              />
+              <img src="/assets/images/laptop1.webp" alt="" class="trademark__item--image" />
             </div>
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
             <div class="trademark__item--image-wrapper round-full border-1">
-              <img
-                src="./App_Data/laptop1.webp"
-                alt=""
-                class="trademark__item--image"
-              />
+              <img src="/assets/images/laptop1.webp" alt="" class="trademark__item--image" />
             </div>
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
             <div class="trademark__item--image-wrapper round-full border-1">
-              <img
-                src="./App_Data/laptop1.webp"
-                alt=""
-                class="trademark__item--image"
-              />
+              <img src="/assets/images/laptop1.webp" alt="" class="trademark__item--image" />
             </div>
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
             <div class="trademark__item--image-wrapper round-full border-1">
-              <img
-                src="./App_Data/laptop1.webp"
-                alt=""
-                class="trademark__item--image"
-              />
+              <img src="/assets/images/laptop1.webp" alt="" class="trademark__item--image" />
             </div>
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
             <div class="trademark__item--image-wrapper round-full border-1">
-              <img
-                src="./App_Data/laptop1.webp"
-                alt=""
-                class="trademark__item--image"
-              />
+              <img src="/assets/images/laptop1.webp" alt="" class="trademark__item--image" />
             </div>
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
             <div class="trademark__item--image-wrapper round-full border-1">
-              <img
-                src="./App_Data/laptop1.webp"
-                alt=""
-                class="trademark__item--image"
-              />
+              <img src="/assets/images/laptop1.webp" alt="" class="trademark__item--image" />
             </div>
             <h1 class="trademark__item--name">Dell</h1>
           </div>
           <div class="trademark__item flex flex-col item-center">
             <div class="trademark__item--image-wrapper round-full border-1">
-              <img
-                src="./App_Data/laptop1.webp"
-                alt=""
-                class="trademark__item--image"
-              />
+              <img src="/assets/images/laptop1.webp" alt="" class="trademark__item--image" />
             </div>
             <h1 class="trademark__item--name">Dell</h1>
           </div>
@@ -252,18 +163,12 @@
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -289,28 +194,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -336,28 +233,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -383,28 +272,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -430,28 +311,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -477,7 +350,7 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
@@ -492,22 +365,14 @@
         <div class="frame__list--product flex">
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -533,28 +398,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -580,28 +437,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -627,28 +476,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -674,28 +515,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -721,7 +554,7 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
@@ -736,22 +569,14 @@
         <div class="frame__list--product flex">
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -777,28 +602,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -824,28 +641,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -871,28 +680,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -918,28 +719,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -965,7 +758,7 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
@@ -980,22 +773,14 @@
         <div class="frame__list--product flex">
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1021,28 +806,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1068,28 +845,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1115,28 +884,20 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
-              <a
-                href="productDetail.html"
-                class="product__img--link flex justify-center"
-              >
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+              <a href="product-detail.aspx" class="product__img--link flex justify-center">
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="productDetail.html" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="product-detail.aspx" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U
+                | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1162,25 +923,19 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1206,7 +961,7 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
@@ -1222,18 +977,12 @@
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1259,25 +1008,19 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1303,25 +1046,19 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1347,25 +1084,19 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1391,25 +1122,19 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1435,7 +1160,7 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
@@ -1451,18 +1176,12 @@
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1488,25 +1207,19 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1532,25 +1245,19 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1576,25 +1283,19 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1620,25 +1321,19 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
           <div class="product">
             <div class="product__img">
               <a href="#" class="product__img--link flex justify-center">
-                <img
-                  class="product__img--src"
-                  src="./App_Data/laptop1.jpg"
-                  alt="laptop"
-                />
+                <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
               </a>
             </div>
             <div class="product__name">
-              <a href="#" class="product__name--link"
-                >[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
-                HD+</a
-              >
+              <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                HD+</a>
             </div>
             <div class="product__des flex flex-col">
               <div class="product__cpu">
@@ -1664,7 +1359,7 @@
                 <span class="sale">21%</span>
               </div>
               <div class="price-bottom">
-                <a href="productDetail.html" class="price-link"> 15.900.000Đ</a>
+                <a href="product-detail.aspx" class="price-link"> 15.900.000Đ</a>
               </div>
             </div>
           </div>
@@ -1743,4 +1438,5 @@
       </div>
     </footer>
   </body>
-</html>
+
+  </html>
