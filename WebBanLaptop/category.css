@@ -1,0 +1,22 @@
+.next_letter::after {
+    content: ">";
+    margin: 0 10px;
+}
+
+.breadcrumb {
+    padding: 15px 0;
+}
+
+.category__title {
+    border-bottom: 1px solid rgb(167, 167, 167, .5);
+    padding: 20px 0;
+    font-size: 18px;
+}
+
+.line__full {
+    width: 200vw;
+    height: 1px;
+    border-bottom: 1px solid rgb(165, 165, 165, .7);
+    position: relative;
+    left: -50%;
+}
