@@ -67,12 +67,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\product.css" />
+    <Content Include="assets\css\productDetailCss.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\images\iconVideo.png" />
+    <Content Include="assets\images\laptop1.jpg" />
+    <Content Include="assets\images\search.svg" />
+    <Content Include="assets\js\productDetailJs.js" />
+    <Content Include="assets\videos\Laptop Gaming HP Victus 2022 15-fa0031dx - 8 nhân 12 luồng siêu khỏe.mp4" />
+    <Content Include="index.aspx" />
+    <Content Include="product-detail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product-detail.aspx.cs">
+      <DependentUpon>product-detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product-detail.aspx.designer.cs">
+      <DependentUpon>product-detail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\2463-laptopaz-hp-victus-15-1s-1.webp" />
+    <Content Include="assets\images\2463-laptopaz-hp-victus-15-3.webp" />
+    <Content Include="assets\images\brand1.webp" />
+    <Content Include="assets\images\laptop1.webp" />
+    <Content Include="assets\images\laptop_white_new.webp" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -81,6 +110,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
