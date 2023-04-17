@@ -1,13 +1,13 @@
 * {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  font-family: monospace;
-  text-decoration: none;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Roboto';
+    text-decoration: none;
+    box-sizing: border-box;
 }
 body {
-  background-color: #f0f0f0;
+    background-color: #f0f0f0;
 }
 .flex {
   display: flex;
@@ -277,3 +277,58 @@ body {
   height: 380px;
   background-color: white;
 }
+.bg-form {
+    background-image: url("https://i.rtings.com/assets/pages/SQatR1BB/best-business-laptops-medium.jpg");
+    background-color: rgba(41, 42, 46, 0.7);
+    position: absolute;
+    opacity: 0.5;
+    width: 900px;
+    height: 100%;
+}
+.form-login {
+    position: absolute;
+    margin-top: 176px;
+    background-color: #f3f3f3;
+    padding: 20px;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
+}
+.container-form {
+    display: flex;
+    justify-content: center;
+}
+input[type=text], input[type=password], select {
+    width: 240px;
+    height: 30px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+input[type=submit] {
+    width: 70px;
+    height: 29px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.label-login {
+    text-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+
+#Label1 {
+    font-size: 14px;
+}
+.header-form {
+    text-align: center;
+    text-transform: uppercase;
+}
+    .header-form h2 {
+        font-size: x-large;
+    }

@@ -76,7 +76,9 @@
     <Content Include="assets\js\productDetailJs.js" />
     <Content Include="assets\videos\Laptop Gaming HP Victus 2022 15-fa0031dx - 8 nhân 12 luồng siêu khỏe.mp4" />
     <Content Include="index.aspx" />
+    <Content Include="login.aspx" />
     <Content Include="product-detail.aspx" />
+    <Content Include="register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +89,13 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="product-detail.aspx.cs">
       <DependentUpon>product-detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -95,6 +104,13 @@
       <DependentUpon>product-detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\2463-laptopaz-hp-victus-15-1s-1.webp" />
