@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LaptopWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_image">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="path" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="product_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="phone_number" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="customer_name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="delivery_status" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_order_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="order_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="slug" Type="nchar" MaxLength="100" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="status" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="70" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="role" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tbl_order_detail_tbl_order">
+          <End Role="tbl_order" Type="Self.tbl_order" Multiplicity="1" />
+          <End Role="tbl_order_detail" Type="Self.tbl_order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_order">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_order_detail">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_order_detail_tbl_product">
+          <End Role="tbl_product" Type="Self.tbl_product" Multiplicity="1" />
+          <End Role="tbl_order_detail" Type="Self.tbl_order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_order_detail">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_product_tbl_category">
+          <End Role="tbl_category" Type="Self.tbl_category" Multiplicity="1" />
+          <End Role="tbl_product" Type="Self.tbl_product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_product">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LaptopWebModelStoreContainer">
+          <EntitySet Name="tbl_category" EntityType="Self.tbl_category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_image" EntityType="Self.tbl_image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_order" EntityType="Self.tbl_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_order_detail" EntityType="Self.tbl_order_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_product" EntityType="Self.tbl_product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_user" EntityType="Self.tbl_user" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tbl_order_detail_tbl_order" Association="Self.FK_tbl_order_detail_tbl_order">
+            <End Role="tbl_order" EntitySet="tbl_order" />
+            <End Role="tbl_order_detail" EntitySet="tbl_order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_order_detail_tbl_product" Association="Self.FK_tbl_order_detail_tbl_product">
+            <End Role="tbl_product" EntitySet="tbl_product" />
+            <End Role="tbl_order_detail" EntitySet="tbl_order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_product_tbl_category" Association="Self.FK_tbl_product_tbl_category">
+            <End Role="tbl_category" EntitySet="tbl_category" />
+            <End Role="tbl_product" EntitySet="tbl_product" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LaptopWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_product" Relationship="Self.FK_tbl_product_tbl_category" FromRole="tbl_category" ToRole="tbl_product" />
+        </EntityType>
+        <EntityType Name="tbl_image">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="phone_number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="customer_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="delivery_status" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="tbl_order_detail" Relationship="Self.FK_tbl_order_detail_tbl_order" FromRole="tbl_order" ToRole="tbl_order_detail" />
+        </EntityType>
+        <EntityType Name="tbl_order_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="order_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_order" Relationship="Self.FK_tbl_order_detail_tbl_order" FromRole="tbl_order_detail" ToRole="tbl_order" />
+          <NavigationProperty Name="tbl_product" Relationship="Self.FK_tbl_order_detail_tbl_product" FromRole="tbl_order_detail" ToRole="tbl_product" />
+        </EntityType>
+        <EntityType Name="tbl_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="slug" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="tbl_category" Relationship="Self.FK_tbl_product_tbl_category" FromRole="tbl_product" ToRole="tbl_category" />
+          <NavigationProperty Name="tbl_order_detail" Relationship="Self.FK_tbl_order_detail_tbl_product" FromRole="tbl_product" ToRole="tbl_order_detail" />
+        </EntityType>
+        <EntityType Name="tbl_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fullname" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="role" Type="Byte" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tbl_product_tbl_category">
+          <End Role="tbl_category" Type="Self.tbl_category" Multiplicity="1" />
+          <End Role="tbl_product" Type="Self.tbl_product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_product">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_order_detail_tbl_order">
+          <End Role="tbl_order" Type="Self.tbl_order" Multiplicity="1" />
+          <End Role="tbl_order_detail" Type="Self.tbl_order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_order">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_order_detail">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_order_detail_tbl_product">
+          <End Role="tbl_product" Type="Self.tbl_product" Multiplicity="1" />
+          <End Role="tbl_order_detail" Type="Self.tbl_order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_order_detail">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LaptopWebEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_category" EntityType="Self.tbl_category" />
+          <EntitySet Name="tbl_image" EntityType="Self.tbl_image" />
+          <EntitySet Name="tbl_order" EntityType="Self.tbl_order" />
+          <EntitySet Name="tbl_order_detail" EntityType="Self.tbl_order_detail" />
+          <EntitySet Name="tbl_product" EntityType="Self.tbl_product" />
+          <EntitySet Name="tbl_user" EntityType="Self.tbl_user" />
+          <AssociationSet Name="FK_tbl_product_tbl_category" Association="Self.FK_tbl_product_tbl_category">
+            <End Role="tbl_category" EntitySet="tbl_category" />
+            <End Role="tbl_product" EntitySet="tbl_product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_order_detail_tbl_order" Association="Self.FK_tbl_order_detail_tbl_order">
+            <End Role="tbl_order" EntitySet="tbl_order" />
+            <End Role="tbl_order_detail" EntitySet="tbl_order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_order_detail_tbl_product" Association="Self.FK_tbl_order_detail_tbl_product">
+            <End Role="tbl_product" EntitySet="tbl_product" />
+            <End Role="tbl_order_detail" EntitySet="tbl_order_detail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LaptopWebModelStoreContainer" CdmEntityContainer="LaptopWebEntities">
+          <EntitySetMapping Name="tbl_category">
+            <EntityTypeMapping TypeName="LaptopWebModel.tbl_category">
+              <MappingFragment StoreEntitySet="tbl_category">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_image">
+            <EntityTypeMapping TypeName="LaptopWebModel.tbl_image">
+              <MappingFragment StoreEntitySet="tbl_image">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_order">
+            <EntityTypeMapping TypeName="LaptopWebModel.tbl_order">
+              <MappingFragment StoreEntitySet="tbl_order">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="delivery_status" ColumnName="delivery_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_order_detail">
+            <EntityTypeMapping TypeName="LaptopWebModel.tbl_order_detail">
+              <MappingFragment StoreEntitySet="tbl_order_detail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_product">
+            <EntityTypeMapping TypeName="LaptopWebModel.tbl_product">
+              <MappingFragment StoreEntitySet="tbl_product">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_user">
+            <EntityTypeMapping TypeName="LaptopWebModel.tbl_user">
+              <MappingFragment StoreEntitySet="tbl_user">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

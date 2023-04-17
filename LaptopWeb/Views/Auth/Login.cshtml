@@ -1,0 +1,47 @@
+﻿@model LaptopWeb.ViewModels.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+@section PageCss{
+    <link rel="stylesheet" href="~/Public/css/Auth/auth.css" asp-append-version="true" />
+}
+
+
+<div class="form">
+    <div class="bg-form"></div>
+    @using (Html.BeginForm("Login", "Auth", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <h1 class="form-heading">
+            Đăng nhập
+        </h1>
+        <div class="form-fields-container">
+            @if (@ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            }
+            <div class="input-wrapper">
+                @Html.LabelFor(model => model.username, new { @class = "input-label" })
+                @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập tên đăng nhập", @type = "text" } })
+                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-error" })
+            </div>
+
+            <div class="input-wrapper">
+                @Html.LabelFor(model => model.password, new { @class = "input-label" })
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập mật khẩu", @type = "password" } })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-error"})
+            </div>
+
+            <div class="bottom-content">
+                <a href="/Auth/Register" class="link">Tạo tài khoản mới</a>
+            </div>
+            <div class="input-wrapper">
+                <input type="submit" value="Đăng nhập" class="btn btn-info form-control" />
+            </div>
+        </div>
+
+    }
+</div>

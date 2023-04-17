@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageCss{
+    <link rel="stylesheet" href="~/Public/css/Admin/admin.css" asp-append-version="true" />
+    @RenderSection("PageCss", required: false)
+}
+@section Scripts{
+    <script type="text/javascript" src="~/Public/js/Admin/admin.js"></script>
+
+}
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    @Html.ActionLink("Sản phẩm", "HomeAdmin", "Admin")
+    @Html.ActionLink("Phân loại", "ListCategory", "Admin")
+    @Html.ActionLink("Hóa đơn", "ListOrder", "Admin")
+</div>
+<div class="container body-content" id="main">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    @RenderBody()
+</div>
+<hr />
+<footer>
+    <p class="information">&copy; @DateTime.Now.Year - BTL Lập trình web </p>
+</footer>

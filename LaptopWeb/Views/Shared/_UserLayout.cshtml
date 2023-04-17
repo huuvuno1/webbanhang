@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Web bán laptop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageCss{
+    <link rel="stylesheet" href="~/Public/css/Auth/auth.css" asp-append-version="true" />
+    @RenderSection("PageCss", required: false)
+}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Laptop Web", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                @if (Session["Id"] == null)
+                {
+                    <li>@Html.ActionLink("Login", "Login", "Auth")</li>
+                    <li>@Html.ActionLink("Register", "Register", "Auth")</li>
+                }
+                else
+                {
+                    <li><a href="/">Xin chào, @Session["Fullname"] </a></li>
+                }
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container body-content">
+    @RenderBody()
+</div>
+<hr />
+<footer>
+    <p class="information">&copy; @DateTime.Now.Year - BTL Lập trình web </p>
+</footer>
+
+

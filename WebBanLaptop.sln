@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBanLaptop", "WebBanLaptop\WebBanLaptop.csproj", "{AB1C8333-9ACB-40BB-A637-4AC87616640F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaptopWeb", "LaptopWeb\LaptopWeb.csproj", "{9A06B8C1-97EE-4B5F-8A87-FA994B4401EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AB1C8333-9ACB-40BB-A637-4AC87616640F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB1C8333-9ACB-40BB-A637-4AC87616640F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB1C8333-9ACB-40BB-A637-4AC87616640F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A06B8C1-97EE-4B5F-8A87-FA994B4401EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A06B8C1-97EE-4B5F-8A87-FA994B4401EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A06B8C1-97EE-4B5F-8A87-FA994B4401EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A06B8C1-97EE-4B5F-8A87-FA994B4401EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
