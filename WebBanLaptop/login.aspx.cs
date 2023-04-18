@@ -19,26 +19,37 @@ namespace WebBanLaptop
         }
         protected void Login_Click(object sender, EventArgs e)
         {
+
             string strcon = ConfigurationManager.ConnectionStrings["WebLaptopConnection"].ConnectionString;
             SqlConnection con = new SqlConnection(strcon);
+            con.Open();
             SqlCommand cmd = new SqlCommand("select * from tbl_user where username=@username and password=@password", con);
             cmd.Parameters.AddWithValue("@username", username.Text);
             cmd.Parameters.AddWithValue("@password", password.Text);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            con.Open();
-            int i = cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
             con.Close();
 
             if (dt.Rows.Count > 0)
             {
-                Response.Redirect("index.aspx");
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if (dt.Rows[i]["role"].ToString() == "1")
+                    {
+                        Response.Redirect("index.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("admin-managament.aspx");
+                    }
+                }
+                
             }
             else
             {
                 Label1.Text = "Tên đăng nhập/Mật khẩu không chính xác";
-                Label1.ForeColor = System.Drawing.Color.Red;
 
             }
 

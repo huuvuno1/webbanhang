@@ -323,7 +323,8 @@ input[type=submit] {
 }
 
 #Label1 {
-    font-size: 14px;
+    font-size: 13px;
+    color: red;
 }
 .header-form {
     text-align: center;
@@ -332,3 +333,8 @@ input[type=submit] {
     .header-form h2 {
         font-size: x-large;
     }
+.bonus-option {
+    font-size: 13px;
+    color: #3388bc;
+    margin-left: 20px;
+}

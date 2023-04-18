@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/product.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container container-form">
         <div class="bg-form"></div>
-        <form id="form1" class="form-login" runat="server" method="post">
+        <form id="form1" class="form-login" runat="server" method="post" onsubmit="return submitFormRegister()">
             <div>
                 <div class="header-form">
                     <h2>Đăng Ký</h2>
@@ -88,6 +88,7 @@
                         <td class=""></td>
                         <td>
                             <asp:Button ID="Button1" runat="server" Text="Đăng ký" OnClick="Register_Click" />
+                            <a href="login.aspx" class="bonus-option">Bạn đã có tài khoản?</a>
                         </td>
                         <td></td>
                     </tr>
@@ -96,4 +97,5 @@
     </form>
     </div>
 </body>
+    <script type="text/javascript" src="/assets/js/form.js"></script>
 </html>
