@@ -32,7 +32,7 @@
             <div class="add-new">
                     <a href="add-product.aspx" class="link-add-new">&#43; Thêm mới</a>
                 </div>
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" GridLines="None" Height="200px" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" Width="800px">
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" GridLines="None" Height="200px" OnPageIndexChanging="GridView1_PageIndexChanging" Width="800px">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
                     <asp:TemplateField HeaderText="Tên sản phẩm">
@@ -65,7 +65,12 @@
                             <asp:Label ID="Label5" runat="server" Text='<%# Eval("Status") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:CommandField CausesValidation="False" HeaderText="Action" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" />
+                    <asp:TemplateField HeaderText="Action">
+                        <ItemTemplate>
+                            <a href="edit-product.aspx?id=<%# Eval("Id") %>">Edit</a>
+                            <a href="delete-product.aspx?id=<%# Eval("Id") %>">Delete</a>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

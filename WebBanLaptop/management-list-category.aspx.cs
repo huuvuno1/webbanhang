@@ -28,28 +28,11 @@ namespace WebBanLaptop
             }
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
 
         }
 
-        protected void GridView1_PageIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-
-        }
-
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-
-        }
     }
 }

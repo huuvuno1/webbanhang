@@ -32,19 +32,19 @@
             <div class="add-new">
                     <a href="add-category.aspx" class="link-add-new">&#43; Thêm mới</a>
                 </div>
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="id" Height="400px" 
-                OnPageIndexChanged="GridView1_PageIndexChanged" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowEditing="GridView1_RowEditing" 
-                OnRowUpdating="GridView1_RowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="500px">
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="id" Height="400px"
+                OnPageIndexChanging="GridView1_PageIndexChanging" Width="500px">
                 <Columns>
                     <asp:TemplateField HeaderText="Tên loại">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Eval("Name") %>'></asp:TextBox>
-                        </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:CommandField CausesValidation="False" HeaderText="Action" ShowEditButton="True" />
+                    <asp:TemplateField HeaderText="Action">
+                        <ItemTemplate>
+                            <a href="edit-category.aspx?id=<%# Eval("Id") %>">Edit</a>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
         </div>

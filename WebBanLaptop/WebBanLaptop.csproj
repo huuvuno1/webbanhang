@@ -88,7 +88,7 @@
     <Content Include="login.aspx" />
     <Content Include="management-list-category.aspx" />
     <Content Include="management-list-product.aspx" />
-    <Content Include="Model\database\weblaptop.sql" />
+    <Content Include="Model\db\weblaptop.sql" />
     <Content Include="product-detail.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Web.config" />
