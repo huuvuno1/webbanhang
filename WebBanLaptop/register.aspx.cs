@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebBanLaptop.Utils;
 
 namespace WebBanLaptop
 {
@@ -19,7 +20,7 @@ namespace WebBanLaptop
         }
         protected void Register_Click(object sender, EventArgs e)
         {
-            string strcon = ConfigurationManager.ConnectionStrings["WebLaptopConnection"].ConnectionString;
+            string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
             if (checkUsername(username.Text, con))
             {

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
+using WebBanLaptop.Utils;
 
 namespace WebBanLaptop
 {
@@ -20,7 +21,7 @@ namespace WebBanLaptop
         protected void Login_Click(object sender, EventArgs e)
         {
 
-            string strcon = ConfigurationManager.ConnectionStrings["WebLaptopConnection"].ConnectionString;
+            string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from tbl_user where username=@username and password=@password", con);
@@ -34,15 +35,19 @@ namespace WebBanLaptop
 
             if (dt.Rows.Count > 0)
             {
+                Session["login"] = true;
+                
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
+                    Session["user_name"] = dt.Rows[i]["fullname"].ToString();
                     if (dt.Rows[i]["role"].ToString() == "1")
                     {
                         Response.Redirect("index.aspx");
                     }
                     else
                     {
-                        Response.Redirect("admin-managament.aspx");
+                        Session["admin"] = true;
+                        Response.Redirect("admin-management.aspx");
                     }
                 }
                 

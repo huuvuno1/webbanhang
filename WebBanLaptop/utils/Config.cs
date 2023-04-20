@@ -4,13 +4,13 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 
-namespace WebBanLaptop.utils
+namespace WebBanLaptop.Utils
 {
     public class Config
     {
         public static string getConnectionString()
         {
-            string strcon = ConfigurationManager.ConnectionStrings["Bai23ConnectionString"].ConnectionString;
+            string strcon = ConfigurationManager.ConnectionStrings["WebLaptopConnection"].ConnectionString;
             return strcon;
         }
     }
