@@ -41,7 +41,59 @@ namespace WebBanLaptop.DAO
 
             return products;
         }
-        public bool insertProduct(int category_id,string name,string slug,int price,int quantity,string description)
+
+        public List<Product> filterProducts(string priceRanges, string brands, int limit, string sortBy)
+        {
+            string priceRangeCondition = "";
+            if (!string.IsNullOrEmpty(priceRanges))
+            {
+                var map = priceRanges.Split(',').Select(x => Util.getPriceRangeCondition(x));
+                priceRangeCondition = string.Join(" or ", map);
+            }
+
+            string sort = !String.IsNullOrEmpty(sortBy) ? $"order by {sortBy.Split('_')[0]} {sortBy.Split('_')[1]}" : "";
+
+            string condition = priceRangeCondition == "" ? "" : $"WHERE {priceRangeCondition}";
+            if (!String.IsNullOrEmpty(brands))
+            {
+                string prefix = condition == "" ? "WHERE" : "AND";
+                condition += $@"{prefix} brand in ({string.Join(", ", brands.Split(',').Select(x => $"'{x}'"))})";
+            }
+
+
+            List<Product> products = new List<Product>();
+            string strcon = Config.getConnectionString();
+            SqlConnection con = new SqlConnection(strcon);
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = $"SELECT top(@limit) * FROM tbl_product {condition} {sort}";
+            cmd.Parameters.AddWithValue("@limit", limit);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader != null && reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    products.Add(new Product()
+                    {
+                        Id = int.Parse(reader["id"].ToString()),
+                        Name = reader["name"].ToString(),
+                        Price = int.Parse(reader["price"].ToString()),
+                        Description = reader["description"].ToString(),
+                        Quantity = int.Parse(reader["quantity"].ToString()),
+                        CategoryId = int.Parse(reader["category_id"].ToString()),
+                        Status = int.Parse(reader["status"].ToString()),
+                        Brand = reader["brand"].ToString(),
+
+                    });
+                }
+            }
+            con.Close();
+
+            return products;
+        }
+
+        public bool insertProduct(int category_id, string name, string slug, int price, int quantity, string description)
         {
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
@@ -87,14 +139,14 @@ namespace WebBanLaptop.DAO
                     product.Price = Convert.ToInt32(reader["price"]);
                     product.Quantity = Convert.ToInt32(reader["quantity"]);
                     product.Status = Convert.ToInt32(reader["status"]);
-                    product.Description= Convert.ToString(reader["description"]);
-                    product.Slug= Convert.ToString(reader["slug"]);
+                    product.Description = Convert.ToString(reader["description"]);
+                    product.Slug = Convert.ToString(reader["slug"]);
                 }
                 return product;
             }
             else { return null; }
         }
-        public bool updateProduct (string id, int category_id, string name, int price, int quantity, string description) 
+        public bool updateProduct(string id, int category_id, string name, int price, int quantity, string description)
         {
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);

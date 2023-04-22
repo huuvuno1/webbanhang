@@ -296,3 +296,17 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.py-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.py-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}

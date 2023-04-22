@@ -70,6 +70,7 @@
     <Content Include="add-category.aspx" />
     <Content Include="add-product.aspx" />
     <Content Include="admin-management.aspx" />
+    <Content Include="Api\FilterProduct.aspx" />
     <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\category.css" />
     <Content Include="assets\css\product.css" />
@@ -79,6 +80,7 @@
     <Content Include="assets\images\laptop1.jpg" />
     <Content Include="assets\images\search.svg" />
     <Content Include="assets\js\admin.js" />
+    <Content Include="assets\js\category.js" />
     <Content Include="assets\js\form.js" />
     <Content Include="assets\js\productDetailJs.js" />
     <Content Include="assets\videos\Laptop Gaming HP Victus 2022 15-fa0031dx - 8 nhân 12 luồng siêu khỏe.mp4" />
@@ -116,6 +118,13 @@
     </Compile>
     <Compile Include="admin-management.aspx.designer.cs">
       <DependentUpon>admin-management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\FilterProduct.aspx.cs">
+      <DependentUpon>FilterProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Api\FilterProduct.aspx.designer.cs">
+      <DependentUpon>FilterProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="category.aspx.cs">
       <DependentUpon>category.aspx</DependentUpon>
@@ -196,6 +205,8 @@
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utils\Config.cs" />
+    <Compile Include="Utils\Constant.cs" />
+    <Compile Include="Utils\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\2463-laptopaz-hp-victus-15-1s-1.webp" />
