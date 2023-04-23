@@ -186,6 +186,7 @@ body {
 
 .trademark__item--name {
   margin-top: 8px;
+  color: black;
 }
 
 .trademark__title {
@@ -309,4 +310,8 @@ body {
 
 .mt-20 {
     margin-top: 20px;
+}
+
+.trademark__item--image {
+    max-height: 45px;
 }

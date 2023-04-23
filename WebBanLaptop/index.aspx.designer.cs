@@ -13,5 +13,50 @@ namespace WebBanLaptop
 
     public partial class index
     {
+
+        /// <summary>
+        /// RepeaterBrand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterBrand;
+
+        /// <summary>
+        /// RepeaterPriceRange control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterPriceRange;
+
+        /// <summary>
+        /// RepeaterProductNew control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterProductNew;
+
+        /// <summary>
+        /// RepeaterProductGaming control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterProductGaming;
+
+        /// <summary>
+        /// RepeaterProductGraphics control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterProductGraphics;
     }
 }
