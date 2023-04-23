@@ -1,2 +1,95 @@
 ﻿body {
 }
+.category {
+    background: white;
+    border: 1px solid #ff0000;
+}
+
+.price_range {
+    border: 1px solid #ff0000;
+    border-right: unset;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.price_range-item {
+    width: 160px;
+    display: block;
+    padding: 7px;
+}
+
+.product__normal.product {
+    background: white;
+    border: 1px solid #eee;
+    margin: 0;
+    border-radius: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 13px;
+    padding-right: 13px;
+    display: block;
+}
+
+.product__normal:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: relative;
+    right: -1px;
+}
+
+.product__normal .product__name--link {
+    color: #333;
+}
+
+.product__cpu--des, .product__ram--des, .product__ssd--des, .product__card--des {
+    margin-bottom: 10px;
+    color: #0657a3;
+    font-weight: bold;
+}
+
+.product__cpu--name, .product__ram--name, .product__ssd--name, .product__card--name {
+    color: #0657a3;
+    font-weight: bold;
+}
+
+.oldPrice {
+    color: red;
+}
+
+.product__name--link {
+    font-size: 15px;
+}
+
+.product {
+    width: calc(100% / 4);
+}
+
+.frame__list--product {
+    height: unset;
+    flex-wrap: wrap;
+}
+
+.paging {
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.paging-item {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    border: 1px solid gray transparent;
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    background: red;
+    color: white;
+}
+
+.frame__product {
+    border: unset;
+}

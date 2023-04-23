@@ -41,27 +41,27 @@
       <nav class="flex justify-between bg-red">
         <div class="nav__item flex flex-col">
           <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="#" class="nav__item--link">LAPTOP MỚI</a>
+          <a href="/category.aspx?type=laptop-moi" class="nav__item--link">LAPTOP MỚI</a>
         </div>
         <div class="nav__item flex flex-col">
           <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="#" class="nav__item--link">LAPTOP GAMING</a>
+          <a href="/category.aspx?type=laptop-gaming" class="nav__item--link">LAPTOP GAMING</a>
         </div>
         <div class="nav__item flex flex-col">
           <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="#" class="nav__item--link">LAPTOP ĐỒ HỌA</a>
+          <a href="/category.aspx?type=laptop-do-hoa" class="nav__item--link">LAPTOP ĐỒ HỌA</a>
         </div>
         <div class="nav__item flex flex-col">
           <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="#" class="nav__item--link">LAPTOP MỎNG NHẸ</a>
+          <a href="/category.aspx?type=laptop-mong-nhe" class="nav__item--link">LAPTOP MỎNG NHẸ</a>
         </div>
         <div class="nav__item flex flex-col">
           <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="#" class="nav__item--link">LAPTOP VĂN PHÒNG </a>
+          <a href="/category.aspx?type=laptop-van-phong" class="nav__item--link">LAPTOP VĂN PHÒNG </a>
         </div>
         <div class="nav__item flex flex-col">
           <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="#" class="nav__item--link">LAPTOP SURFACE </a>
+          <a href="/category.aspx?type=laptop-surface" class="nav__item--link">LAPTOP SURFACE </a>
         </div>
       </nav>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

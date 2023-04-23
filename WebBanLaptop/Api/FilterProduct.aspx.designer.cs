@@ -7,20 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebBanLaptop
+namespace WebBanLaptop.Api
 {
 
 
-    public partial class category
+    public partial class FilterProduct
     {
 
         /// <summary>
-        /// RepeaterBrand control.
+        /// productsRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepeaterBrand;
+        protected global::System.Web.UI.WebControls.Repeater productsRepeater;
+
+        /// <summary>
+        /// RepeaterPaging control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterPaging;
     }
 }
