@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="category">
-        <h1 class="py-20">LAPTOP GAMING</h1>
+        <h1 class="py-20" id="breadcrumb"></h1>
         <hr />
         <div class="flex py-10">
             <h2 class="text-red" style="width: 100px;">Tìm theo:</h2>
