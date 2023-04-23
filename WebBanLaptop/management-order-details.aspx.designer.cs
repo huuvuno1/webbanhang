@@ -11,7 +11,7 @@ namespace WebBanLaptop
 {
 
 
-    public partial class management_list_category
+    public partial class management_order_details
     {
 
         /// <summary>
