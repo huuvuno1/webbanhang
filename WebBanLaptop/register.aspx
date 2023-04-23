@@ -10,6 +10,7 @@
     <title>Đăng ký</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/product.css" />
+    <link rel="stylesheet" href="/assets/css/login.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
         <form id="form1" class="form-login" runat="server" method="post" onsubmit="return submitFormRegister()">
             <div>
                 <div class="header-form">
-                    <h2>Đăng Ký</h2>
+                    <h2 class="txtHeader">Đăng Ký</h2>
                 </div>
                 <table style="width: 100%;">
 
@@ -85,8 +86,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class=""></td>
-                        <td>
+                        
+                        <td colspan="2" class="btn">
                             <asp:Button ID="Button1" runat="server" Text="Đăng ký" OnClick="Register_Click" />
                             <a href="login.aspx" class="bonus-option">Bạn đã có tài khoản?</a>
                         </td>

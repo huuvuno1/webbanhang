@@ -12,17 +12,17 @@
           <div class="detail__media--src">
             <iframe class="detail-img 1 active" width='100%' height='100%'
               src='https://www.youtube.com/embed/kT3j7VjHgqw' frameborder='0' allowfullscreen></iframe>
-            <img src="/assets/images/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" alt="img" class="detail-img 2 active">
+            <img src="/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" alt="img" class="detail-img 2">
             <img src="/assets/images/2463-laptopaz-hp-victus-15-3.webp" alt="img" class="detail-img 3">
             <img src="/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" alt="img" class="detail-img 4">
             <img src="/assets/images/2463-laptopaz-hp-victus-15-3.webp" alt="img" class="detail-img 5">
           </div>
           <div class="detail__select">
             <div class="select__wrapper">
-              <div onclick="handleChangeImg(this)" data-index="1" class="select-item">
+              <div onclick="handleChangeImg(this)" data-index="1" class="select-item active">
                 <img src="/assets/images/iconVideo.png" alt="videoimg" class="select-item--img" />
               </div>
-              <div onclick="handleChangeImg(this)" data-index="2" class="select-item active">
+              <div onclick="handleChangeImg(this)" data-index="2" class="select-item">
 
                 <img src="/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" alt="laptopimg" class="select-item--img" />
               </div>
@@ -40,9 +40,9 @@
           </div>
         </div>
         <div class="detail__action">
-          <div class="price-box">
-            <div class="price-top"><span class="special-price">16.900.000Đ</span></div>
-            <div class="price-bottom"><span class="old-price">Giá thị trường <del
+          <div class="detail-price--box">
+            <div class="detail-price--top"><span class="special-price">16.900.000Đ</span></div>
+            <div class="detail-price--bottom"><span class="old-price">Giá thị trường <del
                   class="old-price--value">21.000.000Đ</del>
               </span>
               <span class="save-price">Tiết kiệm <del class="save-prive--value">
@@ -196,7 +196,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
   <div class="modal-cart">
     <div class="wrapper-modal js-close">
       <div class="modal-header">Bạn đã thêm <span class="nameProd">[New Outlet] Acer Swift 3 2022 SF314-512-56QN
@@ -211,7 +211,7 @@
         </tr>
         <tr>
           <td class="modal-prod--des">
-            <img src="/App_Data/laptop1.jpg" width="100px" />
+            <img src="/assets/images/laptop1.jpg" width="100px" />
             <p>[New Outlet] Acer Swift 3 2022 SF314-512-56QN (i5-1240P/16GB/512GB PCIE/14.0 FHD/WIN11/BẠC)</p>
           </td>
           <td><span class="modal-price">12000000</span>d</td>
@@ -233,6 +233,7 @@
       </div>
       <span class="close-modal" onclick="closeModal()">X</span>
     </div>
+      </div>
 </asp:Content>
 
 <asp:Content ID="Script1" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">

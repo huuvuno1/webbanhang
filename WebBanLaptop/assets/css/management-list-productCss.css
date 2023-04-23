@@ -1,0 +1,62 @@
+﻿body {
+}
+
+.txtTitle {
+    font-size: 40px !important;
+}
+
+.dvAddNew {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.btnAdd {
+    background: #4caf50;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.headerCss {
+    text-align: center !important;
+    min-width: 120px;
+}
+
+.contentCss {
+    text-align: center !important;
+}
+
+.btnEdit, .btnDelete {
+    background: #00a5ff;
+    width: 60px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btnDelete {
+    background-color: red;
+}
+
+    .btnEdit:hover, .btnDelete:hover {
+        opacity: 0.7;
+    }
+
+.btn {
+    display: flex;
+}

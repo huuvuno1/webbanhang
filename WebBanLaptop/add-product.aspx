@@ -10,6 +10,7 @@
     <title>Thêm mới</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/admin.css" />
+    <link rel="stylesheet" href="/assets/css/add-productCss.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -19,7 +20,7 @@
         <form id="form1" class="layout-form" method="post" runat="server">
             <div>
                 <div class="header-form">
-                    <h3>Thêm mới sản phẩm</h3>
+                    <h3 class="head-Text">Thêm mới sản phẩm</h3>
                 </div>
                 <table style="width: 100%;">
                     <tr>
@@ -37,23 +38,23 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="label-login">Gía tiền:</td>
+                        <td class="label-login">GIÁ TIỀN:</td>
                         <td>
-                            <asp:TextBox ID="price" runat="server" placeholder="Nhập giá tiền" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox ID="price" runat="server" CssClass="txtPrice" placeholder="Nhập giá tiền" TextMode="Number"></asp:TextBox>
                         </td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="label-login">Số lượng:</td>
                         <td>
-                            <asp:TextBox ID="quantity" runat="server" placeholder="Nhập số lượng" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox ID="quantity" runat="server" CssClass="txtQuan" placeholder="Nhập số lượng" TextMode="Number"></asp:TextBox>
                         </td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="label-login">Mô tả:</td>
                         <td>
-                            <textarea id="description" name="description" runat="server" style="width: 240px;"></textarea>
+                            <textarea id="description" class="txtDes" name="description" runat="server" ></textarea>
                         </td>
                         <td></td>
                     </tr>
@@ -66,9 +67,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class=""></td>
-                        <td>
-                            <asp:Button ID="Button1" runat="server" Text="Thêm" OnClick="Add_Click"/>
+                        
+                        <td colspan="2" class="tdBtnAdd">
+                            <asp:Button ID="Button1" CssClass="btnAdd" runat="server" Text="Thêm" OnClick="Add_Click"/>
+                            <asp:Button ID="Button2" CssClass="btnback" runat="server" Text="Quay lại"  PostBackUrl="~/management-list-product.aspx" />
+
                         </td>
                         <td></td>
                     </tr>

@@ -114,5 +114,25 @@ namespace WebBanLaptop.DAO
                 return false;
             }
         }
+        public bool deleteProduct(string id)
+        {
+            string strcon = Config.getConnectionString();
+            SqlConnection con = new SqlConnection(strcon);
+
+            string strQuery = $@"delete tbl_product  where id = {id}";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@
     <title>Đăng Nhập</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/product.css" />
+    <link rel="stylesheet" href="/assets/css/login.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
         <form id="form1" class="form-login" runat="server" method="post" onsubmit="return submitFormLogin()">
             <div>
                 <div class="header-form">
-                    <h2>Đăng Nhập</h2>
+                    <h2 class="txtHeader">Đăng Nhập</h2>
                 </div>
                 <table style="width: 100%;">
 
@@ -32,7 +33,7 @@
                     <tr>
                         <td class="label-login">Username:</td>
                         <td>
-                            <asp:TextBox ID="username" runat="server" placeholder="Nhập tên đăng nhập"></asp:TextBox>
+                            <asp:TextBox ID="username" CssClass="txtUserName" runat="server" placeholder="Nhập tên đăng nhập"></asp:TextBox>
                         </td>
                         <td></td>
                     </tr>
@@ -49,7 +50,7 @@
                     <tr>
                         <td class="label-login">Password:</td>
                         <td>
-                            <asp:TextBox ID="password" TextMode="password" runat="server" placeholder="Nhập mật khẩu"></asp:TextBox>
+                            <asp:TextBox ID="password" CssClass="txtPassword" TextMode="password" runat="server" placeholder="Nhập mật khẩu"></asp:TextBox>
                         </td>
                         <td></td>
                     </tr>

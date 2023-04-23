@@ -10,6 +10,7 @@
     <title>Thêm mới</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/admin.css" />
+    <link rel="stylesheet" href="/assets/css/add-categoryCss.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -40,7 +41,9 @@
                     <tr>
                         <td class=""></td>
                         <td>
-                            <asp:Button ID="Button1" runat="server" Text="Thêm" OnClick="Add_Click" />
+                            <asp:Button ID="Button1" CssClass="btnEdit" runat="server" Text="Thêm" OnClick="Add_Click" />
+                            <asp:Button ID="Button2" CssClass="btnback" runat="server" Text="Quay lại"  PostBackUrl="~/management-list-category.aspx" />
+
                         </td>
                         <td></td>
                     </tr>
