@@ -79,13 +79,8 @@
     <Content Include="assets\css\product.css" />
     <Content Include="assets\css\productDetailCss.css" />
     <Content Include="assets\css\style.css" />
-    <Content Include="assets\images\2463-laptopaz-hp-victus-15-1s-1.webp" />
-    <Content Include="assets\images\2463-laptopaz-hp-victus-15-3.webp" />
-    <Content Include="assets\images\brand1.webp" />
     <Content Include="assets\images\iconVideo.png" />
     <Content Include="assets\images\laptop1.jpg" />
-    <Content Include="assets\images\laptop1.webp" />
-    <Content Include="assets\images\laptop_white_new.webp" />
     <Content Include="assets\images\search.svg" />
     <Content Include="assets\js\admin.js" />
     <Content Include="assets\js\category.js" />
@@ -100,10 +95,7 @@
     <Content Include="index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="management-list-category.aspx" />
-    <Content Include="management-list-order.aspx" />
     <Content Include="management-list-product.aspx" />
-    <Content Include="management-list-user.aspx" />
-    <Content Include="management-order-details.aspx" />
     <Content Include="Model\db\weblaptop.sql" />
     <Content Include="product-detail.aspx" />
     <Content Include="register.aspx" />
@@ -153,8 +145,6 @@
       <DependentUpon>Common.Master</DependentUpon>
     </Compile>
     <Compile Include="DAO\CategoryDAO.cs" />
-    <Compile Include="DAO\OrderDAO.cs" />
-    <Compile Include="DAO\OrderDetailDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="delete-product.aspx.cs">
       <DependentUpon>delete-product.aspx</DependentUpon>
@@ -163,7 +153,6 @@
     <Compile Include="delete-product.aspx.designer.cs">
       <DependentUpon>delete-product.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="edit-category.aspx.cs">
       <DependentUpon>edit-category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,13 +191,6 @@
     <Compile Include="management-list-category.aspx.designer.cs">
       <DependentUpon>management-list-category.aspx</DependentUpon>
     </Compile>
-    <Compile Include="management-list-order.aspx.cs">
-      <DependentUpon>management-list-order.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="management-list-order.aspx.designer.cs">
-      <DependentUpon>management-list-order.aspx</DependentUpon>
-    </Compile>
     <Compile Include="management-list-product.aspx.cs">
       <DependentUpon>management-list-product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -216,27 +198,9 @@
     <Compile Include="management-list-product.aspx.designer.cs">
       <DependentUpon>management-list-product.aspx</DependentUpon>
     </Compile>
-    <Compile Include="management-list-user.aspx.cs">
-      <DependentUpon>management-list-user.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="management-list-user.aspx.designer.cs">
-      <DependentUpon>management-list-user.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="management-order-details.aspx.cs">
-      <DependentUpon>management-order-details.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="management-order-details.aspx.designer.cs">
-      <DependentUpon>management-order-details.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Pageable.cs" />
-    <Compile Include="Model\Image.cs" />
-    <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\OrderDetail.cs" />
     <Compile Include="Model\Product.cs" />
-    <Compile Include="Model\User.cs" />
     <Compile Include="product-detail.aspx.cs">
       <DependentUpon>product-detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -263,8 +227,6 @@
     <Content Include="assets\images\laptop1.webp" />
     <Content Include="assets\images\laptop_white_new.webp" />
     <Content Include="Common.Master" />
-    <Content Include="assets\images\b63554bf-d9b7-4315-8cbc-e4a078fe15d2 - Copy.webp" />
-    <Content Include="assets\images\b63554bf-d9b7-4315-8cbc-e4a078fe15d2.webp" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

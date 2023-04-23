@@ -36,20 +36,9 @@ namespace WebBanLaptop
             int quantityProduct = Int32.Parse(quantity.Text);
             string descriptionProduct = Request.Form["description"];
 
-            int product_id = productDAO.insertProduct(categoryId, nameProduct, slugName, priceProduct, quantityProduct,descriptionProduct);
-            if (product_id > 0)
+            bool check = productDAO.insertProduct(categoryId, nameProduct, slugName, priceProduct, quantityProduct,descriptionProduct);
+            if (check)
             {
-                
-                if (UploadImages.HasFiles)
-                {
-                    foreach (HttpPostedFile uploadedFile in UploadImages.PostedFiles)
-                    {
-                        uploadedFile.SaveAs(System.IO.Path.Combine(Server.MapPath("~/assets/images/"), uploadedFile.FileName));
-                        listofuploadedfiles.Text += String.Format("{0}<br />", uploadedFile.FileName);
-                        string path = uploadedFile.FileName;
-                        productDAO.insertImages(product_id, path);
-                    }
-                }
                 Response.Redirect("management-list-product.aspx");
             }
         }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -31,16 +30,10 @@ namespace WebBanLaptop
                             quantity.Text = Convert.ToString(product.Quantity);
                             description.InnerText= product.Description;
 
-                            var images = productDAO.getImageByProductId(id);
-                            List<ListItem> files = new List<ListItem>();
-                            foreach (var image in images)
-                            {
-                                string fileName = image.Path;
-                                files.Add(new ListItem(fileName, "~/assets/images/" + fileName));
-                            }
-                            RepeaterImages.DataSource = files;
-                            RepeaterImages.DataBind();
-
+                        }
+                        else
+                        {
+                            Response.StatusCode = 404;
                         }
                     }
                     else
@@ -68,17 +61,11 @@ namespace WebBanLaptop
             bool check = productDAO.updateProduct(id, categoryId, nameProduct, priceProduct, quantityProduct, descriptionProduct);
             if (check)
             {
-                if (UploadImages.HasFiles)
-                {
-                    productDAO.deleteImages(id);
-                    foreach (HttpPostedFile uploadedFile in UploadImages.PostedFiles)
-                    {
-                        uploadedFile.SaveAs(System.IO.Path.Combine(Server.MapPath("~/assets/images/"), uploadedFile.FileName));
-                        string path = uploadedFile.FileName;
-                        productDAO.insertImages(Convert.ToInt32(id), path);
-                    }
-                }
                 Response.Redirect("management-list-product.aspx");
+            }
+            else
+            {
+                form1.InnerText = "lỗi!";
             }
         }
     }

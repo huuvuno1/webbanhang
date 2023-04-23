@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="container body-content" id="main">
-        <form id="form1" class="layout-form" method="post" runat="server" enctype="multipart/form-data" >
+        <form id="form1" class="layout-form" method="post" runat="server">
             <div>
                 <div class="header-form">
                     <h3>Chỉnh sửa sản phẩm</h3>
@@ -38,19 +38,7 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="label-login">Hình ảnh:</td>
-                        <td>
-                            <asp:FileUpload runat="server" ID="UploadImages" AllowMultiple="true" />
-                            <asp:Repeater ID="RepeaterImages" runat="server">
-                                <ItemTemplate>
-                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Value") %>'/>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td class="label-login">Gía tiền:</td>
+                        <td class="label-login">Giá tiền:</td>
                         <td>
                             <asp:TextBox ID="price" CssClass="txtPrice" runat="server" TextMode="Number"></asp:TextBox>
                         </td>
