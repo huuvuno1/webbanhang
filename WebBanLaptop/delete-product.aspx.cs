@@ -23,11 +23,6 @@ namespace WebBanLaptop
                     productDAO.deleteProduct(id);
                     
                         Response.Redirect("management-list-product.aspx");
-                    
-
-
-                    
-
                 }
             }
             else
