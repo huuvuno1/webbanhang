@@ -1,0 +1,93 @@
+﻿body {
+}
+
+.layout-form {
+    background: #fff;
+    width: 1200px;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.label-login {
+    width: 130px;
+}
+
+.txtPrice, .txtQuan {
+    width: 100%;
+    height: 30px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.txtDes,select {
+    width: 100%;
+    height: 60px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+input[type=text] {
+    width: 100%;
+    height: 40px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.tdBtnAdd, .tdBtnEdit {
+    text-align: center;
+}
+
+.btnAdd:hover, .btnEdit:hover {
+    opacity: 0.8;
+}
+
+input[type=submit] {
+    width: 80px;
+    height: 32px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+.btnEdit {
+    background-color: #00a5ff !important;
+}
+
+input[type=text], select {
+    width: 100%;
+}
+
+.header-form {
+    margin-bottom: 10px;
+}
+
+.head-Text {
+    font-size: 30px;
+}
+.btnEdit {
+    background-color: #00a5ff;
+}
+.btn{
+    text-align:center;
+}
+.btnback:hover{
+    opacity:0.8;
+}
