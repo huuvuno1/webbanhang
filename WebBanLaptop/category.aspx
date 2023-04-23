@@ -78,14 +78,8 @@
             </div>
         </div>
 
-        <div class="paging flex">
-            <div class="paging-item"><<</div>
-            <div class="paging-item">1</div>
-            <div class="paging-item">2</div>
-            <div class="paging-item">3</div>
-            <div class="paging-item">4</div>
-            <div class="paging-item">5</div>
-            <div class="paging-item">>></div>
+        <div class="paging flex" id="paging">
+            
         </div>
     </div>
 </asp:Content>

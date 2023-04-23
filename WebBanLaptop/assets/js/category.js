@@ -5,7 +5,10 @@ function requestFilterProduct(options) {
     const xhr = new XMLHttpRequest()
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('list__products').innerHTML = xhr.responseText;
+            const listProductsHtml = xhr.responseText.split('|')[0];
+            const listPagingHtml = xhr.responseText.split('|')[1];
+            document.getElementById('list__products').innerHTML = listProductsHtml;
+            document.getElementById('paging').innerHTML = listPagingHtml;
         }
     }
     const uri = new URLSearchParams(options).toString()
@@ -14,6 +17,13 @@ function requestFilterProduct(options) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const categoryType = urlParams.get("type");
+    if (categoryType)
+        filtersMap["type"] = categoryType;
+
+
     const brands = document.querySelectorAll('input[name="brand"]');
     brands.forEach(doc => {
         doc.addEventListener('change', () => {
@@ -43,5 +53,11 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
-    requestFilterProduct();
+    requestFilterProduct(filtersMap);
 })
+
+
+function gotoPage(page) {
+    filtersMap["pageNum"] = page;
+    requestFilterProduct(filtersMap);
+}

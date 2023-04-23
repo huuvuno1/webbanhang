@@ -188,6 +188,7 @@
       <DependentUpon>management-list-product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Pageable.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="product-detail.aspx.cs">
       <DependentUpon>product-detail.aspx</DependentUpon>

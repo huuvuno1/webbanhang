@@ -42,7 +42,7 @@ namespace WebBanLaptop.DAO
             return products;
         }
 
-        public List<Product> filterProducts(string priceRanges, string brands, int limit, string sortBy)
+        public Pageable filterProducts(string categoryType, string priceRanges, string brands, string sortBy, int page_num, int page_size)
         {
             string priceRangeCondition = "";
             if (!string.IsNullOrEmpty(priceRanges))
@@ -51,23 +51,37 @@ namespace WebBanLaptop.DAO
                 priceRangeCondition = string.Join(" or ", map);
             }
 
-            string sort = !String.IsNullOrEmpty(sortBy) ? $"order by {sortBy.Split('_')[0]} {sortBy.Split('_')[1]}" : "";
 
-            string condition = priceRangeCondition == "" ? "" : $"WHERE {priceRangeCondition}";
+            string condition = priceRangeCondition == "" ? "" : $"WHERE ({priceRangeCondition})";
             if (!String.IsNullOrEmpty(brands))
             {
                 string prefix = condition == "" ? "WHERE" : "AND";
-                condition += $@"{prefix} brand in ({string.Join(", ", brands.Split(',').Select(x => $"'{x}'"))})";
+                condition += $@"{prefix} (brand in ({string.Join(", ", brands.Split(',').Select(x => $"'{x}'"))}))";
             }
 
+            if (!String.IsNullOrEmpty(categoryType))
+            {
+                string prefix = condition == "" ? "WHERE" : "AND";
+                condition += $@"{prefix} (type=@type) ";
+            }
 
+            string sort = !String.IsNullOrEmpty(sortBy) ? $"order by {sortBy.Split('_')[0]} {sortBy.Split('_')[1]}" : "order by id";
+            string paging = $@" OFFSET @offset ROWS
+                                    FETCH NEXT @page_size ROWS ONLY";
             List<Product> products = new List<Product>();
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
             con.Open();
+
+            // get prodcuts
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = $"SELECT top(@limit) * FROM tbl_product {condition} {sort}";
-            cmd.Parameters.AddWithValue("@limit", limit);
+            cmd.CommandText = $"SELECT * FROM tbl_product {condition} {sort} {paging}";
+            cmd.Parameters.AddWithValue("@offset", (page_num - 1) * page_size);
+            cmd.Parameters.AddWithValue("@page_size", page_size);
+            if (!String.IsNullOrEmpty(categoryType))
+            {
+                cmd.Parameters.AddWithValue("@type", categoryType);
+            }
 
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader != null && reader.HasRows)
@@ -88,9 +102,29 @@ namespace WebBanLaptop.DAO
                     });
                 }
             }
+
+            con.Close();
+            con.Open();
+
+            // count result
+            // MultipleActiveResultSets=true;
+            SqlCommand cmd2 = con.CreateCommand();
+            cmd2.CommandText = $"select count(*) from tbl_product {condition}";
+            if (!String.IsNullOrEmpty(categoryType))
+            {
+                cmd2.Parameters.AddWithValue("@type", categoryType);
+            }
+            string count = cmd2.ExecuteScalar().ToString();
+
             con.Close();
 
-            return products;
+            Pageable pageable = new Pageable()
+            {
+                Total= int.Parse(count),
+                Products= products,
+            };
+
+            return pageable;
         }
 
         public bool insertProduct(int category_id, string name, string slug, int price, int quantity, string description)

@@ -14,17 +14,36 @@ namespace WebBanLaptop.Api
         private ProductDAO productDAO = new ProductDAO();
         protected void Page_Load(object sender, EventArgs e)
         {
+            string type = Request.QueryString["type"];
             string priceRange = Request.QueryString["priceRange"];
             string sortBy = Request.QueryString["sortBy"];
-            string limit = Request.QueryString["limit"];
             string brands = Request.QueryString["brands"];
-            if (String.IsNullOrEmpty(limit))
+            string pageNum = Request.QueryString["pageNum"];
+            string pageSize = Request.QueryString["pageSize"];
+            if (String.IsNullOrEmpty(pageSize))
             {
-                limit = "20";
+                pageSize = "20";
             }
-            var list = productDAO.filterProducts(priceRange, brands, int.Parse(limit), sortBy);
-            productsRepeater.DataSource = list;
+
+            if (String.IsNullOrEmpty(pageNum))
+            {
+                pageNum= "1";
+            }
+            var pageable = productDAO.filterProducts(type, priceRange, brands, sortBy, int.Parse(pageNum), int.Parse(pageSize));
+            productsRepeater.DataSource = pageable.Products;
             productsRepeater.DataBind();
+
+
+            List<object> pageNumbers = new List<object>();
+            for (int i = 1; i <= pageable.Total/ int.Parse(pageSize) + 1; i++)
+            {
+                pageNumbers.Add(new
+                {
+                    pageNumber = i,
+                });
+            }
+            RepeaterPaging.DataSource = pageNumbers;
+            RepeaterPaging.DataBind();
         }
     }
 }
