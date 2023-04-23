@@ -6,21 +6,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebBanLaptop.DAO;
-using WebBanLaptop.Model;
 
 namespace WebBanLaptop
 {
-    public partial class management_list_product : System.Web.UI.Page
+    public partial class management_list_order : System.Web.UI.Page
     {
-        private ProductDAO productDAO = new ProductDAO();
+        private OrderDAO orderDAO;
         protected void Page_Load(object sender, EventArgs e)
         {
             if ((bool)Session["admin"])
             {
                 if (!Page.IsPostBack)
                 {
-                    productDAO = new ProductDAO();
-                    GridView1.DataSource = productDAO.getProducts();
+                    orderDAO = new OrderDAO();
+                    GridView1.DataSource = orderDAO.getOrders();
                     GridView1.DataBind();
                 }
             }
@@ -28,7 +27,6 @@ namespace WebBanLaptop
             {
                 Response.Redirect("login.aspx");
             }
-            
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -36,21 +34,22 @@ namespace WebBanLaptop
 
         }
 
-        protected void Delete_Click(object sender, EventArgs e)
+        protected void Confirm_Click(object sender, EventArgs e)
         {
             var button = (IButtonControl)sender;
             // grab the id from CommandArgument property
             int id = Convert.ToInt32(button.CommandArgument, CultureInfo.InvariantCulture);
             // call stored procedure based on id
-            productDAO = new ProductDAO();
-            if (productDAO.deleteProduct(id))
+            orderDAO = new OrderDAO();
+            if (orderDAO.updateStatusOrder(id))
             {
-                Response.Redirect("management-list-product.aspx");
+                Response.Redirect("management-list-order.aspx");
             }
             else
             {
-                Response.StatusCode = 200;
+                form1.InnerText = "loi!";
             }
+
         }
     }
 }

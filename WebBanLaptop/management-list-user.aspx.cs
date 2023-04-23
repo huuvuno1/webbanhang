@@ -6,21 +6,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebBanLaptop.DAO;
-using WebBanLaptop.Model;
 
 namespace WebBanLaptop
 {
-    public partial class management_list_product : System.Web.UI.Page
+    public partial class management_list_user : System.Web.UI.Page
     {
-        private ProductDAO productDAO = new ProductDAO();
+        private UserDAO userDAO;
         protected void Page_Load(object sender, EventArgs e)
         {
             if ((bool)Session["admin"])
             {
                 if (!Page.IsPostBack)
                 {
-                    productDAO = new ProductDAO();
-                    GridView1.DataSource = productDAO.getProducts();
+                    userDAO = new UserDAO();
+                    GridView1.DataSource = userDAO.getUsers();
                     GridView1.DataBind();
                 }
             }
@@ -28,7 +27,6 @@ namespace WebBanLaptop
             {
                 Response.Redirect("login.aspx");
             }
-            
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -42,10 +40,10 @@ namespace WebBanLaptop
             // grab the id from CommandArgument property
             int id = Convert.ToInt32(button.CommandArgument, CultureInfo.InvariantCulture);
             // call stored procedure based on id
-            productDAO = new ProductDAO();
-            if (productDAO.deleteProduct(id))
+            userDAO = new UserDAO();
+            if (userDAO.deleteUser(id))
             {
-                Response.Redirect("management-list-product.aspx");
+                Response.Redirect("management-list-user.aspx");
             }
             else
             {

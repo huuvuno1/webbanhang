@@ -20,7 +20,7 @@ namespace WebBanLaptop
                 {
                     productDAO = new ProductDAO();
                     string id = Request.QueryString["id"];
-                    productDAO.deleteProduct(id);
+                    productDAO.deleteProduct(int.Parse(id));
 
                     Response.Redirect("management-list-product.aspx");
                 }

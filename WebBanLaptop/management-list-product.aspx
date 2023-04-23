@@ -47,7 +47,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Phân loại">
                         <ItemTemplate>
-                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("CategoryId") %>'></asp:Label>
+                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("CategoryName") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Mô tả">
@@ -71,12 +71,11 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Action">
-                        <ItemTemplate >
+                        <ItemTemplate>
                             <div class="btn">
-
-                            <a class="btnEdit" href="edit-product.aspx?id=<%# Eval("Id") %>">Edit</a>
-                            <a class="btnDelete"  href="delete-product.aspx?id=<%# Eval("Id") %>">Delete</a>
-                            </div>
+                            <a href="edit-product.aspx?id=<%# Eval("Id") %>">Edit</a>
+                            <asp:LinkButton ID="LinkButton1" runat="server" Text="Delete" CommandArgument='<%# Bind("Id") %>' OnClick="Delete_Click"></asp:LinkButton>
+                        </div>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -91,6 +90,18 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
+            <div class="center">
+                <div class="pagination">
+                    <asp:LinkButton ID="lbtnPrev" runat="server" Visible="false">&laquo;</asp:LinkButton>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
         </div>
     </div>
     </form>
