@@ -1,4 +1,6 @@
-﻿.sidenav {
+﻿
+
+.sidenav {
     height: 100%;
     width: 0;
     position: fixed;
@@ -65,23 +67,28 @@
     margin-top: 5px;
     margin-bottom: 10px;
 }
+
     .add-new a {
         color: white;
         font-size: 14px;
     }
+
 .tbl-list {
     margin: 0 auto;
 }
+
 #GridView1 {
     border-collapse: collapse;
     width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
+
     #GridView1 td, #GridView1 th {
         border: 1px solid #ddd;
         padding: 8px;
     }
+
     #GridView1 tr:nth-child(even) {
         background-color: #f2f2f2;
     }
@@ -97,15 +104,39 @@
         background-color: #04AA6D;
         color: white;
     }
+
 .txt-heading {
     text-align: center
 }
+
     .txt-heading h2 {
         font-size: revert;
         text-transform: uppercase;
     }
+
 .layout-form {
     width: 400px;
     margin: 0 auto;
     margin-top: 50px;
+}
+
+.iconOpen {
+    margin-left: 10px;
+    position:fixed;
+    top:0px;
+    left:0px;
+}
+
+.header {
+    min-height: 40px;
+}
+
+.text-wellcome {
+    width:100%;
+    font-size:26px;
+    text-align:center;
+}
+
+.container.body-content {
+    margin-left: 0;
 }
