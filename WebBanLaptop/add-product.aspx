@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="container body-content" id="main">
-        <form id="form1" class="layout-form" method="post" runat="server">
+        <form id="form1" class="layout-form" method="post" runat="server" enctype="multipart/form-data">
             <div>
                 <div class="header-form">
                     <h3 class="head-Text">Thêm mới sản phẩm</h3>
@@ -38,7 +38,15 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="label-login">GIÁ TIỀN:</td>
+                        <td class="label-login">Hình ảnh:</td>
+                        <td>
+                            <asp:FileUpload runat="server" ID="UploadImages" AllowMultiple="true" />
+                            <asp:Label ID="listofuploadedfiles" runat="server" />
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Gía tiền:</td>
                         <td>
                             <asp:TextBox ID="price" runat="server" CssClass="txtPrice" placeholder="Nhập giá tiền" TextMode="Number"></asp:TextBox>
                         </td>
@@ -80,4 +88,30 @@
         </form>
     </div>
 </body>
+
+    <script type="text/javascript">
+        function addFileUploadBox() {
+            if (!document.getElementById || !document.createElement)
+                return false;
+            var uploadArea = document.getElementById("upload-area");
+            if (!uploadArea)
+                return;
+
+            var newLine = document.createElement("br");
+            uploadArea.appendChild(newLine);
+
+            var newUploadBox = document.createElement("input");
+            newUploadBox.type = "file";
+            newUploadBox.size = "60";
+
+            if (!addFileUploadBox.lastAssignedId) {
+                addFileUploadBox.lastAssignedId = 100;
+            }
+            newUploadBox.setAttribute("id", "FileField" + addFileUploadBox.lastAssignedId)
+            newUploadBox.setAttribute("name", "FileField" + addFileUploadBox.lastAssignedId)
+            uploadArea.appendChild(newUploadBox);
+            addFileUploadBox.lastAssignedId++;
+
+        }
+    </script>
 </html>
