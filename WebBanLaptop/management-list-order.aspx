@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="management-list-product.aspx.cs" Inherits="WebBanLaptop.management_list_product" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="management-list-order.aspx.cs" Inherits="WebBanLaptop.management_list_order" %>
 
 <!DOCTYPE html>
 
@@ -27,61 +27,52 @@
         <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
         <div class="tbl-list">
             <div class="txt-heading">
-                <h2>Quản lý sản phẩm</h2>
+                <h2>Quản lý đơn hàng</h2>
             </div>
-            <div class="add-new">
-                    <a href="add-product.aspx" class="link-add-new">&#43; Thêm mới</a>
-                </div>
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" GridLines="None" Height="200px" OnPageIndexChanging="GridView1_PageIndexChanging" Width="800px">
-                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" GridLines="None" OnPageIndexChanging="GridView1_PageIndexChanging">
+                <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:TemplateField HeaderText="Tên sản phẩm">
+                    <asp:TemplateField HeaderText="ID">
                         <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
+                            <a href="management-order-details.aspx?order_id=<%# Eval("Id") %>"><%# Eval("Id") %></a>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Phân loại">
+                    <asp:TemplateField HeaderText="Tên khách hàng">
                         <ItemTemplate>
-                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("CategoryName") %>'></asp:Label>
+                            <asp:Label ID="lb_name" runat="server" Text='<%# Eval("CustomerName") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Mô tả">
+                    <asp:TemplateField HeaderText="Số điện thoại">
                         <ItemTemplate>
-                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("Description") %>'></asp:Label>
+                            <asp:Label ID="lb_phone" runat="server" Text='<%# Eval("NumberPhone") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Gía tiền">
+                    <asp:TemplateField HeaderText="Địa chỉ">
                         <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Số lượng">
-                        <ItemTemplate>
-                            <asp:Label ID="Label4" runat="server" Text='<%# Eval("Quantity") %>'></asp:Label>
+                            <asp:Label ID="lb_address" runat="server" Text='<%# Eval("Address") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Trạng thái">
                         <ItemTemplate>
-                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Status") %>'></asp:Label>
+                            <asp:Label ID="lb_status" runat="server" Text='<%# Eval("Status") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Action">
                         <ItemTemplate>
-                            <a href="edit-product.aspx?id=<%# Eval("Id") %>">Edit</a>
-                            <asp:LinkButton ID="LinkButton1" runat="server" Text="Delete" CommandArgument='<%# Bind("Id") %>' OnClick="Delete_Click"></asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" runat="server" Text="Confirm" CommandArgument='<%# Bind("Id") %>' OnClick="Confirm_Click"></asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
-                <EditRowStyle BackColor="#999999" />
-                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                <EditRowStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
             <div class="center">
                 <div class="pagination">

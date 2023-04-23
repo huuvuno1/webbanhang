@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="container body-content" id="main">
-        <form id="form1" class="layout-form" method="post" runat="server">
+        <form id="form1" class="layout-form" method="post" runat="server" enctype="multipart/form-data" >
             <div>
                 <div class="header-form">
                     <h3>Chỉnh sửa sản phẩm</h3>
@@ -33,6 +33,18 @@
                         <td class="label-login">Phân loại:</td>
                         <td><asp:DropDownList ID="category" runat="server" DataSourceID="SqlDataSource1" DataTextField="name" DataValueField="id" Height="48px"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:WebLaptopConnection %>" SelectCommand="SELECT * FROM [tbl_category]"></asp:SqlDataSource>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Hình ảnh:</td>
+                        <td>
+                            <asp:FileUpload runat="server" ID="UploadImages" AllowMultiple="true" />
+                            <asp:Repeater ID="RepeaterImages" runat="server">
+                                <ItemTemplate>
+                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Value") %>'/>
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </td>
                         <td></td>
                     </tr>

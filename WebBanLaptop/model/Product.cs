@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -15,9 +16,11 @@ namespace WebBanLaptop.Model
         public int Quantity { get; set; }
         public int Status { get; set; }
         public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        [NotMapped]
+        public string CategoryName { get; set; }
+        public Category Category { get; set; }
 
-        public Product(int id, string name, string description, int price, int category_id, int quantity, int status, string slug)
+        public Product(int id, string name, string description, int price, int category_id, int quantity, int status, string slug, string category_name)
         {
             Id = id;
             Name = name;
@@ -27,6 +30,7 @@ namespace WebBanLaptop.Model
             Quantity = quantity;
             Status = status;
             Slug = slug;
+            CategoryName = category_name;
         }
 
         public Product()

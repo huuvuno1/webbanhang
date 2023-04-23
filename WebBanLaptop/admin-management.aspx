@@ -19,8 +19,8 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="management-list-category.aspx" class="" >Phân loại</a>
         <a href="management-list-product.aspx" class="">Sản phẩm</a>
-        <a href="" class="">Đơn hàng</a>
-        <a href="" class="">Người dùng</a>
+        <a href="management-list-order.aspx" class="">Đơn hàng</a>
+        <a href="management-list-user.aspx" class="">Người dùng</a>
 </div>
 <div class="container body-content" id="main">
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>

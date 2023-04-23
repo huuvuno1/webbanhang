@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="management-list-category.aspx.cs" Inherits="WebBanLaptop.management_list_category" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="management-list-user.aspx.cs" Inherits="WebBanLaptop.management_list_user" %>
 
 <!DOCTYPE html>
 
@@ -27,25 +27,37 @@
         <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
         <div class="tbl-list">
             <div class="txt-heading">
-                <h2>Quản lý phân loại</h2>
+                <h2>Quản lý người dùng</h2>
             </div>
-            <div class="add-new">
-                    <a href="add-category.aspx" class="link-add-new">&#43; Thêm mới</a>
-                </div>
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="id" Height="400px"
-                OnPageIndexChanging="GridView1_PageIndexChanging" Width="500px">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" GridLines="None" OnPageIndexChanging="GridView1_PageIndexChanging">
+                <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:TemplateField HeaderText="Tên loại">
+                    <asp:TemplateField HeaderText="Tên đăng nhập">
                         <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
+                            <asp:Label ID="lb_name" runat="server" Text='<%# Eval("Username") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Họ tên khách hàng">
+                        <ItemTemplate>
+                            <asp:Label ID="lb_phone" runat="server" Text='<%# Eval("Fullname") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Action">
                         <ItemTemplate>
-                            <a href="edit-category.aspx?id=<%# Eval("Id") %>">Edit</a>
+                            <asp:LinkButton ID="LinkButton1" runat="server" Text="Delete" CommandArgument='<%# Bind("Id") %>' OnClick="Delete_Click"></asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
+                <EditRowStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
             <div class="center">
                 <div class="pagination">
