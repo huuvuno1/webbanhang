@@ -89,6 +89,9 @@ namespace WebBanLaptop.DAO
                 cmd.Parameters.AddWithValue("@type", categoryType);
             }
 
+            SqlCommand cmd = new SqlCommand("GetProcductCategoryData", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader != null && reader.HasRows)
             {
@@ -105,6 +108,7 @@ namespace WebBanLaptop.DAO
                         Status = int.Parse(reader["status"].ToString()),
                         Brand = reader["brand"].ToString(),
 
+                        CategoryName = reader["name_category"].ToString(),
                     });
                 }
             }
@@ -132,7 +136,6 @@ namespace WebBanLaptop.DAO
 
             return pageable;
         }
-
         public int insertProduct(int category_id,string name,string slug,int price,int quantity,string description)
         {
             int product_id;

@@ -88,9 +88,7 @@
         </form>
     </div>
 </body>
-<<<<<<< HEAD
-</html>
-=======
+
     <script type="text/javascript">
         function addFileUploadBox() {
             if (!document.getElementById || !document.createElement)
@@ -117,4 +115,3 @@
         }
     </script>
 </html>
->>>>>>> 2caa0b7 (add management user and order)
