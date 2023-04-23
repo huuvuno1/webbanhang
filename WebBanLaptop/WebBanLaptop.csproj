@@ -70,7 +70,12 @@
     <Content Include="add-category.aspx" />
     <Content Include="add-product.aspx" />
     <Content Include="admin-management.aspx" />
+    <Content Include="assets\css\add-productCss.css" />
+    <Content Include="assets\css\admin-managementCss.css" />
     <Content Include="assets\css\admin.css" />
+    <Content Include="assets\css\login.css" />
+    <Content Include="assets\css\management-list-categoryCSS.css" />
+    <Content Include="assets\css\management-list-productCSS.css" />
     <Content Include="assets\css\product.css" />
     <Content Include="assets\css\productDetailCss.css" />
     <Content Include="assets\css\style.css" />
@@ -81,6 +86,7 @@
     <Content Include="assets\js\form.js" />
     <Content Include="assets\js\productDetailJs.js" />
     <Content Include="assets\videos\Laptop Gaming HP Victus 2022 15-fa0031dx - 8 nhân 12 luồng siêu khỏe.mp4" />
+    <Content Include="delete-product.aspx" />
     <Content Include="edit-category.aspx" />
     <Content Include="edit-product.aspx" />
     <Content Include="Global.asax" />
@@ -117,6 +123,13 @@
     </Compile>
     <Compile Include="DAO\CategoryDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="delete-product.aspx.cs">
+      <DependentUpon>delete-product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="delete-product.aspx.designer.cs">
+      <DependentUpon>delete-product.aspx</DependentUpon>
+    </Compile>
     <Compile Include="edit-category.aspx.cs">
       <DependentUpon>edit-category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,7 +224,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50377</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50377/</IISUrl>
+          <IISUrl>http://localhost:3000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

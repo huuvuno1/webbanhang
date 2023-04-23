@@ -69,15 +69,18 @@ td {
   border: 1px solid #333;
   width: 100px;
   margin: auto;
+  align-items:center;
 }
 .modal_quan__select-value {
-  width: 50px;
-  text-align: center;
-  border: none;
-  height: 25px;
-  border-left: 1px solid #333;
-  border-right: 1px solid #333;
-  user-select: none;
+    width: 50px !important;
+    text-align: center !important;
+    border: none !important;
+    height: 25px !important;
+    border-left: 1px solid #333 !important;
+    border-right: 1px solid #333 !important;
+    user-select: none !important;
+    border:none !important;
+    box-shadow:none !important;
 }
 .modal_quan__select-sub,
 .modal_quan__select-add {

@@ -1,4 +1,6 @@
-﻿.sidenav {
+﻿
+
+.sidenav {
     height: 100%;
     width: 0;
     position: fixed;
@@ -109,3 +111,16 @@
     margin: 0 auto;
     margin-top: 50px;
 }
+.iconOpen {
+    margin-left: 10px;
+}
+.header{
+    min-height:40px;
+}
+.text-welcome{
+    margin-left:10px;
+}
+.container.body-content{
+    margin-left:0;
+}
+

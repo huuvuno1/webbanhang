@@ -155,11 +155,13 @@
   user-select: none;
 }
 .quan__select-value {
-  width: 70px;
-  border: none;
-  outline: none;
-  height: 100%;
-  text-align: center;
+    width: 70px !important;
+    border: none !important;
+    outline: none !important;
+    height: 100% !important;
+    text-align: center !important;
+    border: none !important;
+    box-shadow:none !important;
 }
 .addToCart {
   height: 100%;
@@ -272,7 +274,6 @@
   font-size: 18px;
   font-weight: 600;
   padding: 5px 15px;
-  height: 100%;
   display: block;
 }
 .des-item,
@@ -300,7 +301,6 @@
   font-size: 18px;
   font-weight: 600;
   padding: 5px 15px 5px 0;
-  height: 100%;
   display: block;
 }
 .parameter-table {

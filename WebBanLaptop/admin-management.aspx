@@ -17,13 +17,16 @@
 <body>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="management-list-category.aspx" class="" >Phân loại</a>
-        <a href="management-list-product.aspx" class="">Sản phẩm</a>
-        <a href="" class="">Đơn hàng</a>
-        <a href="" class="">Người dùng</a>
+        <a href="management-list-category.aspx" class="nav-item" >Phân loại</a>
+        <a href="management-list-product.aspx" class="nav-item">Sản phẩm</a>
+        <a href="" class="nav-item">Đơn hàng</a>
+        <a href="" class="nav-item">Người dùng</a>
+        <a href="index.aspx" class="">Quay lại trang chủ</a>
+
 </div>
-<div class="container body-content" id="main">
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<div class="header" style="
+    display: flex; align-items:center" id="main">
+    <label style="font-size:30px;cursor:pointer" class="iconOpen" onclick="openNav()">&#9776;</label>
     <h2 class="text-welcome" id="welcome" runat="server"></h2>
 </div>
 <hr />

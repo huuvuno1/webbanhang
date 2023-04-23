@@ -10,6 +10,7 @@
     <title>Đăng Nhập</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/product.css" />
+    <link rel="stylesheet" href="/assets/css/login.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -32,7 +33,7 @@
                     <tr>
                         <td class="label-login">Username:</td>
                         <td>
-                            <asp:TextBox ID="username" runat="server" placeholder="Nhập tên đăng nhập"></asp:TextBox>
+                            <asp:TextBox ID="username" CssClass="txtUserName" runat="server" placeholder="Nhập tên đăng nhập"></asp:TextBox>
                         </td>
                         <td></td>
                     </tr>
@@ -49,7 +50,7 @@
                     <tr>
                         <td class="label-login">Password:</td>
                         <td>
-                            <asp:TextBox ID="password" TextMode="password" runat="server" placeholder="Nhập mật khẩu"></asp:TextBox>
+                            <asp:TextBox ID="password" CssClass="txtPassword" TextMode="password" runat="server" placeholder="Nhập mật khẩu"></asp:TextBox>
                         </td>
                         <td></td>
                     </tr>
@@ -68,7 +69,7 @@
                     <tr>
                         <td class=""></td>
                         <td>
-                            <asp:Button ID="Button1" runat="server" Text="Log In" OnClick="Login_Click" />
+                            <asp:Button ID="Button1" runat="server" CssClass="btnLogin" Text="Log In" OnClick="Login_Click" />
                             <a href="register.aspx" class="bonus-option">Bạn chưa có tài khoản?</a>
                         </td>
                         <td></td>

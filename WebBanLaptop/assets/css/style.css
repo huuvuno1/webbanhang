@@ -277,14 +277,7 @@ body {
   height: 380px;
   background-color: white;
 }
-.bg-form {
-    background-image: url("https://i.rtings.com/assets/pages/SQatR1BB/best-business-laptops-medium.jpg");
-    background-color: rgba(41, 42, 46, 0.7);
-    position: absolute;
-    opacity: 0.5;
-    width: 900px;
-    height: 100%;
-}
+
 .form-login {
     position: absolute;
     margin-top: 176px;

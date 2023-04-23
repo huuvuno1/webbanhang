@@ -10,9 +10,10 @@
     <title>Quản lý</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/admin.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/management-list-categoryCSS.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,9 +23,14 @@
         <a href="management-list-product.aspx" class="">Sản phẩm</a>
         <a href="management-list-order.aspx" class="">Đơn hàng</a>
         <a href="management-list-user.aspx" class="">Người dùng</a>
+        <a href="index.aspx" class="">Quay lại trang chủ</a>
+
     </div>
     <div class="container body-content" id="main">
-        <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
+        <div class="header">
+
+        <span style="font-size: 30px; cursor: pointer" class="iconOpen" onclick="openNav()">&#9776;</span>
+        </div>
         <div class="tbl-list">
             <div class="txt-heading">
                 <h2>Quản lý phân loại</h2>
@@ -32,17 +38,21 @@
             <div class="add-new">
                     <a href="add-category.aspx" class="link-add-new">&#43; Thêm mới</a>
                 </div>
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="id" Height="400px"
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="id" Height="30px"
                 OnPageIndexChanging="GridView1_PageIndexChanging" Width="500px">
                 <Columns>
-                    <asp:TemplateField HeaderText="Tên loại">
+                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Tên loại">
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Action">
+                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Action">
                         <ItemTemplate>
-                            <a href="edit-category.aspx?id=<%# Eval("Id") %>">Edit</a>
+                            <div class="btn">
+
+                            <a class="btnEdit" href="edit-category.aspx?id=<%# Eval("Id") %>">Edit</a>
+                             <a class="btnDelete" href="delete-product.aspx?id=<%# Eval("Id") %>">Delete</a>
+                            </div>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

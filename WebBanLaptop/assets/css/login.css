@@ -1,0 +1,25 @@
+﻿body {
+}
+.btnLogin{
+    border-radius:3px;
+}
+.btnLogin:hover{
+    opacity:0.8;
+}
+.txtUserName:focus-visible,
+.txtPassword:focus-visible{
+    outline:none;
+}
+.form-login{
+    padding:40px;
+}
+.bg-form {
+    background-image: url("https://i.rtings.com/assets/pages/SQatR1BB/best-business-laptops-medium.jpg");
+    background-color: rgba(41, 42, 46, 0.7);
+    position: absolute;
+    opacity: 0.5;
+    height: 100%;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size:100%;
+}

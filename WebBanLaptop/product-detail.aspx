@@ -10,6 +10,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/productDetailCss.css" />
+    <link rel="stylesheet" href="/assets/css/modalCart.css" />
   </head>
 
   <body>
@@ -98,43 +99,43 @@
           </div>
           <div class="detail__action">
             <div class="price-box">
-              <div class="price-top"><span class="special-price">16.900.000Đ</span></div>
-              <div class="price-bottom"><span class="old-price">Giá thị trường <del
+              <div class="price-top"><label class="special-price">16.900.000Đ</label></div>
+              <div class="price-bottom"><label class="old-price">Giá thị trường <del
                     class="old-price--value">21.000.000Đ</del>
-                </span>
-                <span class="save-price">Tiết kiệm <del class="save-prive--value">
+                </label>
+                <label class="save-price">Tiết kiệm <del class="save-prive--value">
                     4.900.000Đ
-                  </del></span>
+                  </del></label>
               </div>
             </div>
             <div class="status">
-              <span class="status-title">Tình trạng: <del class="status-value">Còn hàng</del> </span>
+              <label class="status-title">Tình trạng: <del class="status-value">Còn hàng</del> </label>
             </div>
             <div class="warrant">
-              <span class="warrant-title">CHỌN BẢO HÀNH:</span>
+              <label class="warrant-title">CHỌN BẢO HÀNH:</label>
               <div class="warrant-list">
-                <span onclick="handleWarrant(event)" class="warrant-item active">BH 12 THÁNG</span>
-                <span onclick="handleWarrant(event)" class="warrant-item">BH 24 THÁNG</span>
+                <label onclick="handleWarrant(event)" class="warrant-item active">BH 12 THÁNG</label>
+                <label onclick="handleWarrant(event)" class="warrant-item">BH 24 THÁNG</label>
               </div>
             </div>
             <div class="quan">
               <div class="quan__select">
-                <span onclick="handleSub()" class="quan__select-sub">-</span>
+                <label onclick="handleSub()" class="quan__select-sub">-</label>
                 <input type="text" class="quan__select-value" value="1" />
-                <span onclick="handleAdd()" class="quan__select-add">+</span>
+                <label onclick="handleAdd()" class="quan__select-add">+</label>
               </div>
               <div class="addToCart">
-                <button class="btnAddToCart">Mua Ngay</button>
+                <button class="btnAddToCart" onclick="showModal()">Mua Ngay</button>
               </div>
             </div>
             <div class="pay">
               <div class="pay-flash">
-                <button class="btnPayFlash"><span class="pay-title-top">TRẢ GÓP 0%</span>
-                  <span class="pay-title-bottom">Xét duyệt nhanh</span></button>
+                <button class="btnPayFlash"><label class="pay-title-top">TRẢ GÓP 0%</label>
+                  <label class="pay-title-bottom">Xét duyệt nhanh</label></button>
               </div>
               <div class="pay-online">
-                <button class="btnPayOnline"><span class="pay-title-top">TRẢ GÓP ONLINE</span>
-                  <span class="pay-title-bottom">Qua thẻ VISA, MASTER</span></button>
+                <button class="btnPayOnline"><label class="pay-title-top">TRẢ GÓP ONLINE</label>
+                  <label class="pay-title-bottom">Qua thẻ VISA, MASTER</label></button>
               </div>
             </div>
           </div>
@@ -158,7 +159,7 @@
             <div class="detail__contact-hotline">
               <p class="contact-hotline--title">Gọi điện để được tư vấn:</p>
               <a class="contact-hotline--tel" href="tel:+8439929922">0963.446.199</a>
-              <span>-</span>
+              <label>-</label>
               <a class="contact-hotline--tel" href="tel:+8439929922">0963.446.199</a>
             </div>
           </div>
@@ -167,7 +168,7 @@
         <div class="detail__des">
           <div class="detail__des-content">
             <div class="tab-title">
-              <span class="tab-title--text">MÔ TẢ</span>
+              <label class="tab-title--text">MÔ TẢ</label>
             </div>
             <div class="des-contents">
               <div class="des-item">
@@ -202,20 +203,20 @@
               </div>
 
               <div class="des-conclude">
-                <span class="des-conclude--title">Kết luận: </span>
-                <span class="des-conclude--text">HP Victus 15 là một trong những sự lựa chọn hàng đầu của dòng máy
+                <label class="des-conclude--title">Kết luận: </label>
+                <label class="des-conclude--text">HP Victus 15 là một trong những sự lựa chọn hàng đầu của dòng máy
                   Gaming. Sở hữu thiết kế mạnh mẽ nhưng cũng không kém phần tinh tế, kết hợp cùng cấu hình mạnh mẽ và
                   tản nhiệt mát mẻ, HP Victus 15 tự tin có thể chinh phục được đa số các Game Online, Offline thời
                   thượng hiện nay. Hơn thế nữa HP Victus 15 cũng đủ sức đáp ứng các tác vụ thiết kế đồ họa, công việc,
                   giải trí một cách mượt mà nhất. Hiện tại Game đang có những chương trình ưu đãi vô cùng tuyệt vời khi
-                  khách hàng đặt mua HP Victus 15 ngay từ ngày hôm nay!</span>
+                  khách hàng đặt mua HP Victus 15 ngay từ ngày hôm nay!</label>
               </div>
 
             </div>
           </div>
           <div class="detail__des-parameter">
             <div class="parameter-title">
-              <span class="parameter-title--text">THÔNG SỐ KỸ THUẬT</span>
+              <label class="parameter-title--text">THÔNG SỐ KỸ THUẬT</label>
             </div>
             <div class="parameter-content">
               <table class="parameter-table" border="1px">
@@ -254,64 +255,99 @@
         </div>
       </div>
     </div>
-    </div>
+   <div class="modal-cart">
+         <div class="wrapper-modal js-close">
+           <div class="modal-header">Bạn đã thêm <label class="nameProd">[New Outlet] Acer Swift 3 2022 SF314-512-56QN (i5-1240P/16GB/512GB PCIE/14.0 FHD/WIN11/BẠC) - 6 THÁNG</label> vào giỏ hàng</div>
+           <p class="modal-cart--total">Giỏ hàng của bạn có 1 sản phẩm</p>
+           <table class="modal-cart--table">
+            <tr class="table-header">
+              <td class="tdFirst">Sản phẩm</td>
+              <td>Đơn giá</td>
+              <td>Số lượng</td>
+              <td>Thành tiền</td>
+            </tr>
+            <tr>
+              <td  class="modal-prod--des">
+                <img src="/assets/images/laptop1.jpg" width="100px"/>
+                <p>[New Outlet] Acer Swift 3 2022 SF314-512-56QN (i5-1240P/16GB/512GB PCIE/14.0 FHD/WIN11/BẠC)</p>
+              </td>
+              <td><label  class="modal-price">12000000</label>d</td>
+              <td>
+                <div class="modal_quan__select">
+                  <label onclick="handleSub()" class="modal_quan__select-sub">-</label>
+                  <input type="text" class="modal_quan__select-value" value="1"/>
+                  <label  onclick="handleAdd()" class="modal_quan__select-add">+</label>
+              </div>
+              </td>
+              <td ><label  class="modal-totalPrice1"></label>d</td>
+            </tr>
+            </table>
+            <div class="totalPrice">
+            <p class="price">Thành tiền: <label class="modal-totalPrice2"></label>d</p>
+            </div>
+             <div class="modal-btnAdd">
+              <button class="btn-handle">Thanh toán đơn hàng</button>
+            </div>
+            <label class="close-modal" onclick="closeModal()">X</label>
+          </div>
+      </div>
     <footer class="bg-white">
       <div class="footer__top w-1200 mx-auto flex justify-between">
         <div class="footer__info">
           <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
           <div class="mb-10">
             <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
           </div>
           <div class="mb-10">
             <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
           </div>
           <div class="mb-10">
             <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
           </div>
           <div class="mb-10">
             <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-        </div>
-        <div class="footer__info">
-          <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
           </div>
         </div>
         <div class="footer__info">
           <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
           <div class="mb-10">
             <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
           </div>
           <div class="mb-10">
             <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
           </div>
           <div class="mb-10">
             <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
           </div>
           <div class="mb-10">
             <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
+          </div>
+        </div>
+        <div class="footer__info">
+          <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
+          <div class="mb-10">
+            <h2 class="footer__info--title">Địa chỉ</h2>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
+          </div>
+          <div class="mb-10">
+            <h2 class="footer__info--title">Địa chỉ</h2>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
+          </div>
+          <div class="mb-10">
+            <h2 class="footer__info--title">Địa chỉ</h2>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
+          </div>
+          <div class="mb-10">
+            <h2 class="footer__info--title">Địa chỉ</h2>
+            <label class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</label>
           </div>
         </div>
       </div>
@@ -325,7 +361,7 @@
         </div>
       </div>
     </footer>
-    <script src="/assets/ij/productDetailJs.js"></script>
+    <script src="/assets/js/productDetailJs.js"></script>
   </body>
 
   </html>

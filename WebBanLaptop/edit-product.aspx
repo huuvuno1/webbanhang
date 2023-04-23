@@ -10,6 +10,8 @@
     <title>Chỉnh sửa sản phẩm</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/admin.css" />
+    <link rel="stylesheet" href="/assets/css/add-productCss.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -39,21 +41,21 @@
                     <tr>
                         <td class="label-login">Gía tiền:</td>
                         <td>
-                            <asp:TextBox ID="price" runat="server" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox ID="price" CssClass="txtPrice" runat="server" TextMode="Number"></asp:TextBox>
                         </td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="label-login">Số lượng:</td>
                         <td>
-                            <asp:TextBox ID="quantity" runat="server" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox CssClass="txtQuan" ID="quantity" runat="server" TextMode="Number"></asp:TextBox>
                         </td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="label-login">Mô tả:</td>
                         <td>
-                            <textarea id="description" name="description" runat="server" style="width: 240px;"></textarea>
+                            <textarea id="description" class="txtDes" name="description" runat="server" style="min-height:300px"></textarea>
                         </td>
                         <td></td>
                     </tr>
@@ -66,11 +68,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class=""></td>
-                        <td>
-                            <asp:Button ID="Button1" runat="server" Text="Sửa" OnClick="Edit_Click" />
+                        
+                        <td colspan="2" class="tdBtnEdit">
+                            <asp:Button ID="Button1" CssClass="btnEdit" runat="server" Text="Sửa" OnClick="Edit_Click" />
                         </td>
-                        <td></td>
+                       
                     </tr>
                 </table>
             </div>
