@@ -71,10 +71,12 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Action">
-                        <div class="btn">
-                        <a href="edit-product.aspx?id=<%# Eval("Id") %>">Edit</a>
-                        <asp:LinkButton ID="LinkButton1" runat="server" Text="Delete" CommandArgument='<%# Bind("Id") %>' OnClick="Delete_Click"></asp:LinkButton>
-                    </div>
+                        <ItemTemplate>
+                            <div class="btn">
+                            <a href="edit-product.aspx?id=<%# Eval("Id") %>">Edit</a>
+                            <asp:LinkButton ID="LinkButton1" runat="server" Text="Delete" CommandArgument='<%# Bind("Id") %>' OnClick="Delete_Click"></asp:LinkButton>
+                        </div>
+                        </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
                 <EditRowStyle BackColor="#999999" />

@@ -29,7 +29,7 @@ namespace WebBanLaptop.DAO
             if (reader != null && reader.HasRows)
             {
                 while (reader.Read())
-                {
+                { 
                     products.Add(new Product()
                     {
                         Id = int.Parse(reader["id"].ToString()),

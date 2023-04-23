@@ -12,7 +12,7 @@ namespace WebBanLaptop
 {
     public partial class management_list_product : System.Web.UI.Page
     {
-        private ProductDAO productDAO;
+        private ProductDAO productDAO = new ProductDAO();
         protected void Page_Load(object sender, EventArgs e)
         {
             if ((bool)Session["admin"])
