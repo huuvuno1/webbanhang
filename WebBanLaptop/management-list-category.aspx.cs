@@ -17,9 +17,7 @@ namespace WebBanLaptop
             {
                 if (!Page.IsPostBack)
                 {
-                    category = new CategoryDAO();
-                    GridView1.DataSource = category.getListCategory();
-                    GridView1.DataBind();
+                    BindData();
                 }
             }
             else
@@ -30,9 +28,15 @@ namespace WebBanLaptop
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            GridView1.PageIndex = e.NewPageIndex;
+            BindData();
         }
 
-
+        protected void BindData()
+        {
+            category = new CategoryDAO();
+            GridView1.DataSource = category.getListCategory();
+            GridView1.DataBind();
+        }
     }
 }

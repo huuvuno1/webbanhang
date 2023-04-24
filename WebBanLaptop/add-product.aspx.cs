@@ -35,8 +35,16 @@ namespace WebBanLaptop
             int priceProduct = Int32.Parse(price.Text);
             int quantityProduct = Int32.Parse(quantity.Text);
             string descriptionProduct = Request.Form["description"];
+            string brandProduct = brand.Text;
+            float oldprice = float.Parse(oldPrice.Text);
+            string CPU = cpu.Text;
+            string RAM = ram.Text;
+            string HardDrive = hardDrive.Text;
+            float Weight = float.Parse(weight.Text);
+            string Screen = screen.Text;
+            string Type = type.Text;
 
-            int product_id = productDAO.insertProduct(categoryId, nameProduct, slugName, priceProduct, quantityProduct,descriptionProduct);
+            int product_id = productDAO.insertProduct(categoryId, nameProduct, slugName, priceProduct, quantityProduct,descriptionProduct,brandProduct,oldprice,CPU,RAM,HardDrive,Weight,Screen,Type);
             if (product_id > 0)
             {
                 

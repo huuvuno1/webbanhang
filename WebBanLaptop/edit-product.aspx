@@ -71,6 +71,62 @@
                         <td></td>
                     </tr>
                     <tr>
+                        <td class="label-login">Brand:</td>
+                        <td>
+                            <asp:TextBox ID="brand" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Gía ban đầu:</td>
+                        <td>
+                            <asp:TextBox ID="oldPrice" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">CPU:</td>
+                        <td>
+                            <asp:TextBox ID="cpu" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">RAM:</td>
+                        <td>
+                            <asp:TextBox ID="ram" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Hard Drive:</td>
+                        <td>
+                            <asp:TextBox ID="hardDrive" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Cân nặng:</td>
+                        <td>
+                            <asp:TextBox ID="weight" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Màn hình:</td>
+                        <td>
+                            <asp:TextBox ID="screen" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Loại:</td>
+                        <td>
+                            <asp:TextBox ID="type" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
                         <td></td>
                         <td colspan="2">
                             <div class="text-error">
