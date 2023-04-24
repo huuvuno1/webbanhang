@@ -59,18 +59,6 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-            <div class="center">
-                <div class="pagination">
-                    <asp:LinkButton ID="lbtnPrev" runat="server" Visible="false">&laquo;</asp:LinkButton>
-                    <a href="#" class="active">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">&raquo;</a>
-                </div>
-            </div>
         </div>
     </div>
     </form>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -30,6 +31,14 @@ namespace WebBanLaptop
                             price.Text = Convert.ToString(product.Price);
                             quantity.Text = Convert.ToString(product.Quantity);
                             description.InnerText= product.Description;
+                            brand.Text = product.Brand;
+                            oldPrice.Text = Convert.ToString(product.OldPrice);
+                            cpu.Text = product.CPU;
+                            ram.Text = product.RAM;
+                            hardDrive.Text = product.HardDrive;
+                            weight.Text = Convert.ToString(product.Weight);
+                            screen.Text = product.Screen;
+                            type.Text = product.Type;
 
                             var images = productDAO.getImageByProductId(id);
                             List<ListItem> files = new List<ListItem>();
@@ -59,13 +68,23 @@ namespace WebBanLaptop
         protected void Edit_Click(object sender, EventArgs e)
         {
             productDAO = new ProductDAO();
-            string id = Request.QueryString["id"];
+            int id = Int32.Parse(Request.QueryString["id"]);
             int categoryId = Int32.Parse(category.SelectedValue);
             string nameProduct = name.Text;
             int priceProduct = Int32.Parse(price.Text);
             int quantityProduct = Int32.Parse(quantity.Text);
             string descriptionProduct = Request.Form["description"];
-            bool check = productDAO.updateProduct(id, categoryId, nameProduct, priceProduct, quantityProduct, descriptionProduct);
+            string brandProduct = brand.Text;
+            float oldprice = float.Parse(oldPrice.Text, CultureInfo.InvariantCulture);
+            string CPU = cpu.Text;
+            string RAM = ram.Text;
+            string HardDrive = hardDrive.Text;
+            float Weight = float.Parse(weight.Text, CultureInfo.InvariantCulture);
+            string Screen = screen.Text;
+            string Type = type.Text;
+
+            bool check = productDAO.updateProduct(id, nameProduct, categoryId, priceProduct, quantityProduct, 
+                descriptionProduct, brandProduct, oldprice, CPU, RAM, HardDrive, Weight, Screen, Type);
             if (check)
             {
                 if (UploadImages.HasFiles)

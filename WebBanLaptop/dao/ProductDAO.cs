@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -26,6 +27,7 @@ namespace WebBanLaptop.DAO
 
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader reader = cmd.ExecuteReader();
+
             if (reader != null && reader.HasRows)
             {
                 while (reader.Read())
@@ -39,7 +41,15 @@ namespace WebBanLaptop.DAO
                         Quantity = int.Parse(reader["quantity"].ToString()),
                         CategoryId = int.Parse(reader["category_id"].ToString()),
                         Status = int.Parse(reader["status"].ToString()),
+                        Brand = reader["brand"].ToString(),
+                        CPU = reader["cpu"].ToString(),
+                        RAM = reader["ram"].ToString(),
                         CategoryName = reader["name_category"].ToString(),
+                        OldPrice = float.Parse(reader["oldPrice"].ToString(), CultureInfo.InvariantCulture),
+                        HardDrive = reader["hardDrive"].ToString(),
+                        Weight = float.Parse(reader["weight"].ToString(), CultureInfo.InvariantCulture),
+                        Screen = reader["screen"].ToString(),
+                        Type = reader["type"].ToString(),
                     });
                 }
             }
@@ -133,13 +143,16 @@ namespace WebBanLaptop.DAO
             return pageable;
         }
 
-        public int insertProduct(int category_id,string name,string slug,int price,int quantity,string description)
+        public int insertProduct(int category_id,string name,string slug,int price,int quantity,string description,string brand,
+            float oldPrice,string cpu,string ram,string hardDrive,float weight,string screen,string type)
         {
             int product_id;
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
 
-            string strQuery = "insert into tbl_product values(@category_id,@name,@slug,@price,@quantity,@description,@status) Select Scope_Identity()";
+            string strQuery = "insert into tbl_product values(@category_id,@name,@slug,@price,@quantity," +
+                "@description,@status,@brand,@oldPrice,@cpu,@ram,@hardDrive,@weight,@screen,@type) " +
+                "Select Scope_Identity()";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.Parameters.AddWithValue("@category_id", category_id);
             cmd.Parameters.AddWithValue("@slug", slug);
@@ -148,6 +161,15 @@ namespace WebBanLaptop.DAO
             cmd.Parameters.AddWithValue("@description", description);
             cmd.Parameters.AddWithValue("@status", 1);
             cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@brand", brand);
+            cmd.Parameters.AddWithValue("@cpu", cpu);
+            cmd.Parameters.AddWithValue("@oldPrice", oldPrice);
+            cmd.Parameters.AddWithValue("@ram", ram);
+            cmd.Parameters.AddWithValue("@hardDrive", hardDrive);
+            cmd.Parameters.AddWithValue("@weight", weight);
+            cmd.Parameters.AddWithValue("@screen", screen);
+            cmd.Parameters.AddWithValue("@type", type);
+
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             con.Open();
@@ -175,20 +197,44 @@ namespace WebBanLaptop.DAO
                     product.Status = Convert.ToInt32(reader["status"]);
                     product.Description = Convert.ToString(reader["description"]);
                     product.Slug = Convert.ToString(reader["slug"]);
+                    product.Brand = Convert.ToString(reader["brand"]);
+                    product.CPU = Convert.ToString(reader["cpu"]);
+                    product.RAM = Convert.ToString(reader["ram"]);
+                    product.HardDrive = Convert.ToString(reader["hardDrive"]);
+                    product.Screen = Convert.ToString(reader["screen"]);
+                    product.Type = Convert.ToString(reader["type"]);
+                    product.OldPrice = (float)Convert.ToDouble(reader["oldPrice"]);
+                    product.Weight = (float)Convert.ToDouble(reader["weight"]);
                 }
                 return product;
             }
             else { return null; }
         }
-        public bool updateProduct(string id, int category_id, string name, int price, int quantity, string description)
+        public bool updateProduct(int id, string name, int category_id, int price, int quantity, string description, string brand,
+            float oldPrice, string cpu, string ram, string hardDrive, float weight, string screen, string type)
         {
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
 
-            string strQuery = $@"update tbl_product set name='{name}', category_id = {category_id}, price = {price}, quantity = {quantity}, description = '{description}' where id = {id}";
-            SqlCommand cmd = new SqlCommand(strQuery);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con;
+            SqlCommand cmd = new SqlCommand("UpdateProductByID", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@category_id", category_id);
+            cmd.Parameters.AddWithValue("@price", price);
+            cmd.Parameters.AddWithValue("@quantity", quantity);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@brand", brand);
+            cmd.Parameters.AddWithValue("@oldPrice", oldPrice);
+            cmd.Parameters.AddWithValue("@cpu", cpu);
+            cmd.Parameters.AddWithValue("@ram", ram);
+            cmd.Parameters.AddWithValue("@hardDrive", hardDrive);
+            cmd.Parameters.AddWithValue("@weight", weight);
+            cmd.Parameters.AddWithValue("@screen", screen);
+            cmd.Parameters.AddWithValue("@type", type);
+
             try
             {
                 con.Open();
@@ -243,7 +289,7 @@ namespace WebBanLaptop.DAO
                 return false;
             }
         }
-        public bool deleteImages(string product_id)
+        public bool deleteImages(int product_id)
         {
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);

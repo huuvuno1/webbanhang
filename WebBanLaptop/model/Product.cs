@@ -17,11 +17,19 @@ namespace WebBanLaptop.Model
         public int Status { get; set; }
         public string Brand { get; set; }
         public int CategoryId { get; set; }
+        public float OldPrice { get; set; }
+        public string CPU { get; set; }
+        public string RAM { get; set; }
+        public string HardDrive { get; set; }
+        public float Weight { get; set; }
+        public string Screen { get; set; }
+        public string Type { get; set; }
         [NotMapped]
         public string CategoryName { get; set; }
         public Category Category { get; set; }
 
-        public Product(int id, string name, string description, int price, int category_id, int quantity, int status, string slug, string category_name, string brand)
+        public Product(int id, string name, string description, int price, int category_id, int quantity, int status, 
+            string slug, string category_name, string brand, float oldPrice, string cPU, string rAM, string hardDrive, float weight, string screen, string type)
         {
             Id = id;
             Name = name;
@@ -31,8 +39,15 @@ namespace WebBanLaptop.Model
             Quantity = quantity;
             Status = status;
             Slug = slug;
-            Brand= brand;
+            Brand = brand;
             CategoryName = category_name;
+            OldPrice = oldPrice;
+            CPU = cPU;
+            RAM = rAM;
+            HardDrive = hardDrive;
+            Weight = weight;
+            Screen = screen;
+            Type = type;
         }
 
         public Product()
