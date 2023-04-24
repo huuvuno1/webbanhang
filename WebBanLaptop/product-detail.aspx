@@ -10,21 +10,22 @@
       <div class="detail__container">
         <div class="detail__media">
           <div class="detail__media--src">
-            <iframe class="detail-img 1 active" width='100%' height='100%'
+            <iframe class="detail-img 1" width='100%' height='100%'
               src='https://www.youtube.com/embed/kT3j7VjHgqw' frameborder='0' allowfullscreen></iframe>
-            <img src="/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" alt="img" class="detail-img 2">
+            
+              <asp:Image ID="ImageDetail" CssClass="detail-img 2 active" runat="server" />
             <img src="/assets/images/2463-laptopaz-hp-victus-15-3.webp" alt="img" class="detail-img 3">
             <img src="/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" alt="img" class="detail-img 4">
             <img src="/assets/images/2463-laptopaz-hp-victus-15-3.webp" alt="img" class="detail-img 5">
           </div>
           <div class="detail__select">
             <div class="select__wrapper">
-              <div onclick="handleChangeImg(this)" data-index="1" class="select-item active">
+              <div onclick="handleChangeImg(this)" data-index="1" class="select-item">
                 <img src="/assets/images/iconVideo.png" alt="videoimg" class="select-item--img" />
               </div>
-              <div onclick="handleChangeImg(this)" data-index="2" class="select-item">
+              <div onclick="handleChangeImg(this)" data-index="2" class="select-item  active">
+              <asp:Image ID="ImageDetail2" CssClass="select-item--img" runat="server" />
 
-                <img src="/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" alt="laptopimg" class="select-item--img" />
               </div>
               <div onclick="handleChangeImg(this)" data-index="3" class="select-item">
                 <img src="/assets/images/2463-laptopaz-hp-victus-15-3.webp" alt="" class="select-item--img" />
@@ -41,9 +42,9 @@
         </div>
         <div class="detail__action">
           <div class="detail-price--box">
-            <div class="detail-price--top"><span class="special-price">16.900.000Đ</span></div>
+            <div class="detail-price--top"><span class="special-price" id="price" runat="server"/></div>
             <div class="detail-price--bottom"><span class="old-price">Giá thị trường <del
-                  class="old-price--value">21.000.000Đ</del>
+                  class="old-price--value" id="oldPrice" runat="server"/>
               </span>
               <span class="save-price">Tiết kiệm <del class="save-prive--value">
                   4.900.000Đ
@@ -114,10 +115,8 @@
           </div>
           <div class="des-contents">
             <div class="des-item">
-              <p class="des-item--title">Đánh giá chi tiết Laptop Gaming HP Victus 15</p>
-              <p class="des-item--text">Với thiết kế tinh tế, phần cứng hoàn thiện tuyệt vời, cấu hình hấp dẫn cùng mức
-                giá chỉ ở ngưỡng tầm trung; HP Victus 15 sẽ phù hợp với game thủ, người làm multimedia,… với hầu bao vừa
-                phải nhưng vẫn muốn có được trải nghiệm sát nhất có thể so với các sản phẩm cao cấp. </p>
+              <p class="des-item--title">Đánh giá chi tiết <span class="des-item--title" id="name" runat="server"/>.</p>
+              <p class="des-item--text"><%# Eval("Des") %> </p>
             </div>
             <div class="des-item">
               <p class="des-item--title">Thiết kế đơn giản, mang âm hưởng từ dòng Omen cao cấp </p>
@@ -164,32 +163,21 @@
             <table class="parameter-table" border="1px">
               <tr>
                 <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                <td class="td-value" id="cpu" runat="server"></td>
               </tr>
               <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                <td class="td-title">RAM</td>
+                <td class="td-value" id="ram" runat="server"></td>
               </tr>
               <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                <td class="td-title">Ổ cứng</td>
+                <td class="td-value" id="gpu" runat="server"></td>
               </tr>
               <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                <td class="td-title">Màn hình</td>
+                <td class="td-value" id="screen" runat="server"></td>
               </tr>
-              <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
-              </tr>
-              <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
-              </tr>
-              <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
-              </tr>
+              
 
             </table>
           </div>
@@ -199,8 +187,7 @@
   
   <div class="modal-cart">
     <div class="wrapper-modal js-close">
-      <div class="modal-header">Bạn đã thêm <span class="nameProd">[New Outlet] Acer Swift 3 2022 SF314-512-56QN
-          (i5-1240P/16GB/512GB PCIE/14.0 FHD/WIN11/BẠC) - 6 THÁNG</span> vào giỏ hàng</div>
+      <div class="modal-header">Bạn đã thêm <span class="nameProd" id="nameHeaderModal" runat="server"/> vào giỏ hàng</div>
       <p class="modal-cart--total">Giỏ hàng của bạn có 1 sản phẩm</p>
       <table class="modal-cart--table">
         <tr class="table-header">
@@ -211,10 +198,10 @@
         </tr>
         <tr>
           <td class="modal-prod--des">
-            <img src="/assets/images/laptop1.jpg" width="100px" />
-            <p>[New Outlet] Acer Swift 3 2022 SF314-512-56QN (i5-1240P/16GB/512GB PCIE/14.0 FHD/WIN11/BẠC)</p>
+              <asp:Image ID="Image" CssClass="img" runat="server" />
+            <p id="nameModal" runat="server"></p>
           </td>
-          <td><span class="modal-price">12000000</span>d</td>
+          <td><span class="modal-price" id="priceModal" runat="server"></span>Đ</td>
           <td>
             <div class="modal_quan__select">
               <span onclick="handleSub()" class="modal_quan__select-sub">-</span>
@@ -222,11 +209,11 @@
               <span onclick="handleAdd()" class="modal_quan__select-add">+</span>
             </div>
           </td>
-          <td><span class="modal-totalPrice1"></span>d</td>
+          <td><span class="modal-totalPrice1"></span>Đ</td>
         </tr>
       </table>
       <div class="totalPrice">
-        <p class="price">Thành tiền: <span class="modal-totalPrice2"></span>d</p>
+        <p class="price">Thành tiền: <span class="modal-totalPrice2"></span>Đ</p>
       </div>
       <div class="modal-btnAdd">
         <button class="btn-handle">Thanh toán đơn hàng</button>

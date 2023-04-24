@@ -32,6 +32,11 @@ namespace WebBanLaptop
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            GridView1.PageIndex = e.NewPageIndex;
+            productDAO = new ProductDAO();
+            GridView1.DataSource = productDAO.getProducts();
+            GridView1.DataSource = productDAO.getProducts();
+            GridView1.DataBind();
 
         }
     }

@@ -1,5 +1,8 @@
 ﻿body {
 }
+#GridView1 tr:hover {
+    background-color: none !important;
+}
 
 .txtTitle {
     font-size: 40px !important;
@@ -59,4 +62,8 @@
 
 .btn {
     display: flex;
+}
+
+#GridView1 tr:hover {
+    background-color: #284775;
 }

@@ -1,3 +1,4 @@
+
 .product {
   display: block;
   width: calc(100% / 5 - 12px);
@@ -5,16 +6,22 @@
   margin: 3px 6px;
   border-radius: 3px;
 }
+.product__img--src {
+    width: 205px;
+    height: 205px;
+}
+.categoryProduct__img--src {
+    height: 205px;
+    width:250px;
+}
 
 .product:hover {
-  background-color: #e10101;
+    background-color: #e10101;
 }
 .product__img {
   height: 205px;
 }
-.product__img--src {
-  height: 205px;
-}
+
 .product__name--link {
   color: #fff;
   font-size: 18px;

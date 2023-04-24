@@ -69,6 +69,8 @@
     <Content Include="add-product.aspx" />
     <Content Include="admin-management.aspx" />
     <Content Include="Api\FilterProduct.aspx" />
+    <Content Include="Api\getLaptop.aspx" />
+    <Content Include="Api\Search.aspx" />
     <Content Include="assets\css\add-categoryCss.css" />
     <Content Include="assets\css\add-productCss.css" />
     <Content Include="assets\css\admin.css" />
@@ -78,11 +80,13 @@
     <Content Include="assets\css\management-list-productCss.css" />
     <Content Include="assets\css\product.css" />
     <Content Include="assets\css\productDetailCss.css" />
+    <Content Include="assets\css\search.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\images\iconVideo.png" />
     <Content Include="assets\images\laptop1.jpg" />
     <Content Include="assets\images\search.svg" />
     <Content Include="assets\js\admin.js" />
+    <Content Include="assets\js\index.js" />
     <Content Include="assets\js\category.js" />
     <Content Include="assets\js\form.js" />
     <Content Include="assets\js\productDetailJs.js" />
@@ -129,6 +133,20 @@
     </Compile>
     <Compile Include="Api\FilterProduct.aspx.designer.cs">
       <DependentUpon>FilterProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\getLaptop.aspx.cs">
+      <DependentUpon>getLaptop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Api\getLaptop.aspx.designer.cs">
+      <DependentUpon>getLaptop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Api\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
     <Compile Include="category.aspx.cs">
       <DependentUpon>category.aspx</DependentUpon>

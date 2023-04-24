@@ -98,6 +98,11 @@ namespace WebBanLaptop.DAO
                         CategoryId = int.Parse(reader["category_id"].ToString()),
                         Status = int.Parse(reader["status"].ToString()),
                         Brand = reader["brand"].ToString(),
+                        Image = reader["img"].ToString(),
+                        Cpu = reader["cpu"].ToString(),
+                        Gpu = reader["hardDrive"].ToString(),
+                        Ram = reader["ram"].ToString(),
+                        OldPrice = int.Parse(reader["oldPrice"].ToString()),
 
                     });
                 }
@@ -167,6 +172,40 @@ namespace WebBanLaptop.DAO
             {
                 if (reader.Read())
                 {
+                    product.Id = int.Parse(reader["id"].ToString());
+                    product.Name = reader["name"].ToString();
+                    product.Price = int.Parse(reader["price"].ToString());
+                    product.Description = reader["description"].ToString();
+                    product.Quantity = int.Parse(reader["quantity"].ToString());
+                    product.CategoryId = int.Parse(reader["category_id"].ToString());
+                    product.Status = int.Parse(reader["status"].ToString());
+                    product.Brand = reader["brand"].ToString();
+                    product.Image = reader["img"].ToString();
+                    product.Cpu = reader["cpu"].ToString();
+                    product.Gpu = reader["hardDrive"].ToString();
+                    product.Ram = reader["ram"].ToString();
+                    product.OldPrice = int.Parse(reader["oldPrice"].ToString());
+                    product.Screen = reader["screen"].ToString();
+
+                }
+                return product;
+            }
+            else { return null; }
+        }
+        public List<Product> getProductByName(string name)
+        {
+            List<Product> products = new List<Product>();
+            string strcon = Config.getConnectionString();
+            SqlConnection con = new SqlConnection(strcon);
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = $@"SELECT * FROM tbl_product where name Like '%{name}%'";
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader != null && reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Product product = new Product();
                     product.Id = Convert.ToInt32(reader["id"]);
                     product.Name = Convert.ToString(reader["name"]);
                     product.CategoryId = Convert.ToInt32(reader["category_id"]);
@@ -175,8 +214,46 @@ namespace WebBanLaptop.DAO
                     product.Status = Convert.ToInt32(reader["status"]);
                     product.Description = Convert.ToString(reader["description"]);
                     product.Slug = Convert.ToString(reader["slug"]);
+                    product.Image = Convert.ToString(reader["img"]);
+                    product.Brand = Convert.ToString(reader["brand"]);
+
+                    products.Add(product);
                 }
-                return product;
+                return products;
+            }
+            else { return null; }
+        }
+        public List<Product> getProductByType(string type)
+        {
+            List<Product> products = new List<Product>();
+            string strcon = Config.getConnectionString();
+            SqlConnection con = new SqlConnection(strcon);
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = $@"SELECT top 5 * FROM tbl_product where type Like '%{type}%'";
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader != null && reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Product product = new Product();
+                    product.Id = int.Parse(reader["id"].ToString());
+                    product.Name = reader["name"].ToString();
+                    product.Price = int.Parse(reader["price"].ToString());
+                    product.Description = reader["description"].ToString();
+                    product.Quantity = int.Parse(reader["quantity"].ToString());
+                    product.CategoryId = int.Parse(reader["category_id"].ToString());
+                    product.Status = int.Parse(reader["status"].ToString());
+                    product.Brand = reader["brand"].ToString();
+                    product.Image = reader["img"].ToString();
+                    product.Cpu = reader["cpu"].ToString();
+                    product.Gpu = reader["hardDrive"].ToString();
+                    product.Ram = reader["ram"].ToString();
+                    product.OldPrice = int.Parse(reader["oldPrice"].ToString());
+
+                    products.Add(product);
+                }
+                return products;
             }
             else { return null; }
         }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FilterProduct.aspx.cs" Inherits="WebBanLaptop.Api.FilterProduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="getLaptop.aspx.cs" Inherits="WebBanLaptop.Api.getLaptop" %>
 
 <asp:Repeater id="productsRepeater" runat="server">
     <itemtemplate>
@@ -38,11 +38,3 @@
     </itemtemplate>
 
 </asp:Repeater>
-|
-<div class="paging-item"><<</div>
-<asp:Repeater id="RepeaterPaging" runat="server">
-    <itemtemplate>
-        <div onclick='gotoPage(<%#Eval("pageNumber") %>)' class="paging-item"><%#Eval("pageNumber") %></div>
-    </itemtemplate>
-</asp:Repeater>
-<div class="paging-item">>></div>
