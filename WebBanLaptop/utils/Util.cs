@@ -31,5 +31,10 @@ namespace WebBanLaptop.Utils
                     return "price > 0";
             }
         }
+
+        public static string FormatVND(int value)
+        {
+            return value.ToString("N0");
+        }
     }
 }

@@ -69,6 +69,7 @@
     <Content Include="add-product.aspx" />
     <Content Include="admin-management.aspx" />
     <Content Include="Api\FilterProduct.aspx" />
+    <Content Include="Api\UpdateCart.aspx" />
     <Content Include="assets\css\add-categoryCss.css" />
     <Content Include="assets\css\add-productCss.css" />
     <Content Include="assets\css\admin.css" />
@@ -137,6 +138,13 @@
     </Compile>
     <Compile Include="Api\FilterProduct.aspx.designer.cs">
       <DependentUpon>FilterProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\UpdateCart.aspx.cs">
+      <DependentUpon>UpdateCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Api\UpdateCart.aspx.designer.cs">
+      <DependentUpon>UpdateCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="category.aspx.cs">
       <DependentUpon>category.aspx</DependentUpon>
@@ -230,6 +238,7 @@
     <Compile Include="management-order-details.aspx.designer.cs">
       <DependentUpon>management-order-details.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Cart.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Pageable.cs" />
     <Compile Include="Model\Image.cs" />

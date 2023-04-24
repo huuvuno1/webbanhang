@@ -1,147 +1,173 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Common.master.cs" Inherits="WebBanLaptop.Common" %>
+
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
-   <link rel="stylesheet" href="/assets/css/product.css" />
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/assets/css/product.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-      <asp:ContentPlaceHolder ID="HeaderPlaceHolder" runat="server">
-      </asp:ContentPlaceHolder>
-  </head>
+    <asp:ContentPlaceHolder ID="HeaderPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
 
-  <body>
-       <header class="bg-white">
-      <div class="header__wrapper w-1200 flex justify-between flex justify-between mx-auto">
-        <div class="header__logo">logo</div>
-        <div class="header__search flex item-center relative">
-          <input id="txtSearch" name="txtSearch"/>
-          <img class="header__search--icon absolute cursor-pointer" src="/assets/images/search.svg" />
-        </div>
-        <div class="header__contact flex justify-center flex-col">
-          <div class="bold text-red">HOTLINE: 0945.364.296 - 0910.101.101</div>
-          <div class="mt-5 text-red">Số 96 Định Công, Hoàng Mai, TP Hà Nội</div>
-        </div>
-        <div class="header__cart flex item-center">
-          <div class="header__cart--wraper round-full relative">
-            <div class="header__cart--quantity absolute round-full bold">
-              10
+<body>
+    <header class="bg-white">
+        <div class="header__wrapper w-1200 flex justify-between flex justify-between mx-auto">
+            <div class="header__logo">logo</div>
+            <div class="header__search flex item-center relative">
+                <input id="txtSearch" name="txtSearch" />
+                <img class="header__search--icon absolute cursor-pointer" src="/assets/images/search.svg" />
             </div>
-          </div>
+            <div class="header__contact flex justify-center flex-col">
+                <div class="bold text-red">HOTLINE: 0945.364.296 - 0910.101.101</div>
+                <div class="mt-5 text-red">Số 96 Định Công, Hoàng Mai, TP Hà Nội</div>
+            </div>
+            <div class="header__cart flex item-center">
+                <div class="header__cart--wraper round-full relative flex item-center justify-center" id="cartBtn">
+                    <img style="width: 40%;" src="assets/images/cart.png" />
+                    <div class="header__cart--quantity absolute round-full bold" id="countCart">
+                        0
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </header>
 
     <div class="container w-1200 mx-auto">
-      <nav class="flex justify-between bg-red">
-        <div class="nav__item flex flex-col">
-          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="/category.aspx?type=laptop-moi" class="nav__item--link">LAPTOP MỚI</a>
+        <nav class="flex justify-between bg-red">
+            <div class="nav__item flex flex-col">
+                <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
+                <a href="/category.aspx?type=laptop-moi" class="nav__item--link">LAPTOP MỚI</a>
+            </div>
+            <div class="nav__item flex flex-col">
+                <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
+                <a href="/category.aspx?type=laptop-gaming" class="nav__item--link">LAPTOP GAMING</a>
+            </div>
+            <div class="nav__item flex flex-col">
+                <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
+                <a href="/category.aspx?type=laptop-do-hoa" class="nav__item--link">LAPTOP ĐỒ HỌA</a>
+            </div>
+            <div class="nav__item flex flex-col">
+                <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
+                <a href="/category.aspx?type=laptop-mong-nhe" class="nav__item--link">LAPTOP MỎNG NHẸ</a>
+            </div>
+            <div class="nav__item flex flex-col">
+                <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
+                <a href="/category.aspx?type=laptop-van-phong" class="nav__item--link">LAPTOP VĂN PHÒNG </a>
+            </div>
+            <div class="nav__item flex flex-col">
+                <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
+                <a href="/category.aspx?type=laptop-surface" class="nav__item--link">LAPTOP SURFACE </a>
+            </div>
+        </nav>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <footer class="bg-white">
+        <div class="footer__top w-1200 mx-auto flex justify-between">
+            <div class="footer__info">
+                <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+            </div>
+            <div class="footer__info">
+                <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+            </div>
+            <div class="footer__info">
+                <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+                <div class="mb-10">
+                    <h2 class="footer__info--title">Địa chỉ</h2>
+                    <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
+                </div>
+            </div>
         </div>
-        <div class="nav__item flex flex-col">
-          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="/category.aspx?type=laptop-gaming" class="nav__item--link">LAPTOP GAMING</a>
-        </div>
-        <div class="nav__item flex flex-col">
-          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="/category.aspx?type=laptop-do-hoa" class="nav__item--link">LAPTOP ĐỒ HỌA</a>
-        </div>
-        <div class="nav__item flex flex-col">
-          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="/category.aspx?type=laptop-mong-nhe" class="nav__item--link">LAPTOP MỎNG NHẸ</a>
-        </div>
-        <div class="nav__item flex flex-col">
-          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="/category.aspx?type=laptop-van-phong" class="nav__item--link">LAPTOP VĂN PHÒNG </a>
-        </div>
-        <div class="nav__item flex flex-col">
-          <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
-          <a href="/category.aspx?type=laptop-surface" class="nav__item--link">LAPTOP SURFACE </a>
-        </div>
-      </nav>
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            
-    </asp:ContentPlaceHolder>
-        </div>
-<footer class="bg-white">
-      <div class="footer__top w-1200 mx-auto flex justify-between">
-        <div class="footer__info">
-          <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-        </div>
-        <div class="footer__info">
-          <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-        </div>
-        <div class="footer__info">
-          <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-          <div class="mb-10">
-            <h2 class="footer__info--title">Địa chỉ</h2>
-            <span class="ml-5"> Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
-          </div>
-        </div>
-      </div>
 
-      <div class="footer__bottom">
-        <div class="footer__copyright w-1200 mx-auto text-center">
-          Đơn vị sở hữu: CÔNG TY TNHH BAI TAP LON, Trụ sở: Số 96 Định Công, Q.
+        <div class="footer__bottom">
+            <div class="footer__copyright w-1200 mx-auto text-center">
+                Đơn vị sở hữu: CÔNG TY TNHH BAI TAP LON, Trụ sở: Số 96 Định Công, Q.
           Hoàng Mai, TP. Hà Nội, SĐT: 0866.74.9999, Email:
           nguyenhuuvuno1@gmail.com, Giấy phép số: 0109771096,Ngày cấp:
           11/10/2021, Nơi cấp: Sở kế hoạch đầu tư TP Hà Nội | Cung cấp bởi Sapo
+            </div>
         </div>
-      </div>
     </footer>
 
-      <asp:ContentPlaceHolder ID="ScriptPlaceHolder" runat="server">
+    <div class="modal-cart">
+        <div class="wrapper-modal js-close" style="margin-top: 100px;">
+            <div class="modal-header">Bạn đã thêm <span class="nameProd" id="nameProductAddToCart"></span>vào giỏ hàng</div>
+            <p class="modal-cart--total">Giỏ hàng của bạn có 1 sản phẩm</p>
+            <table class="modal-cart--table" id="cart_rows" style="width: 100%;">
+                <tr class="table-header">
+                    <td class="tdFirst">Sản phẩm</td>
+                    <td>Đơn giá</td>
+                    <td>Số lượng</td>
+                    <td>Thành tiền</td>
+                </tr>
 
-      </asp:ContentPlaceHolder>
-  </body>
+            </table>
+            <div class="totalPrice">
+                <p class="price" id="sumMoney"></p>
+            </div>
+            <div class="modal-btnAdd">
+                <button class="btn-handle">Đặt hàng ngay</button>
+            </div>
+            <span class="close-modal" onclick="closeModal()">X</span>
+        </div>
+    </div>
 
-  </html>
+    <asp:ContentPlaceHolder ID="ScriptPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script src="/assets/js/productDetailJs.js"></script>
+
+</body>
+
+</html>
