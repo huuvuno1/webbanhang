@@ -7,38 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebBanLaptop
+namespace WebBanLaptop.Api
 {
 
 
-    public partial class product_detail
+    public partial class UpdateCart
     {
 
         /// <summary>
-        /// productName control.
+        /// RepeaterProductCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl productName;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterProductCart;
 
         /// <summary>
-        /// product_id control.
+        /// totalMoney control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText product_id;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl totalMoney;
 
         /// <summary>
-        /// price control.
+        /// txtCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl price;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtCount;
     }
 }

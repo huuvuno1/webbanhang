@@ -95,12 +95,12 @@
                 <ItemTemplate>
                     <div class="product">
                         <div class="product__img">
-                            <a href="#" class="product__img--link flex justify-center">
+                            <a href='/product-detail.aspx?id=<%# Eval("Id") %>' class="product__img--link flex justify-center">
                                 <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
                             </a>
                         </div>
                         <div class="product__name">
-                            <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                            <a href='/product-detail.aspx?id=<%# Eval("Id") %>' class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
                 HD+</a>
                         </div>
                         <div class="product__des flex flex-col">
@@ -127,7 +127,7 @@
                                 <span class="sale">21%</span>
                             </div>
                             <div class="price-bottom">
-                                <a href="product-detail.aspx" class="price-link">15.900.000Đ</a>
+                                <a href='/product-detail.aspx?id=<%# Eval("Id") %>' class="price-link">15.900.000Đ</a>
                             </div>
                         </div>
                     </div>
@@ -147,12 +147,12 @@
                 <ItemTemplate>
                     <div class="product">
                         <div class="product__img">
-                            <a href="#" class="product__img--link flex justify-center">
+                            <a href='/product-detail.aspx?id=<%# Eval("Id") %>' class="product__img--link flex justify-center">
                                 <img class="product__img--src" src="/assets/images/laptop1.jpg" alt="laptop" />
                             </a>
                         </div>
                         <div class="product__name">
-                            <a href="#" class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
+                            <a href='/product-detail.aspx?id=<%# Eval("Id") %>' class="product__name--link">[New 100%] Dell XPS 13 9315-F4GH8 Mới - i5-1230U | 13.4" Full
                 HD+</a>
                         </div>
                         <div class="product__des flex flex-col">
@@ -179,7 +179,7 @@
                                 <span class="sale">21%</span>
                             </div>
                             <div class="price-bottom">
-                                <a href="product-detail.aspx" class="price-link">15.900.000Đ</a>
+                                <a href='/product-detail.aspx?id=<%# Eval("Id") %>' class="price-link">15.900.000Đ</a>
                             </div>
                         </div>
                     </div>

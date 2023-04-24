@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using WebBanLaptop.Model;
 
 namespace WebBanLaptop
 {
@@ -20,6 +21,7 @@ namespace WebBanLaptop
         {
             Session["login"] = false;
             Session["admin"] = false;
+            Session["cart"] = new List<Cart>();
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

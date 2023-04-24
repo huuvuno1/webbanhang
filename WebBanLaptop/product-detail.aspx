@@ -6,7 +6,12 @@
 
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="product__detail">
+    <div class="flex">
+        <h1 style="margin-top: 16px; margin-right: 10px;">Sản phẩm > </h1>
+        <h1 style="color: red; margin-top: 16px;" id="productName" runat="server"></h1>
+        <input id="product_id" runat="server" hidden="hidden" class="ContentPlaceHolder1_product_id" />
+    </div>
+    <div class="product__detail" style="margin-top: 12px;">
       <div class="detail__container">
         <div class="detail__media">
           <div class="detail__media--src">
@@ -41,7 +46,11 @@
         </div>
         <div class="detail__action">
           <div class="detail-price--box">
-            <div class="detail-price--top"><span class="special-price">16.900.000Đ</span></div>
+            <div class="detail-price--top">
+                <span class="special-price" id="price" runat="server">16.900.000Đ</span>
+                <span class="special-price">₫</span>
+
+            </div>
             <div class="detail-price--bottom"><span class="old-price">Giá thị trường <del
                   class="old-price--value">21.000.000Đ</del>
               </span>
@@ -62,9 +71,9 @@
           </div>
           <div class="quan">
             <div class="quan__select">
-              <span onclick="handleSub()" class="quan__select-sub">-</span>
-              <input type="text" class="quan__select-value" value="1" name="txtQuantity"/>
-              <span onclick="handleAdd()" class="quan__select-add">+</span>
+              <span onclick="handleChangeQuantity(-1)" class="quan__select-sub">-</span>
+              <input type="text" class="quan__select-value" value="1" name="txtQuantity" id="quantity"/>
+              <span onclick="handleChangeQuantity(1)" class="quan__select-add">+</span>
             </div>
             <div class="addToCart">
               <button class="btnAddToCart" onclick="showModal()">Mua Ngay</button>
@@ -197,45 +206,8 @@
       </div>
     </div>
   
-  <div class="modal-cart">
-    <div class="wrapper-modal js-close">
-      <div class="modal-header">Bạn đã thêm <span class="nameProd">[New Outlet] Acer Swift 3 2022 SF314-512-56QN
-          (i5-1240P/16GB/512GB PCIE/14.0 FHD/WIN11/BẠC) - 6 THÁNG</span> vào giỏ hàng</div>
-      <p class="modal-cart--total">Giỏ hàng của bạn có 1 sản phẩm</p>
-      <table class="modal-cart--table">
-        <tr class="table-header">
-          <td class="tdFirst">Sản phẩm</td>
-          <td>Đơn giá</td>
-          <td>Số lượng</td>
-          <td>Thành tiền</td>
-        </tr>
-        <tr>
-          <td class="modal-prod--des">
-            <img src="/assets/images/laptop1.jpg" width="100px" />
-            <p>[New Outlet] Acer Swift 3 2022 SF314-512-56QN (i5-1240P/16GB/512GB PCIE/14.0 FHD/WIN11/BẠC)</p>
-          </td>
-          <td><span class="modal-price">12000000</span>d</td>
-          <td>
-            <div class="modal_quan__select">
-              <span onclick="handleSub()" class="modal_quan__select-sub">-</span>
-              <input type="text" class="modal_quan__select-value" value="1" />
-              <span onclick="handleAdd()" class="modal_quan__select-add">+</span>
-            </div>
-          </td>
-          <td><span class="modal-totalPrice1"></span>d</td>
-        </tr>
-      </table>
-      <div class="totalPrice">
-        <p class="price">Thành tiền: <span class="modal-totalPrice2"></span>d</p>
-      </div>
-      <div class="modal-btnAdd">
-        <button class="btn-handle">Thanh toán đơn hàng</button>
-      </div>
-      <span class="close-modal" onclick="closeModal()">X</span>
-    </div>
-      </div>
+  
 </asp:Content>
 
 <asp:Content ID="Script1" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">
-    <script src="/assets/js/productDetailJs.js" defer></script>
 </asp:Content>
