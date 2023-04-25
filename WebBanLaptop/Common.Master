@@ -182,7 +182,7 @@
                 <p class="price" id="sumMoney"></p>
             </div>
             <div class="modal-btnAdd">
-                <button class="btn-handle">Đặt hàng ngay</button>
+                <button class="btn-handle" onclick="location.href='/checkout.aspx'">Đặt hàng ngay</button>
             </div>
             <span class="close-modal" onclick="closeModal()">X</span>
         </div>

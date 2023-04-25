@@ -42,5 +42,21 @@ namespace WebBanLaptop.DAO
             return details;
         }
         
+
+        public void SaveOrderDetail(int orderId, Cart cart)
+        {
+            string strcon = Config.getConnectionString();
+            SqlConnection con = new SqlConnection(strcon);
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = $@"INSERT INTO tbl_order_detail(product_id, price, quantity, order_id)
+                                VALUES(@product_id, @price, @quantity, @order_id);";
+            cmd.Parameters.AddWithValue("@product_id", cart.Id);
+            cmd.Parameters.AddWithValue("@price", cart.Price);
+            cmd.Parameters.AddWithValue("@quantity", cart.Quantity);
+            cmd.Parameters.AddWithValue("@order_id", orderId);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

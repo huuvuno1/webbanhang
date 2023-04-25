@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/checkout.css">
+</head>
+
+<body>
+  <div class="flex checkout_container">
+    <div class="checkout_left">
+      <h1 class="checkout_title">LAPTOP GAME</h1>
+      <div class="flex justify-between mt-20">
+        <div style="flex-grow: 1; padding-right: 25px;">
+          <h2 class="checkout_title_label">Thông tin nhận hàng</h2>
+
+          <div class="checkout_wrapper_input">
+            <div class="checkout_label_input">Họ tên</div>
+            <input name="email" class="checkout_input" placeholder="Nhập vào họ tên..." />
+          </div>
+          <div class="checkout_wrapper_input">
+            <div class="checkout_label_input">Email</div>
+            <input name="email" class="checkout_input" placeholder="Nhập vào email..." />
+          </div>
+
+          <div class="checkout_wrapper_input">
+            <div class="checkout_label_input">Số điện thoại</div>
+            <input name="email" class="checkout_input" placeholder="Nhập vào số điện thoại..." />
+          </div>
+          <div class="checkout_wrapper_input">
+            <div class="checkout_label_input">Địa chỉ</div>
+            <input name="email" class="checkout_input" placeholder="Nhập vào địa chỉ của bạn.." />
+          </div>
+          <div class="checkout_wrapper_input">
+            <div class="checkout_label_input">Ghi chú</div>
+            <textarea name="email" class="checkout_input checkout_textare"
+              placeholder="Để lại ghi chú cho đơn hàng..."></textarea>
+          </div>
+        </div>
+        <div style="width: 45%;">
+          <h2 class="checkout_title_label">Thanh toán</h2>
+          <div class="checkout_input flex item-center mt-20 justify-between">
+            <div class="flex item-center">
+              <input name="email" style="margin-right: 10px;" type="radio" checked />
+              <span> Thanh toán khi giao hàng (COD)</span>
+            </div>
+            <img src="/assets/images/money.png" style="height: 25px; margin-top: 6px;" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="checkout_right">
+      <h1 class="checkout_right_title">
+        Đơn hàng (<span id="count">3</span> sản phẩm)
+      </h1>
+      <div class="checkout_products">
+        <div class="flex">
+          <div class="flex item-center justify-center checkout_product_image_wrapper relative">
+            <img src="/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" class="checkout_product_image" />
+            <span class="absolute checkout_product_count flex item-center justify-center">5</span>
+          </div>
+          <div class="checkout_product_name">
+            dell 124435
+          </div>
+          <div class="checkout_product_price">
+            53.970.000₫
+          </div>
+        </div>
+      </div>
+      <div class="checkout_products" style="border: none; margin-top: 35px;">
+        <!-- sum money -->
+        <div class="">
+          <div class="flex justify-between mb-20 item-center">
+            <div class="checkout_sum_label">Tổng cộng</div>
+            <div id="sum_money" class="checkout_summoney">54.120.000₫</div>
+          </div>
+          <div class="flex justify-between item-center">
+            <a href="/index.aspx" class="checkout_sum_label" style="font-size: 16px; color: gray;">
+              < Quay về trang chủ </a>
+                <button id="sum_money" class="checkout_btn_submit">
+                  Đặt hàng
+                </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

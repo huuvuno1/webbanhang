@@ -12,6 +12,10 @@ namespace WebBanLaptop.Model
         public string NumberPhone { get; set; }
         public string Address { get; set; }
         public int Status { get; set; }
+        public string Email { get; set; }
+        public string Note { get; set; }
+        public string CreatedAt { get; set; }
+        public string UpdatedAt { get; set; }
 
         public Order(int id, string name, string address, int status, string phone)
         {
