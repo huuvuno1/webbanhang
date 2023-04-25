@@ -40,6 +40,11 @@
             <asp:GridView ID="GridView1"  runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" GridLines="None" Height="200px" OnPageIndexChanging="GridView1_PageIndexChanging" Width="1000px" CssClass="table">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
+                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Ảnh tiêu đề">
+                        <ItemTemplate>
+                            <asp:Image CssClass="item-image" ID="imageReview" ImageUrl='<%# Eval("ImageSrc") %>' runat="server"/>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Tên sản phẩm">
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
