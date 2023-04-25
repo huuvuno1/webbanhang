@@ -19,7 +19,6 @@ namespace WebBanLaptop.Model
         public int Status { get; set; }
         public string Brand { get; set; }
         public string Image { get; set; }
-        public int CategoryId { get; set; }
         public object Products { get; internal set; }
         public object Search { get; internal set; }
         public string Cpu { get; internal set; }
@@ -28,16 +27,8 @@ namespace WebBanLaptop.Model
         public string Screen { get; internal set; }
 
         public int OldPrice { get; set; }
-        public string CPU { get; set; }
-        public string RAM { get; set; }
-        public string HardDrive { get; set; }
         public float Weight { get; set; }
         public string Type { get; set; }
-        [NotMapped]
-        public string CategoryName { get; set; }
-        public Category Category { get; set; }
-
-        
 
         public Product()
         {

@@ -39,17 +39,16 @@ namespace WebBanLaptop.DAO
                         Price = int.Parse(reader["price"].ToString()),
                         Description = reader["description"].ToString(),
                         Quantity = int.Parse(reader["quantity"].ToString()),
-                        CategoryId = int.Parse(reader["category_id"].ToString()),
                         Status = int.Parse(reader["status"].ToString()),
                         Brand = reader["brand"].ToString(),
-                        CPU = reader["cpu"].ToString(),
-                        RAM = reader["ram"].ToString(),
-                        CategoryName = reader["name_category"].ToString(),
-                        OldPrice = int.Parse(reader["oldPrice"].ToString(), CultureInfo.InvariantCulture),
-                        HardDrive = reader["hardDrive"].ToString(),
+                        Cpu = reader["cpu"].ToString(),
+                        Ram = reader["ram"].ToString(),
+                        OldPrice = int.Parse(reader["oldPrice"].ToString()),
+                        Gpu = reader["hardDrive"].ToString(),
                         Weight = float.Parse(reader["weight"].ToString(), CultureInfo.InvariantCulture),
                         Screen = reader["screen"].ToString(),
                         Type = reader["type"].ToString(),
+                        Image = reader["img"].ToString(),
                     });
                 }
             }
@@ -113,7 +112,6 @@ namespace WebBanLaptop.DAO
                         Price = int.Parse(reader["price"].ToString()),
                         Description = reader["description"].ToString(),
                         Quantity = int.Parse(reader["quantity"].ToString()),
-                        CategoryId = int.Parse(reader["category_id"].ToString()),
                         Status = int.Parse(reader["status"].ToString()),
                         Brand = reader["brand"].ToString(),
                         Image = reader["img"].ToString(),
@@ -150,18 +148,17 @@ namespace WebBanLaptop.DAO
             return pageable;
         }
 
-        public int insertProduct(int category_id,string name,string slug,int price,int quantity,string description,string brand,
-            float oldPrice,string cpu,string ram,string hardDrive,float weight,string screen,string type)
+        public int insertProduct(string name,string slug,int price,int quantity,string description,string brand,
+            float oldPrice,string cpu,string ram,string hardDrive,float weight,string screen,string type,string image)
         {
             int product_id;
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
 
-            string strQuery = "insert into tbl_product values(@category_id,@name,@slug,@price,@quantity," +
-                "@description,@status,@brand,@oldPrice,@cpu,@ram,@hardDrive,@weight,@screen,@type) " +
+            string strQuery = "insert into tbl_product values(@name,@slug,@price,@quantity," +
+                "@description,@status,@brand,@oldPrice,@cpu,@ram,@hardDrive,@weight,@screen,@type,@image) " +
                 "Select Scope_Identity()";
             SqlCommand cmd = new SqlCommand(strQuery);
-            cmd.Parameters.AddWithValue("@category_id", category_id);
             cmd.Parameters.AddWithValue("@slug", slug);
             cmd.Parameters.AddWithValue("@price", price);
             cmd.Parameters.AddWithValue("@quantity", quantity);
@@ -176,6 +173,7 @@ namespace WebBanLaptop.DAO
             cmd.Parameters.AddWithValue("@weight", weight);
             cmd.Parameters.AddWithValue("@screen", screen);
             cmd.Parameters.AddWithValue("@type", type);
+            cmd.Parameters.AddWithValue("@image", image);
 
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
@@ -202,7 +200,6 @@ namespace WebBanLaptop.DAO
                     product.Price = int.Parse(reader["price"].ToString());
                     product.Description = reader["description"].ToString();
                     product.Quantity = int.Parse(reader["quantity"].ToString());
-                    product.CategoryId = int.Parse(reader["category_id"].ToString());
                     product.Status = int.Parse(reader["status"].ToString());
                     product.Brand = reader["brand"].ToString();
                     product.Image = reader["img"].ToString();
@@ -211,6 +208,7 @@ namespace WebBanLaptop.DAO
                     product.Ram = reader["ram"].ToString();
                     product.OldPrice = oldPrice == "" ? int.Parse(reader["price"].ToString()) : int.Parse(oldPrice);
                     product.Screen = reader["screen"].ToString();
+                    product.Image = reader["img"].ToString();
 
                 }
                 return product;
@@ -233,7 +231,6 @@ namespace WebBanLaptop.DAO
                     Product product = new Product();
                     product.Id = Convert.ToInt32(reader["id"]);
                     product.Name = Convert.ToString(reader["name"]);
-                    product.CategoryId = Convert.ToInt32(reader["category_id"]);
                     product.Price = Convert.ToInt32(reader["price"]);
                     product.Quantity = Convert.ToInt32(reader["quantity"]);
                     product.Status = Convert.ToInt32(reader["status"]);
@@ -243,9 +240,9 @@ namespace WebBanLaptop.DAO
                     product.Brand = Convert.ToString(reader["brand"]);
 
                     product.Brand = Convert.ToString(reader["brand"]);
-                    product.CPU = Convert.ToString(reader["cpu"]);
-                    product.RAM = Convert.ToString(reader["ram"]);
-                    product.HardDrive = Convert.ToString(reader["hardDrive"]);
+                    product.Cpu = Convert.ToString(reader["cpu"]);
+                    product.Ram = Convert.ToString(reader["ram"]);
+                    product.Gpu = Convert.ToString(reader["hardDrive"]);
                     product.Screen = Convert.ToString(reader["screen"]);
                     product.Type = Convert.ToString(reader["type"]);
                     product.OldPrice =Convert.ToInt32(reader["oldPrice"].ToString() == "" ? reader["price"] : reader["oldPrice"]);
@@ -276,7 +273,6 @@ namespace WebBanLaptop.DAO
                     product.Price = int.Parse(reader["price"].ToString());
                     product.Description = reader["description"].ToString();
                     product.Quantity = int.Parse(reader["quantity"].ToString());
-                    product.CategoryId = int.Parse(reader["category_id"].ToString());
                     product.Status = int.Parse(reader["status"].ToString());
                     product.Brand = reader["brand"].ToString();
                     product.Image = reader["img"].ToString();
@@ -291,8 +287,8 @@ namespace WebBanLaptop.DAO
             }
             else { return null; }
         }
-        public bool updateProduct(int id, string name, int category_id, int price, int quantity, string description, string brand,
-            float oldPrice, string cpu, string ram, string hardDrive, float weight, string screen, string type)
+        public bool updateProduct(int id, string name, int price, int quantity, string description, string brand,
+            float oldPrice, string cpu, string ram, string hardDrive, float weight, string screen, string type, string img)
         {
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
@@ -303,7 +299,6 @@ namespace WebBanLaptop.DAO
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@name", name);
-            cmd.Parameters.AddWithValue("@category_id", category_id);
             cmd.Parameters.AddWithValue("@price", price);
             cmd.Parameters.AddWithValue("@quantity", quantity);
             cmd.Parameters.AddWithValue("@description", description);
@@ -315,6 +310,7 @@ namespace WebBanLaptop.DAO
             cmd.Parameters.AddWithValue("@weight", weight);
             cmd.Parameters.AddWithValue("@screen", screen);
             cmd.Parameters.AddWithValue("@type", type);
+            cmd.Parameters.AddWithValue("@img", img);
 
             try
             {

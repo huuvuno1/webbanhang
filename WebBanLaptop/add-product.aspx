@@ -31,14 +31,15 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="label-login">Phân loại:</td>
-                        <td><asp:DropDownList ID="category" runat="server" DataSourceID="SqlDataSource1" DataTextField="name" DataValueField="id" Height="48px"></asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:WebLaptopConnection %>" SelectCommand="SELECT * FROM [tbl_category]"></asp:SqlDataSource>
+                        <td class="label-login">Ảnh nổi bật:</td>
+                        <td>
+                            <asp:FileUpload runat="server" ID="FileUploadTitle"/>
+                            <asp:Label ID="imagetitle" runat="server" />
                         </td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="label-login">Hình ảnh:</td>
+                        <td class="label-login">Albums:</td>
                         <td>
                             <asp:FileUpload runat="server" ID="UploadImages" AllowMultiple="true" />
                             <asp:Label ID="listofuploadedfiles" runat="server" />
@@ -69,7 +70,7 @@
                     <tr>
                         <td class="label-login">Brand:</td>
                         <td>
-                            <asp:DropDownList ID="brand" runat="server" DataTextField="Value" DataValueField="Value" Height="48px"></asp:DropDownList>
+                            <asp:DropDownList ID="brand" runat="server" Height="48px" DataTextField="Value" DataValueField="Value"></asp:DropDownList>
                         </td>
                         <td></td>
                     </tr>
@@ -144,9 +145,7 @@
         </form>
     </div>
 </body>
-<<<<<<< HEAD
 </html>
-=======
     <script type="text/javascript">
         function addFileUploadBox() {
             if (!document.getElementById || !document.createElement)
@@ -173,4 +172,3 @@
         }
     </script>
 </html>
->>>>>>> 2caa0b7 (add management user and order)

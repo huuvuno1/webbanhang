@@ -31,9 +31,11 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="label-login">Phân loại:</td>
-                        <td><asp:DropDownList ID="category" runat="server" DataSourceID="SqlDataSource1" DataTextField="name" DataValueField="id" Height="48px"></asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:WebLaptopConnection %>" SelectCommand="SELECT * FROM [tbl_category]"></asp:SqlDataSource>
+                        <td class="label-login">Ảnh nổi bật:</td>
+                        <td>
+                            <asp:FileUpload runat="server" ID="FileUploadTitle"/>
+                            <asp:Label ID="imagetitle" runat="server" />
+                            <asp:Image class="Image" ID="imageReview" runat="server"/>
                         </td>
                         <td></td>
                     </tr>
@@ -41,11 +43,13 @@
                         <td class="label-login">Hình ảnh:</td>
                         <td>
                             <asp:FileUpload runat="server" ID="UploadImages" AllowMultiple="true" />
-                            <asp:Repeater ID="RepeaterImages" runat="server">
-                                <ItemTemplate>
-                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Value") %>'/>
-                                </ItemTemplate>
-                            </asp:Repeater>
+                            <div class="list-image">
+                                <asp:Repeater ID="RepeaterImages" runat="server">
+                                    <ItemTemplate>
+                                        <asp:Image ID="Image1" runat="server" CssClass="item-image" ImageUrl='<%# Eval("Value") %>' />
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
                         </td>
                         <td></td>
                     </tr>
@@ -73,7 +77,7 @@
                     <tr>
                         <td class="label-login">Brand:</td>
                         <td>
-                            <asp:TextBox ID="brand" runat="server" CssClass="txtQuan"></asp:TextBox>
+                            <asp:DropDownList ID="brand" runat="server" DataTextField="Value" DataValueField="Value" Height="48px"></asp:DropDownList>
                         </td>
                         <td></td>
                     </tr>
