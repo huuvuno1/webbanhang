@@ -49,6 +49,7 @@ namespace WebBanLaptop.DAO
                         Screen = reader["screen"].ToString(),
                         Type = reader["type"].ToString(),
                         Image = reader["img"].ToString(),
+                        ImageSrc = "~/assets/images/" + reader["img"].ToString(),
                     });
                 }
             }

@@ -29,6 +29,7 @@ namespace WebBanLaptop.Model
         public int OldPrice { get; set; }
         public float Weight { get; set; }
         public string Type { get; set; }
+        public string ImageSrc { get; set; }
 
         public Product()
         {

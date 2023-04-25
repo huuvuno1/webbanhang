@@ -67,3 +67,6 @@
 #GridView1 tr:hover {
     background-color: #284775;
 }
+.item-image {
+    height: 90px;
+}
