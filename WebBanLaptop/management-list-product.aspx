@@ -42,7 +42,7 @@
                 <Columns>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Ảnh tiêu đề">
                         <ItemTemplate>
-                            <asp:Image CssClass="item-image" ID="imageReview" ImageUrl='<%# Eval("ImageSrc") %>' runat="server"/>
+                            <asp:Image CssClass="item-image" ID="imageReview" ImageUrl='<%# Eval("Image") %>' runat="server"/>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Tên sản phẩm">
@@ -52,7 +52,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Mô tả">
                         <ItemTemplate>
-                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("Description") %>'></asp:Label>
+                            <asp:Label ID="Label2" CssClass="des" runat="server" Text='<%# Eval("Description") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Brand">
