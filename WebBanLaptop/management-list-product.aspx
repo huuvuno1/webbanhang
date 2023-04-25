@@ -45,11 +45,6 @@
                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Phân loại">
-                        <ItemTemplate>
-                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("CategoryName") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Mô tả">
                         <ItemTemplate>
                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Description") %>'></asp:Label>

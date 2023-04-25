@@ -39,12 +39,10 @@ namespace WebBanLaptop.DAO
                         Price = int.Parse(reader["price"].ToString()),
                         Description = reader["description"].ToString(),
                         Quantity = int.Parse(reader["quantity"].ToString()),
-                        CategoryId = int.Parse(reader["category_id"].ToString()),
                         Status = int.Parse(reader["status"].ToString()),
                         Brand = reader["brand"].ToString(),
                         CPU = reader["cpu"].ToString(),
                         RAM = reader["ram"].ToString(),
-                        CategoryName = reader["name_category"].ToString(),
                         OldPrice = float.Parse(reader["oldPrice"].ToString(), CultureInfo.InvariantCulture),
                         HardDrive = reader["hardDrive"].ToString(),
                         Weight = float.Parse(reader["weight"].ToString(), CultureInfo.InvariantCulture),
@@ -111,7 +109,6 @@ namespace WebBanLaptop.DAO
                         Price = int.Parse(reader["price"].ToString()),
                         Description = reader["description"].ToString(),
                         Quantity = int.Parse(reader["quantity"].ToString()),
-                        CategoryId = int.Parse(reader["category_id"].ToString()),
                         Status = int.Parse(reader["status"].ToString()),
                         Brand = reader["brand"].ToString(),
 
@@ -143,18 +140,17 @@ namespace WebBanLaptop.DAO
             return pageable;
         }
 
-        public int insertProduct(int category_id,string name,string slug,int price,int quantity,string description,string brand,
+        public int insertProduct(string name,string slug,int price,int quantity,string description,string brand,
             float oldPrice,string cpu,string ram,string hardDrive,float weight,string screen,string type)
         {
             int product_id;
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
 
-            string strQuery = "insert into tbl_product values(@category_id,@name,@slug,@price,@quantity," +
+            string strQuery = "insert into tbl_product values(@name,@slug,@price,@quantity," +
                 "@description,@status,@brand,@oldPrice,@cpu,@ram,@hardDrive,@weight,@screen,@type) " +
                 "Select Scope_Identity()";
             SqlCommand cmd = new SqlCommand(strQuery);
-            cmd.Parameters.AddWithValue("@category_id", category_id);
             cmd.Parameters.AddWithValue("@slug", slug);
             cmd.Parameters.AddWithValue("@price", price);
             cmd.Parameters.AddWithValue("@quantity", quantity);
@@ -191,7 +187,6 @@ namespace WebBanLaptop.DAO
                 {
                     product.Id = Convert.ToInt32(reader["id"]);
                     product.Name = Convert.ToString(reader["name"]);
-                    product.CategoryId = Convert.ToInt32(reader["category_id"]);
                     product.Price = Convert.ToInt32(reader["price"]);
                     product.Quantity = Convert.ToInt32(reader["quantity"]);
                     product.Status = Convert.ToInt32(reader["status"]);
@@ -210,7 +205,7 @@ namespace WebBanLaptop.DAO
             }
             else { return null; }
         }
-        public bool updateProduct(int id, string name, int category_id, int price, int quantity, string description, string brand,
+        public bool updateProduct(int id, string name, int price, int quantity, string description, string brand,
             float oldPrice, string cpu, string ram, string hardDrive, float weight, string screen, string type)
         {
             string strcon = Config.getConnectionString();
@@ -222,7 +217,6 @@ namespace WebBanLaptop.DAO
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@name", name);
-            cmd.Parameters.AddWithValue("@category_id", category_id);
             cmd.Parameters.AddWithValue("@price", price);
             cmd.Parameters.AddWithValue("@quantity", quantity);
             cmd.Parameters.AddWithValue("@description", description);

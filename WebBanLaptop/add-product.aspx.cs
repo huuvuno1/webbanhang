@@ -18,9 +18,11 @@ namespace WebBanLaptop
         {
             if ((bool)Session["admin"])
             {
-                brand.DataSource = Constant.Brands.Select(x => new { Value = x });
-                brand.DataBind();
-                return;
+                if (!Page.IsPostBack)
+                {
+                    brand.DataSource = Constant.Brands.Select(x => new { Value = x });
+                    brand.DataBind();
+                }
             }
             else
             {
@@ -32,7 +34,6 @@ namespace WebBanLaptop
         protected void Add_Click(object sender, EventArgs e)
         {
             productDAO = new ProductDAO();
-            int categoryId = Int32.Parse(category.SelectedValue);
             string nameProduct = name.Text;
             string slugName = ToStringSlug(nameProduct);
             int priceProduct = Int32.Parse(price.Text);
@@ -47,7 +48,7 @@ namespace WebBanLaptop
             string Screen = screen.Text;
             string Type = type.Text;
 
-            int product_id = productDAO.insertProduct(categoryId, nameProduct, slugName, priceProduct, quantityProduct,descriptionProduct,brandProduct,oldprice,CPU,RAM,HardDrive,Weight,Screen,Type);
+            int product_id = productDAO.insertProduct(nameProduct, slugName, priceProduct, quantityProduct,descriptionProduct,brandProduct,oldprice,CPU,RAM,HardDrive,Weight,Screen,Type);
             if (product_id > 0)
             {
                 
