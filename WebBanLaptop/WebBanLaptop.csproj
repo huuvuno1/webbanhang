@@ -71,6 +71,7 @@
     <Content Include="Api\FilterProduct.aspx" />
     <Content Include="Api\getLaptop.aspx" />
     <Content Include="Api\Search.aspx" />
+    <Content Include="Api\searchOrder.aspx" />
     <Content Include="Api\UpdateCart.aspx" />
     <Content Include="assets\css\add-categoryCss.css" />
     <Content Include="assets\css\add-productCss.css" />
@@ -165,6 +166,13 @@
     </Compile>
     <Compile Include="Api\Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\searchOrder.aspx.cs">
+      <DependentUpon>searchOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Api\searchOrder.aspx.designer.cs">
+      <DependentUpon>searchOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Api\UpdateCart.aspx.cs">
       <DependentUpon>UpdateCart.aspx</DependentUpon>

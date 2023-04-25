@@ -113,5 +113,36 @@ namespace WebBanLaptop.DAO
             con.Close();
         }
         
+        public List<Order> getOrdersByNamOrPhone(string input)
+        {
+            List<Order> orders = new List<Order>();
+            string strcon = Config.getConnectionString();
+            SqlConnection con = new SqlConnection(strcon);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("getOrdersByNamOrPhone", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@input", input);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader != null && reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    orders.Add(new Order()
+                    {
+                        Id = int.Parse(reader["id"].ToString()),
+                        CustomerName = reader["customer_name"].ToString(),
+                        NumberPhone = reader["phone_number"].ToString(),
+                        Address = reader["address"].ToString(),
+                        Status = int.Parse(reader["delivery_status"].ToString()),
+                    });
+                }
+                return orders;
+            }
+            else { return null; }
+        }
+        
     }
 }
