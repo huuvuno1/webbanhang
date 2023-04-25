@@ -39,7 +39,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Tên sản phẩm">
                         <ItemTemplate>
-                            <asp:Label ID="lb_product" runat="server" Text='<%# Eval("ProductId") %>'></asp:Label>
+                            <asp:Label ID="lb_product" runat="server" Text='<%# Eval("ProductName") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Số lượng">
