@@ -31,9 +31,11 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="label-login">Phân loại:</td>
-                        <td><asp:DropDownList ID="category" runat="server" DataSourceID="SqlDataSource1" DataTextField="name" DataValueField="id" Height="48px"></asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:WebLaptopConnection %>" SelectCommand="SELECT * FROM [tbl_category]"></asp:SqlDataSource>
+                        <td class="label-login">Ảnh nổi bật:</td>
+                        <td>
+                            <asp:FileUpload runat="server" ID="FileUploadTitle"/>
+                            <asp:Label ID="imagetitle" runat="server" />
+                            <asp:Image class="Image" ID="imageReview" runat="server"/>
                         </td>
                         <td></td>
                     </tr>
@@ -41,11 +43,13 @@
                         <td class="label-login">Hình ảnh:</td>
                         <td>
                             <asp:FileUpload runat="server" ID="UploadImages" AllowMultiple="true" />
-                            <asp:Repeater ID="RepeaterImages" runat="server">
-                                <ItemTemplate>
-                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Value") %>'/>
-                                </ItemTemplate>
-                            </asp:Repeater>
+                            <div class="list-image">
+                                <asp:Repeater ID="RepeaterImages" runat="server">
+                                    <ItemTemplate>
+                                        <asp:Image ID="Image1" runat="server" CssClass="item-image" ImageUrl='<%# Eval("Value") %>' />
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
                         </td>
                         <td></td>
                     </tr>
@@ -67,6 +71,62 @@
                         <td class="label-login">Mô tả:</td>
                         <td>
                             <textarea id="description" class="txtDes" name="description" runat="server" style="height: 240px;"></textarea>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Brand:</td>
+                        <td>
+                            <asp:DropDownList ID="brand" runat="server" DataTextField="Value" DataValueField="Value" Height="48px"></asp:DropDownList>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Gía ban đầu:</td>
+                        <td>
+                            <asp:TextBox ID="oldPrice" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">CPU:</td>
+                        <td>
+                            <asp:TextBox ID="cpu" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">RAM:</td>
+                        <td>
+                            <asp:TextBox ID="ram" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Hard Drive:</td>
+                        <td>
+                            <asp:TextBox ID="hardDrive" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Cân nặng:</td>
+                        <td>
+                            <asp:TextBox ID="weight" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Màn hình:</td>
+                        <td>
+                            <asp:TextBox ID="screen" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Loại:</td>
+                        <td>
+                            <asp:TextBox ID="type" runat="server" CssClass="txtQuan"></asp:TextBox>
                         </td>
                         <td></td>
                     </tr>

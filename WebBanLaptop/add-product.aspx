@@ -31,14 +31,15 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="label-login">Phân loại:</td>
-                        <td><asp:DropDownList ID="category" runat="server" DataSourceID="SqlDataSource1" DataTextField="name" DataValueField="id" Height="48px"></asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:WebLaptopConnection %>" SelectCommand="SELECT * FROM [tbl_category]"></asp:SqlDataSource>
+                        <td class="label-login">Ảnh nổi bật:</td>
+                        <td>
+                            <asp:FileUpload runat="server" ID="FileUploadTitle"/>
+                            <asp:Label ID="imagetitle" runat="server" />
                         </td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="label-login">Hình ảnh:</td>
+                        <td class="label-login">Albums:</td>
                         <td>
                             <asp:FileUpload runat="server" ID="UploadImages" AllowMultiple="true" />
                             <asp:Label ID="listofuploadedfiles" runat="server" />
@@ -67,6 +68,62 @@
                         <td></td>
                     </tr>
                     <tr>
+                        <td class="label-login">Brand:</td>
+                        <td>
+                            <asp:DropDownList ID="brand" runat="server" Height="48px" DataTextField="Value" DataValueField="Value"></asp:DropDownList>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Gía ban đầu:</td>
+                        <td>
+                            <asp:TextBox ID="oldPrice" runat="server" CssClass="txtQuan" placeholder="Nhập giá ban đầu" TextMode="Number"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">CPU:</td>
+                        <td>
+                            <asp:TextBox ID="cpu" runat="server" CssClass="txtQuan" placeholder="Nhập CPU"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">RAM:</td>
+                        <td>
+                            <asp:TextBox ID="ram" runat="server" CssClass="txtQuan" placeholder="Nhập RAM"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Hard Drive:</td>
+                        <td>
+                            <asp:TextBox ID="hardDrive" runat="server" CssClass="txtQuan" placeholder="Nhập Hard Drive"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Cân nặng:</td>
+                        <td>
+                            <asp:TextBox ID="weight" runat="server" CssClass="txtQuan" placeholder="Nhập cân nặng" TextMode="Number"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Màn hình:</td>
+                        <td>
+                            <asp:TextBox ID="screen" runat="server" CssClass="txtQuan" placeholder="Nhập màn hình"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Loại:</td>
+                        <td>
+                            <asp:TextBox ID="type" runat="server" CssClass="txtQuan" placeholder="Nhập loại"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
                         <td></td>
                         <td colspan="2">
                             <div class="text-error">
@@ -88,9 +145,7 @@
         </form>
     </div>
 </body>
-<<<<<<< HEAD
 </html>
-=======
     <script type="text/javascript">
         function addFileUploadBox() {
             if (!document.getElementById || !document.createElement)
@@ -117,4 +172,3 @@
         }
     </script>
 </html>
->>>>>>> 2caa0b7 (add management user and order)

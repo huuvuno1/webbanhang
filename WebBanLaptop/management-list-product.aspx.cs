@@ -19,21 +19,20 @@ namespace WebBanLaptop
             {
                 if (!Page.IsPostBack)
                 {
-                    productDAO = new ProductDAO();
-                    GridView1.DataSource = productDAO.getProducts();
-                    GridView1.DataBind();
+                    BindData();
                 }
             }
             else
             {
                 Response.Redirect("login.aspx");
             }
-            
+
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            GridView1.PageIndex = e.NewPageIndex;
+            BindData();
         }
 
         protected void Delete_Click(object sender, EventArgs e)
@@ -51,6 +50,12 @@ namespace WebBanLaptop
             {
                 Response.StatusCode = 200;
             }
+        }
+        protected void BindData()
+        {
+            productDAO = new ProductDAO();
+            GridView1.DataSource = productDAO.getProducts();
+            GridView1.DataBind();
         }
     }
 }

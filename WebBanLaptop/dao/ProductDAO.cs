@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -26,6 +27,7 @@ namespace WebBanLaptop.DAO
 
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader reader = cmd.ExecuteReader();
+
             if (reader != null && reader.HasRows)
             {
                 while (reader.Read())
@@ -37,9 +39,17 @@ namespace WebBanLaptop.DAO
                         Price = int.Parse(reader["price"].ToString()),
                         Description = reader["description"].ToString(),
                         Quantity = int.Parse(reader["quantity"].ToString()),
-                        CategoryId = int.Parse(reader["category_id"].ToString()),
                         Status = int.Parse(reader["status"].ToString()),
-                        CategoryName = reader["name_category"].ToString(),
+                        Brand = reader["brand"].ToString(),
+                        Cpu = reader["cpu"].ToString(),
+                        Ram = reader["ram"].ToString(),
+                        OldPrice = int.Parse(reader["oldPrice"].ToString()),
+                        Gpu = reader["hardDrive"].ToString(),
+                        Weight = float.Parse(reader["weight"].ToString(), CultureInfo.InvariantCulture),
+                        Screen = reader["screen"].ToString(),
+                        Type = reader["type"].ToString(),
+                        Image = reader["img"].ToString(),
+                        ImageSrc = "~/assets/images/" + reader["img"].ToString(),
                     });
                 }
             }
@@ -94,6 +104,8 @@ namespace WebBanLaptop.DAO
             {
                 while (reader.Read())
                 {
+                    string oldPrice = reader["oldPrice"].ToString();
+
                     products.Add(new Product()
                     {
                         Id = int.Parse(reader["id"].ToString()),
@@ -101,9 +113,13 @@ namespace WebBanLaptop.DAO
                         Price = int.Parse(reader["price"].ToString()),
                         Description = reader["description"].ToString(),
                         Quantity = int.Parse(reader["quantity"].ToString()),
-                        CategoryId = int.Parse(reader["category_id"].ToString()),
                         Status = int.Parse(reader["status"].ToString()),
                         Brand = reader["brand"].ToString(),
+                        Image = reader["img"].ToString(),
+                        Cpu = reader["cpu"].ToString(),
+                        Gpu = reader["hardDrive"].ToString(),
+                        Ram = reader["ram"].ToString(),
+                        OldPrice = oldPrice == "" ? int.Parse(reader["price"].ToString()) : int.Parse(oldPrice),
 
                     });
                 }
@@ -133,21 +149,33 @@ namespace WebBanLaptop.DAO
             return pageable;
         }
 
-        public int insertProduct(int category_id,string name,string slug,int price,int quantity,string description)
+        public int insertProduct(string name,string slug,int price,int quantity,string description,string brand,
+            float oldPrice,string cpu,string ram,string hardDrive,float weight,string screen,string type,string image)
         {
             int product_id;
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
 
-            string strQuery = "insert into tbl_product values(@category_id,@name,@slug,@price,@quantity,@description,@status) Select Scope_Identity()";
+            string strQuery = "insert into tbl_product values(@name,@slug,@price,@quantity," +
+                "@description,@status,@brand,@oldPrice,@cpu,@ram,@hardDrive,@weight,@screen,@type,@image) " +
+                "Select Scope_Identity()";
             SqlCommand cmd = new SqlCommand(strQuery);
-            cmd.Parameters.AddWithValue("@category_id", category_id);
             cmd.Parameters.AddWithValue("@slug", slug);
             cmd.Parameters.AddWithValue("@price", price);
             cmd.Parameters.AddWithValue("@quantity", quantity);
             cmd.Parameters.AddWithValue("@description", description);
             cmd.Parameters.AddWithValue("@status", 1);
             cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@brand", brand);
+            cmd.Parameters.AddWithValue("@cpu", cpu);
+            cmd.Parameters.AddWithValue("@oldPrice", oldPrice);
+            cmd.Parameters.AddWithValue("@ram", ram);
+            cmd.Parameters.AddWithValue("@hardDrive", hardDrive);
+            cmd.Parameters.AddWithValue("@weight", weight);
+            cmd.Parameters.AddWithValue("@screen", screen);
+            cmd.Parameters.AddWithValue("@type", type);
+            cmd.Parameters.AddWithValue("@image", image);
+
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             con.Open();
@@ -167,28 +195,124 @@ namespace WebBanLaptop.DAO
             {
                 if (reader.Read())
                 {
-                    product.Id = Convert.ToInt32(reader["id"]);
-                    product.Name = Convert.ToString(reader["name"]);
-                    product.CategoryId = Convert.ToInt32(reader["category_id"]);
-                    product.Price = Convert.ToInt32(reader["price"]);
-                    product.Quantity = Convert.ToInt32(reader["quantity"]);
-                    product.Status = Convert.ToInt32(reader["status"]);
-                    product.Description = Convert.ToString(reader["description"]);
-                    product.Slug = Convert.ToString(reader["slug"]);
+                    string oldPrice = reader["oldPrice"].ToString();
+                    product.Id = int.Parse(reader["id"].ToString());
+                    product.Name = reader["name"].ToString();
+                    product.Price = int.Parse(reader["price"].ToString());
+                    product.Description = reader["description"].ToString();
+                    product.Quantity = int.Parse(reader["quantity"].ToString());
+                    product.Status = int.Parse(reader["status"].ToString());
+                    product.Brand = reader["brand"].ToString();
+                    product.Image = reader["img"].ToString();
+                    product.Cpu = reader["cpu"].ToString();
+                    product.Gpu = reader["hardDrive"].ToString();
+                    product.Ram = reader["ram"].ToString();
+                    product.OldPrice = oldPrice == "" ? int.Parse(reader["price"].ToString()) : int.Parse(oldPrice);
+                    product.Screen = reader["screen"].ToString();
+                    product.Image = reader["img"].ToString();
+
                 }
                 return product;
             }
             else { return null; }
         }
-        public bool updateProduct(string id, int category_id, string name, int price, int quantity, string description)
+        public List<Product> getProductByName(string name)
+        {
+            List<Product> products = new List<Product>();
+            string strcon = Config.getConnectionString();
+            SqlConnection con = new SqlConnection(strcon);
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = $@"SELECT * FROM tbl_product where name Like '%{name}%'";
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader != null && reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Product product = new Product();
+                    product.Id = Convert.ToInt32(reader["id"]);
+                    product.Name = Convert.ToString(reader["name"]);
+                    product.Price = Convert.ToInt32(reader["price"]);
+                    product.Quantity = Convert.ToInt32(reader["quantity"]);
+                    product.Status = Convert.ToInt32(reader["status"]);
+                    product.Description = Convert.ToString(reader["description"]);
+                    product.Slug = Convert.ToString(reader["slug"]);
+                    product.Image = Convert.ToString(reader["img"]);
+                    product.Brand = Convert.ToString(reader["brand"]);
+
+                    product.Brand = Convert.ToString(reader["brand"]);
+                    product.Cpu = Convert.ToString(reader["cpu"]);
+                    product.Ram = Convert.ToString(reader["ram"]);
+                    product.Gpu = Convert.ToString(reader["hardDrive"]);
+                    product.Screen = Convert.ToString(reader["screen"]);
+                    product.Type = Convert.ToString(reader["type"]);
+                    product.OldPrice =Convert.ToInt32(reader["oldPrice"].ToString() == "" ? reader["price"] : reader["oldPrice"]);
+                    product.Weight = (float)Convert.ToDouble(reader["weight"]);
+                    products.Add(product);
+
+                }
+                return products;
+            }
+            else { return null; }
+        }
+        public List<Product> getProductByType(string type)
+        {
+            List<Product> products = new List<Product>();
+            string strcon = Config.getConnectionString();
+            SqlConnection con = new SqlConnection(strcon);
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = $@"SELECT top 5 * FROM tbl_product where type Like '%{type}%'";
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader != null && reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Product product = new Product();
+                    product.Id = int.Parse(reader["id"].ToString());
+                    product.Name = reader["name"].ToString();
+                    product.Price = int.Parse(reader["price"].ToString());
+                    product.Description = reader["description"].ToString();
+                    product.Quantity = int.Parse(reader["quantity"].ToString());
+                    product.Status = int.Parse(reader["status"].ToString());
+                    product.Brand = reader["brand"].ToString();
+                    product.Image = reader["img"].ToString();
+                    product.Cpu = reader["cpu"].ToString();
+                    product.Gpu = reader["hardDrive"].ToString();
+                    product.Ram = reader["ram"].ToString();
+                    product.OldPrice = int.Parse(reader["oldPrice"].ToString());
+
+                    products.Add(product);
+                }
+                return products;
+            }
+            else { return null; }
+        }
+        public bool updateProduct(int id, string name, int price, int quantity, string description, string brand,
+            float oldPrice, string cpu, string ram, string hardDrive, float weight, string screen, string type, string img)
         {
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
 
-            string strQuery = $@"update tbl_product set name='{name}', category_id = {category_id}, price = {price}, quantity = {quantity}, description = '{description}' where id = {id}";
-            SqlCommand cmd = new SqlCommand(strQuery);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con;
+            SqlCommand cmd = new SqlCommand("UpdateProductByID", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@price", price);
+            cmd.Parameters.AddWithValue("@quantity", quantity);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@brand", brand);
+            cmd.Parameters.AddWithValue("@oldPrice", oldPrice);
+            cmd.Parameters.AddWithValue("@cpu", cpu);
+            cmd.Parameters.AddWithValue("@ram", ram);
+            cmd.Parameters.AddWithValue("@hardDrive", hardDrive);
+            cmd.Parameters.AddWithValue("@weight", weight);
+            cmd.Parameters.AddWithValue("@screen", screen);
+            cmd.Parameters.AddWithValue("@type", type);
+            cmd.Parameters.AddWithValue("@img", img);
+
             try
             {
                 con.Open();
@@ -243,7 +367,7 @@ namespace WebBanLaptop.DAO
                 return false;
             }
         }
-        public bool deleteImages(string product_id)
+        public bool deleteImages(int product_id)
         {
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);

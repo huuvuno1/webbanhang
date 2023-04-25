@@ -8,6 +8,9 @@
     height: 100%;
     display: none;
 }
+.img{
+    width:100px;
+}
 @keyframes modalFadeIn {
   from {
     transform: translateY(-100px);
@@ -21,14 +24,17 @@
 }
 .wrapper-modal {
   animation: modalFadeIn ease 0.4s;
-  width: 900px;
+  max-width: 900px;
   display: flow-root;
   background-color: #fff;
   margin: 200px auto;
   position: relative;
 }
+.modal-cart--table{
+    width:100%;
+}
 .table-header {
-  background-color: #f0f0f0;
+    background-color: #f0f0f0;
 }
 .nameProd {
   color: red;

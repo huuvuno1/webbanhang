@@ -1,5 +1,8 @@
 ﻿body {
 }
+#GridView1 tr:hover {
+    background-color: none !important;
+}
 
 .txtTitle {
     font-size: 40px !important;
@@ -48,6 +51,16 @@
     box-sizing: border-box;
     box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+.des {
+    display: block;
+    display: -webkit-box;
+    font-size: 16px;
+    -webkit-line-clamp: 3; /* số dòng hiển thị */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 10px;
+}
 
 .btnDelete {
     background-color: red;
@@ -59,4 +72,11 @@
 
 .btn {
     display: flex;
+}
+
+#GridView1 tr:hover {
+    background-color: #284775;
+}
+.item-image {
+    height: 90px;
 }

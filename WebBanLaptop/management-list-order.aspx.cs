@@ -18,9 +18,7 @@ namespace WebBanLaptop
             {
                 if (!Page.IsPostBack)
                 {
-                    orderDAO = new OrderDAO();
-                    GridView1.DataSource = orderDAO.getOrders();
-                    GridView1.DataBind();
+                    BindData();
                 }
             }
             else
@@ -31,7 +29,8 @@ namespace WebBanLaptop
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            GridView1.PageIndex = e.NewPageIndex;
+            BindData();
         }
 
         protected void Confirm_Click(object sender, EventArgs e)
@@ -50,6 +49,12 @@ namespace WebBanLaptop
                 form1.InnerText = "loi!";
             }
 
+        }
+        protected void BindData()
+        {
+            orderDAO = new OrderDAO();
+            GridView1.DataSource = orderDAO.getOrders();
+            GridView1.DataBind();
         }
     }
 }

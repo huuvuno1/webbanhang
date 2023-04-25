@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -16,8 +17,9 @@ namespace WebBanLaptop.DAO
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
             con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = $@"SELECT * FROM tbl_order_detail WHERE order_id = {order_id}";
+            SqlCommand cmd = new SqlCommand("getOrderDetail", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@order_id", order_id);
 
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader != null && reader.HasRows)
@@ -31,6 +33,7 @@ namespace WebBanLaptop.DAO
                         Price = int.Parse(reader["price"].ToString()),
                         Quantity = int.Parse(reader["quantity"].ToString()),
                         OrderId = int.Parse(reader["order_id"].ToString()),
+                        ProductName = reader["name_product"].ToString(),
                     });
                 }
             }
