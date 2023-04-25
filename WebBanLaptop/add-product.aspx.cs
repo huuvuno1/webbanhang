@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebBanLaptop.DAO;
+using WebBanLaptop.Utils;
 
 namespace WebBanLaptop
 {
@@ -17,6 +18,8 @@ namespace WebBanLaptop
         {
             if ((bool)Session["admin"])
             {
+                brand.DataSource = Constant.Brands.Select(x => new { Value = x });
+                brand.DataBind();
                 return;
             }
             else
@@ -35,7 +38,7 @@ namespace WebBanLaptop
             int priceProduct = Int32.Parse(price.Text);
             int quantityProduct = Int32.Parse(quantity.Text);
             string descriptionProduct = Request.Form["description"];
-            string brandProduct = brand.Text;
+            string brandProduct = brand.SelectedValue;
             float oldprice = float.Parse(oldPrice.Text);
             string CPU = cpu.Text;
             string RAM = ram.Text;

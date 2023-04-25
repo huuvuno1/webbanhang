@@ -69,7 +69,7 @@
                     <tr>
                         <td class="label-login">Brand:</td>
                         <td>
-                            <asp:TextBox ID="brand" runat="server" CssClass="txtQuan" placeholder="Nhập brand"></asp:TextBox>
+                            <asp:DropDownList ID="brand" runat="server" DataTextField="Value" DataValueField="Value" Height="48px"></asp:DropDownList>
                         </td>
                         <td></td>
                     </tr>
