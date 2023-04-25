@@ -1,35 +1,36 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Common.Master" AutoEventWireup="true" CodeBehind="product-detail.aspx.cs" Inherits="WebBanLaptop.product_detail"
-  %>
-<asp:Content ID="Header1" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
+﻿<%@ Page Language="C#" MasterPageFile="~/Common.Master" AutoEventWireup="true" CodeBehind="product-detail.aspx.cs"
+  Inherits="WebBanLaptop.product_detail" %>
+  <asp:Content ID="Header1" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
     <link rel="stylesheet" href="/assets/css/productDetailCss.css" />
     <link rel="stylesheet" href="/assets/css/modalCart.css" />
 
-</asp:Content>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  </asp:Content>
+  <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="flex">
-        <h1 style="margin-top: 16px; margin-right: 10px;">Sản phẩm > </h1>
-        <h1 style="color: red; margin-top: 16px;" id="productName" runat="server"></h1>
-        <input id="product_id" runat="server" hidden="hidden" class="ContentPlaceHolder1_product_id" />
+      <h1 style="margin-top: 16px; margin-right: 10px;">Sản phẩm > </h1>
+      <h1 style="color: red; margin-top: 16px;" id="productName" runat="server"></h1>
+      <input id="product_id" runat="server" hidden="hidden" class="ContentPlaceHolder1_product_id" />
     </div>
     <div class="product__detail" style="margin-top: 12px;">
       <div class="detail__container">
         <div class="detail__media">
           <div class="detail__media--src">
-            <iframe class="detail-img 1 active" width='100%' height='100%'
-              src='https://www.youtube.com/embed/kT3j7VjHgqw' frameborder='0' allowfullscreen></iframe>
-            <img src="/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" alt="img" class="detail-img 2">
+            <iframe class="detail-img 1" width='100%' height='100%' src='https://www.youtube.com/embed/kT3j7VjHgqw'
+              frameborder='0' allowfullscreen></iframe>
+
+            <asp:Image ID="ImageDetail" CssClass="detail-img 2 active" runat="server" />
             <img src="/assets/images/2463-laptopaz-hp-victus-15-3.webp" alt="img" class="detail-img 3">
             <img src="/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" alt="img" class="detail-img 4">
             <img src="/assets/images/2463-laptopaz-hp-victus-15-3.webp" alt="img" class="detail-img 5">
           </div>
           <div class="detail__select">
             <div class="select__wrapper">
-              <div onclick="handleChangeImg(this)" data-index="1" class="select-item active">
+              <div onclick="handleChangeImg(this)" data-index="1" class="select-item">
                 <img src="/assets/images/iconVideo.png" alt="videoimg" class="select-item--img" />
               </div>
-              <div onclick="handleChangeImg(this)" data-index="2" class="select-item">
+              <div onclick="handleChangeImg(this)" data-index="2" class="select-item  active">
+                <asp:Image ID="ImageDetail2" CssClass="select-item--img" runat="server" />
 
-                <img src="/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" alt="laptopimg" class="select-item--img" />
               </div>
               <div onclick="handleChangeImg(this)" data-index="3" class="select-item">
                 <img src="/assets/images/2463-laptopaz-hp-victus-15-3.webp" alt="" class="select-item--img" />
@@ -47,12 +48,12 @@
         <div class="detail__action">
           <div class="detail-price--box">
             <div class="detail-price--top">
-                <span class="special-price" id="price" runat="server">16.900.000Đ</span>
-                <span class="special-price">₫</span>
+              <span class="special-price" id="price" runat="server">16.900.000Đ</span>
+              <span class="special-price">₫</span>
 
             </div>
-            <div class="detail-price--bottom"><span class="old-price">Giá thị trường <del
-                  class="old-price--value">21.000.000Đ</del>
+            <div class="detail-price--bottom"><span class="old-price">Giá thị trường <del class="old-price--value"
+                  id="oldPrice" runat="server" />
               </span>
               <span class="save-price">Tiết kiệm <del class="save-prive--value">
                   4.900.000Đ
@@ -72,7 +73,7 @@
           <div class="quan">
             <div class="quan__select">
               <span onclick="handleChangeQuantity(-1)" class="quan__select-sub">-</span>
-              <input type="text" class="quan__select-value" value="1" name="txtQuantity" id="quantity"/>
+              <input type="text" class="quan__select-value" value="1" name="txtQuantity" id="quantity" />
               <span onclick="handleChangeQuantity(1)" class="quan__select-add">+</span>
             </div>
             <div class="addToCart">
@@ -123,10 +124,11 @@
           </div>
           <div class="des-contents">
             <div class="des-item">
-              <p class="des-item--title">Đánh giá chi tiết Laptop Gaming HP Victus 15</p>
-              <p class="des-item--text">Với thiết kế tinh tế, phần cứng hoàn thiện tuyệt vời, cấu hình hấp dẫn cùng mức
-                giá chỉ ở ngưỡng tầm trung; HP Victus 15 sẽ phù hợp với game thủ, người làm multimedia,… với hầu bao vừa
-                phải nhưng vẫn muốn có được trải nghiệm sát nhất có thể so với các sản phẩm cao cấp. </p>
+              <p class="des-item--title">Đánh giá chi tiết <span class="des-item--title" id="name" runat="server" />.
+              </p>
+              <p class="des-item--text">
+                <%# Eval("Des") %>
+              </p>
             </div>
             <div class="des-item">
               <p class="des-item--title">Thiết kế đơn giản, mang âm hưởng từ dòng Omen cao cấp </p>
@@ -173,41 +175,30 @@
             <table class="parameter-table" border="1px">
               <tr>
                 <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                <td class="td-value" id="cpu" runat="server"></td>
               </tr>
               <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                <td class="td-title">RAM</td>
+                <td class="td-value" id="ram" runat="server"></td>
               </tr>
               <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                <td class="td-title">Ổ cứng</td>
+                <td class="td-value" id="gpu" runat="server"></td>
               </tr>
               <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
+                <td class="td-title">Màn hình</td>
+                <td class="td-value" id="screen" runat="server"></td>
               </tr>
-              <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
-              </tr>
-              <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
-              </tr>
-              <tr>
-                <td class="td-title">CPU</td>
-                <td class="td-value">Core i5 12450H (8 Core, 12 Threards, 12MB Cache, 3.30 GHz up to 4.40 GHz)</td>
-              </tr>
+
 
             </table>
           </div>
         </div>
       </div>
     </div>
-  
-  
-</asp:Content>
 
-<asp:Content ID="Script1" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">
-</asp:Content>
+
+  </asp:Content>
+
+  <asp:Content ID="Script1" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">
+  </asp:Content>

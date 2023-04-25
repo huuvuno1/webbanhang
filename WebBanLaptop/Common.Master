@@ -6,9 +6,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Web bán Laptop</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/product.css" />
+    <link rel="stylesheet" href="/assets/css/search.css" />
+    <link rel="stylesheet" href="/assets/css/modalCart.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -21,22 +23,38 @@
         <div class="header__wrapper w-1200 flex justify-between flex justify-between mx-auto">
             <div class="header__logo">logo</div>
             <div class="header__search flex item-center relative">
-                <input id="txtSearch" name="txtSearch" />
+                <input id="txtSearch" oninput="search()" name="txtSearch" />
                 <img class="header__search--icon absolute cursor-pointer" src="/assets/images/search.svg" />
+                <div class="search"></div>
             </div>
+            <script>
+                function search() {
+                    // change url
+                    const value = document.getElementById('txtSearch').value;
+
+                    const xhr = new XMLHttpRequest()
+                    xhr.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.querySelector('.search').innerHTML = xhr.responseText;
+                        }
+                    }
+                    xhr.open('get', '/Api/Search.aspx?name=' + value)
+                    xhr.send()
+                }
+
+            </script>
             <div class="header__contact flex justify-center flex-col">
                 <div class="bold text-red">HOTLINE: 0945.364.296 - 0910.101.101</div>
                 <div class="mt-5 text-red">Số 96 Định Công, Hoàng Mai, TP Hà Nội</div>
             </div>
             <div class="header__cart flex item-center">
                 <div class="header__cart--wraper round-full relative flex item-center justify-center" id="cartBtn">
-                    <img style="width: 40%;" src="assets/images/cart.png" />
-                    <div class="header__cart--quantity absolute round-full bold" id="countCart">
-                        0
-                    </div>
+                        <img style="width: 40%;" src="/assets/images/cart.png" />
+                        <div class="header__cart--quantity absolute round-full bold" id="countCart">
+                            0
+                        </div>
                 </div>
-            </div>
-        </div>
+                </div>
     </header>
 
     <div class="container w-1200 mx-auto">
@@ -139,6 +157,7 @@
             </div>
         </div>
     </footer>
+
 
     <div class="modal-cart">
         <div class="wrapper-modal js-close" style="margin-top: 100px;">

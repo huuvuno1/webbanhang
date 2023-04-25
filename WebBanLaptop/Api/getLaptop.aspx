@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FilterProduct.aspx.cs" Inherits="WebBanLaptop.Api.FilterProduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="getLaptop.aspx.cs" Inherits="WebBanLaptop.Api.getLaptop" %>
 
 <asp:Repeater id="productsRepeater" runat="server">
     <itemtemplate>
-        <a href='product-detail.aspx?id=<%# Eval("Id") %>' class="product product__normal">
+        <a href="product-detail.aspx" class="product product__normal">
             <div class="product__img product__img--link flex justify-center">
                 <img class="categoryProduct__img--src" src="<%#Eval("Image") %>" alt="laptop">
             </div>
@@ -38,11 +38,3 @@
     </itemtemplate>
 
 </asp:Repeater>
-|
-<div class="paging-item"><<</div>
-<asp:Repeater id="RepeaterPaging" runat="server">
-    <itemtemplate>
-        <div onclick='gotoPage(<%#Eval("pageNumber") %>)' class="paging-item"><%#Eval("pageNumber") %></div>
-    </itemtemplate>
-</asp:Repeater>
-<div class="paging-item">>></div>

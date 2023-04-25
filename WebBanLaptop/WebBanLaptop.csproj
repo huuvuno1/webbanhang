@@ -69,6 +69,8 @@
     <Content Include="add-product.aspx" />
     <Content Include="admin-management.aspx" />
     <Content Include="Api\FilterProduct.aspx" />
+    <Content Include="Api\getLaptop.aspx" />
+    <Content Include="Api\Search.aspx" />
     <Content Include="Api\UpdateCart.aspx" />
     <Content Include="assets\css\add-categoryCss.css" />
     <Content Include="assets\css\add-productCss.css" />
@@ -79,6 +81,7 @@
     <Content Include="assets\css\management-list-productCss.css" />
     <Content Include="assets\css\product.css" />
     <Content Include="assets\css\productDetailCss.css" />
+    <Content Include="assets\css\search.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\images\2463-laptopaz-hp-victus-15-1s-1.webp" />
     <Content Include="assets\images\2463-laptopaz-hp-victus-15-3.webp" />
@@ -89,6 +92,7 @@
     <Content Include="assets\images\laptop_white_new.webp" />
     <Content Include="assets\images\search.svg" />
     <Content Include="assets\js\admin.js" />
+    <Content Include="assets\js\index.js" />
     <Content Include="assets\js\category.js" />
     <Content Include="assets\js\form.js" />
     <Content Include="assets\js\productDetailJs.js" />
@@ -139,6 +143,20 @@
     <Compile Include="Api\FilterProduct.aspx.designer.cs">
       <DependentUpon>FilterProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Api\getLaptop.aspx.cs">
+      <DependentUpon>getLaptop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Api\getLaptop.aspx.designer.cs">
+      <DependentUpon>getLaptop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+	  <Compile Include="Api\Search.aspx.designer.cs">
+		  <DependentUpon>Search.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="Api\UpdateCart.aspx.cs">
       <DependentUpon>UpdateCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

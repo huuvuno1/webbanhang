@@ -90,14 +90,14 @@ wapperModal.addEventListener("click", (event) => {
 });
 
 
-document.querySelector('.quan__select-value').addEventListener('keydown', (e) => {
+document.querySelector('.quan__select-value')?.addEventListener('keydown', (e) => {
     const isNumber = /^[0-9]$/i.test(event.key)
     if (!isNumber && e.key !== 'Backspace') {
         e.preventDefault();
     }
 })
 
-document.querySelector('.quan__select-value').addEventListener('change', e => {
+document.querySelector('.quan__select-value')?.addEventListener('change', e => {
     if (e.target.value.length === 0) {
         e.target.value = '1'
     }
