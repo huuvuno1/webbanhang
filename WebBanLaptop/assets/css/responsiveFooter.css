@@ -1,0 +1,17 @@
+﻿@media screen and (max-width: 1120px){
+
+	.footer__info1{
+		display:none;
+	}
+	.footer__top{
+		justify-content:space-around;
+	}
+}
+@media screen and (max-width: 755px) {
+	
+
+
+	.footer__top {
+		display:none;
+	}
+}

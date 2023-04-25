@@ -7,12 +7,12 @@
   border-radius: 3px;
 }
 .product__img--src {
-    width: 205px;
+    max-width: 205px;
     height: 205px;
 }
 .categoryProduct__img--src {
     height: 205px;
-    width:250px;
+    max-width:250px;
 }
 
 .product:hover {

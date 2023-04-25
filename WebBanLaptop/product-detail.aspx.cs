@@ -31,6 +31,10 @@ namespace WebBanLaptop
             ram.InnerText = data.Ram.ToString();
             gpu.InnerText = data.Gpu.ToString();
             screen.InnerText = data.Screen.ToString();
+            cpu1.InnerText = data.Cpu.ToString();
+            ram1.InnerText = data.Ram.ToString();
+            gpu1.InnerText = data.Gpu.ToString();
+            screen1.InnerText = data.Screen.ToString();
             ImageDetail.ImageUrl = data.Image.ToString();
             ImageDetail2.ImageUrl = data.Image.ToString();
             

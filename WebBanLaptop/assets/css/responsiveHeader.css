@@ -1,0 +1,21 @@
+﻿@media screen and (max-width: 1120px){
+	
+	.header__contact{
+		display:none;
+	}
+	.header__wrapper{
+		justify-content:space-between;
+	}
+}
+@media screen and (max-width: 660px) {
+	.header__logo{
+		display:none;
+	}
+	.header__contact {
+		display: none;
+	}
+
+	.header__wrapper {
+		justify-content: space-around;
+	}
+}

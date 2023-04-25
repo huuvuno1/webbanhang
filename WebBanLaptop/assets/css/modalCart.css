@@ -24,7 +24,7 @@
 }
 .wrapper-modal {
   animation: modalFadeIn ease 0.4s;
-  width: 900px;
+  max-width: 900px;
   display: flow-root;
   background-color: #fff;
   margin: 200px auto;

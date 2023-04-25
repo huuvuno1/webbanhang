@@ -1,0 +1,13 @@
+﻿.product{
+    min-width:212px;
+}
+
+@media screen and (max-width: 1150px) {
+   
+
+    .frame__list--product
+     {
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+}
