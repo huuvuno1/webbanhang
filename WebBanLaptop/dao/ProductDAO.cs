@@ -45,7 +45,7 @@ namespace WebBanLaptop.DAO
                         CPU = reader["cpu"].ToString(),
                         RAM = reader["ram"].ToString(),
                         CategoryName = reader["name_category"].ToString(),
-                        OldPrice = float.Parse(reader["oldPrice"].ToString(), CultureInfo.InvariantCulture),
+                        OldPrice = int.Parse(reader["oldPrice"].ToString(), CultureInfo.InvariantCulture),
                         HardDrive = reader["hardDrive"].ToString(),
                         Weight = float.Parse(reader["weight"].ToString(), CultureInfo.InvariantCulture),
                         Screen = reader["screen"].ToString(),
@@ -104,6 +104,8 @@ namespace WebBanLaptop.DAO
             {
                 while (reader.Read())
                 {
+                    string oldPrice = reader["oldPrice"].ToString();
+
                     products.Add(new Product()
                     {
                         Id = int.Parse(reader["id"].ToString()),
@@ -118,7 +120,7 @@ namespace WebBanLaptop.DAO
                         Cpu = reader["cpu"].ToString(),
                         Gpu = reader["hardDrive"].ToString(),
                         Ram = reader["ram"].ToString(),
-                        OldPrice = int.Parse(reader["oldPrice"].ToString()),
+                        OldPrice = oldPrice == "" ? int.Parse(reader["price"].ToString()) : int.Parse(oldPrice),
 
                     });
                 }
@@ -194,6 +196,7 @@ namespace WebBanLaptop.DAO
             {
                 if (reader.Read())
                 {
+                    string oldPrice = reader["oldPrice"].ToString();
                     product.Id = int.Parse(reader["id"].ToString());
                     product.Name = reader["name"].ToString();
                     product.Price = int.Parse(reader["price"].ToString());
@@ -206,7 +209,7 @@ namespace WebBanLaptop.DAO
                     product.Cpu = reader["cpu"].ToString();
                     product.Gpu = reader["hardDrive"].ToString();
                     product.Ram = reader["ram"].ToString();
-                    product.OldPrice = int.Parse(reader["oldPrice"].ToString());
+                    product.OldPrice = oldPrice == "" ? int.Parse(reader["price"].ToString()) : int.Parse(oldPrice);
                     product.Screen = reader["screen"].ToString();
 
                 }
@@ -245,7 +248,7 @@ namespace WebBanLaptop.DAO
                     product.HardDrive = Convert.ToString(reader["hardDrive"]);
                     product.Screen = Convert.ToString(reader["screen"]);
                     product.Type = Convert.ToString(reader["type"]);
-                    product.OldPrice = (float)Convert.ToDouble(reader["oldPrice"]);
+                    product.OldPrice =Convert.ToInt32(reader["oldPrice"].ToString() == "" ? reader["price"] : reader["oldPrice"]);
                     product.Weight = (float)Convert.ToDouble(reader["weight"]);
                     products.Add(product);
 

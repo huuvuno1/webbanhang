@@ -2,7 +2,7 @@
 
 <asp:Repeater id="productsRepeater" runat="server">
     <itemtemplate>
-        <a href="product-detail.aspx" class="product product__normal">
+        <a href='product-detail.aspx?id=<%# Eval("Id") %>' class="product product__normal">
             <div class="product__img product__img--link flex justify-center">
                 <img class="categoryProduct__img--src" src="<%#Eval("Image") %>" alt="laptop">
             </div>

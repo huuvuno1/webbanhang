@@ -16,14 +16,15 @@ namespace WebBanLaptop.Api
         protected void Page_Load(object sender, EventArgs e)
         {
             string name = Request.QueryString["name"];
-           
+            if (String.IsNullOrEmpty(name))
+            {
+                Response.Write("");
+                return;
+            }
             
             var pageable = productDAO.getProductByName(name);
             searchRepeter.DataSource = pageable;
             searchRepeter.DataBind();
-
-
-       
         }
     }
 }

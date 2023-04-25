@@ -25,49 +25,19 @@ namespace WebBanLaptop.Model
         public string Cpu { get; internal set; }
         public string Gpu { get; internal set; }
         public string Ram { get; internal set; }
-        public int OldPrice { get; internal set; }
         public string Screen { get; internal set; }
 
-        public Product(int id, string name, string description, int price, int category_id, int quantity, int status, string slug, string brand,string image,string cpu,string gpu,string ram,int oldPrice ,string screen)
-        public float OldPrice { get; set; }
+        public int OldPrice { get; set; }
         public string CPU { get; set; }
         public string RAM { get; set; }
         public string HardDrive { get; set; }
         public float Weight { get; set; }
-        public string Screen { get; set; }
         public string Type { get; set; }
         [NotMapped]
         public string CategoryName { get; set; }
         public Category Category { get; set; }
 
-        public Product(int id, string name, string description, int price, int category_id, int quantity, int status, 
-            string slug, string category_name, string brand, float oldPrice, string cPU, string rAM, string hardDrive, float weight, string screen, string type)
-        {
-            Id = id;
-            Name = name;
-            Description = description;
-            Price = price;  
-            CategoryId = category_id;
-            Quantity = quantity;
-            Status = status;
-            Slug = slug;
-            Brand= brand;
-            Image = image;
-            Cpu = cpu;
-                Gpu = gpu;
-            Ram = ram;
-            OldPrice = oldPrice;
-            Screen = screen;
-            Brand = brand;
-            CategoryName = category_name;
-            OldPrice = oldPrice;
-            CPU = cPU;
-            RAM = rAM;
-            HardDrive = hardDrive;
-            Weight = weight;
-            Screen = screen;
-            Type = type;
-        }
+        
 
         public Product()
         {

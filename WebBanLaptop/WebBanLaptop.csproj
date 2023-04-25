@@ -154,8 +154,9 @@
       <DependentUpon>Search.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Api\Search.aspx.designer.cs">
-      <DependentUpon>Search.aspx</DependentUpon>
+	  <Compile Include="Api\Search.aspx.designer.cs">
+		  <DependentUpon>Search.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="Api\UpdateCart.aspx.cs">
       <DependentUpon>UpdateCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
