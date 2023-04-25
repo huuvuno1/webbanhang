@@ -12,6 +12,7 @@ namespace WebBanLaptop.Model
         public int Quantity { get; set; }
         public int Price { get; set; }
         public int TotalPrice { get; set; }
+        public string Image { get; set; }
 
         public Cart()
         {

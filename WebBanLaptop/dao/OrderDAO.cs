@@ -11,6 +11,7 @@ namespace WebBanLaptop.DAO
 {
     public class OrderDAO
     {
+        OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
         public List<Order> getOrders()
         {
             List<Order> orders = new List<Order>();
@@ -114,5 +115,34 @@ namespace WebBanLaptop.DAO
             else { return null; }
         }
 
+
+        public void createOrder(ref Order order, List<Cart> carts)
+        {
+            string conn = Config.getConnectionString();
+            SqlConnection con = new SqlConnection(conn);
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = @"INSERT INTO tbl_order(email, phone_number, customer_name, address, delivery_status, note)
+                VALUES(@email, @phone_number, @customer_name, @address, @delivery_status, @note);
+                Select Scope_Identity()";
+
+            cmd.Parameters.AddWithValue("@email", order.Email);
+            cmd.Parameters.AddWithValue("@phone_number", order.NumberPhone);
+            cmd.Parameters.AddWithValue("@customer_name", order.CustomerName);
+            cmd.Parameters.AddWithValue("@address", order.Address);
+            cmd.Parameters.AddWithValue("@delivery_status", 0);
+            cmd.Parameters.AddWithValue("@note", order.Note);
+            int order_id = int.Parse(cmd.ExecuteScalar().ToString());
+            order.Id = order_id;
+
+            carts.ForEach(cart =>
+            {
+                orderDetailDAO.SaveOrderDetail(order_id, cart);
+            });
+
+            con.Close();
+        }
+        
     }
 }
