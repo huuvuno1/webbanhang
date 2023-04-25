@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="/assets/css/product.css" />
     <link rel="stylesheet" href="/assets/css/search.css" />
     <link rel="stylesheet" href="/assets/css/modalCart.css" />
+    <link rel="stylesheet" href="/assets/css/modalCartResponsive.css" />
+    <link rel="stylesheet" href="/assets/css/responsiveHeader.css" />
+    <link rel="stylesheet" href="/assets/css/responsiveFooter.css" />
+    <link rel="stylesheet" href="/assets/css/responsiveNav.css" />
+    <link rel="stylesheet" href="/assets/css/frameListProductResponsive.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -83,13 +88,14 @@
                 <img src="/assets/images/laptop_white_new.webp" alt="" class="nav__item--image mx-auto" />
                 <a href="/category.aspx?type=laptop-surface" class="nav__item--link">LAPTOP SURFACE </a>
             </div>
+            
         </nav>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </div>
     <footer class="bg-white">
         <div class="footer__top w-1200 mx-auto flex justify-between">
-            <div class="footer__info">
+            <div class="footer__info1">
                 <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
                 <div class="mb-10">
                     <h2 class="footer__info--title">Địa chỉ</h2>
@@ -108,7 +114,7 @@
                     <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
                 </div>
             </div>
-            <div class="footer__info">
+            <div class="footer__info2">
                 <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
                 <div class="mb-10">
                     <h2 class="footer__info--title">Địa chỉ</h2>
@@ -127,7 +133,7 @@
                     <span class="ml-5">Số 96 Định Công, Q. Hoàng Mai, TP. Hà Nội</span>
                 </div>
             </div>
-            <div class="footer__info">
+            <div class="footer__info3">
                 <h1 class="footer__info--name mb-10">CÔNG TY TNHH BAI TAP LON</h1>
                 <div class="mb-10">
                     <h2 class="footer__info--title">Địa chỉ</h2>

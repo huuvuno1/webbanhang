@@ -78,12 +78,17 @@
     <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\category.css" />
     <Content Include="assets\css\checkout.css" />
+    <Content Include="assets\css\frameListProductResponsive.css" />
     <Content Include="assets\css\login.css" />
     <Content Include="assets\css\management-list-categoryCss.css" />
     <Content Include="assets\css\management-list-productCss.css" />
     <Content Include="assets\css\order_lookup.css" />
     <Content Include="assets\css\product.css" />
+    <Content Include="assets\css\productDetailCssResponsive.css" />
     <Content Include="assets\css\productDetailCss.css" />
+    <Content Include="assets\css\responsiveFooter.css" />
+    <Content Include="assets\css\responsiveNav.css" />
+    <Content Include="assets\css\responsiveHeader.css" />
     <Content Include="assets\css\search.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\images\2463-laptopaz-hp-victus-15-1s-1.webp" />
