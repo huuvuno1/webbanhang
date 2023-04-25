@@ -74,9 +74,11 @@
     <Content Include="assets\css\add-productCss.css" />
     <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\category.css" />
+    <Content Include="assets\css\checkout.css" />
     <Content Include="assets\css\login.css" />
     <Content Include="assets\css\management-list-categoryCss.css" />
     <Content Include="assets\css\management-list-productCss.css" />
+    <Content Include="assets\css\order_lookup.css" />
     <Content Include="assets\css\product.css" />
     <Content Include="assets\css\productDetailCss.css" />
     <Content Include="assets\css\style.css" />
@@ -90,10 +92,12 @@
     <Content Include="assets\images\search.svg" />
     <Content Include="assets\js\admin.js" />
     <Content Include="assets\js\category.js" />
+    <Content Include="assets\js\checkout.js" />
     <Content Include="assets\js\form.js" />
     <Content Include="assets\js\productDetailJs.js" />
     <Content Include="assets\videos\Laptop Gaming HP Victus 2022 15-fa0031dx - 8 nhân 12 luồng siêu khỏe.mp4" />
     <Content Include="category.aspx" />
+    <Content Include="checkout.aspx" />
     <Content Include="delete-product.aspx" />
     <Content Include="edit-category.aspx" />
     <Content Include="edit-product.aspx" />
@@ -152,6 +156,13 @@
     </Compile>
     <Compile Include="category.aspx.designer.cs">
       <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="checkout.aspx.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="checkout.aspx.designer.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common.Master.cs">
       <DependentUpon>Common.Master</DependentUpon>

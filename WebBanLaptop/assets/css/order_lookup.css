@@ -1,0 +1,21 @@
+﻿.order_lookup_container {
+  width: 600px;
+  height: 500px;
+  background-color: white;
+}
+
+.shipper {
+  width: 140px;
+  z-index: 100;
+}
+
+.bg-order-check {
+  background: linear-gradient(to bottom right, #fd2424 37%, #f5f5f5 70%);
+  transform: rotate(50deg);
+  position: absolute;
+  top: -30%;
+  left: -170%;
+  z-index: 2;
+  width: 500px;
+  height: 100%;
+}
