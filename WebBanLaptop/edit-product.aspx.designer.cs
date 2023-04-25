@@ -33,22 +33,31 @@ namespace WebBanLaptop
         protected global::System.Web.UI.WebControls.TextBox name;
 
         /// <summary>
-        /// category control.
+        /// FileUploadTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList category;
+        protected global::System.Web.UI.WebControls.FileUpload FileUploadTitle;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// imagetitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label imagetitle;
+
+        /// <summary>
+        /// imageReview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imageReview;
 
         /// <summary>
         /// UploadImages control.
@@ -102,7 +111,7 @@ namespace WebBanLaptop
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox brand;
+        protected global::System.Web.UI.WebControls.DropDownList brand;
 
         /// <summary>
         /// oldPrice control.

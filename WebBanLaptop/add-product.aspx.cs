@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -18,9 +19,11 @@ namespace WebBanLaptop
         {
             if ((bool)Session["admin"])
             {
-                brand.DataSource = Constant.Brands.Select(x => new { Value = x });
-                brand.DataBind();
-                return;
+                if (!Page.IsPostBack)
+                {
+                    brand.DataSource = Constant.Brands.Select(x => new { Value = x });
+                    brand.DataBind();
+                }
             }
             else
             {
@@ -32,25 +35,30 @@ namespace WebBanLaptop
         protected void Add_Click(object sender, EventArgs e)
         {
             productDAO = new ProductDAO();
-            int categoryId = Int32.Parse(category.SelectedValue);
             string nameProduct = name.Text;
             string slugName = ToStringSlug(nameProduct);
             int priceProduct = Int32.Parse(price.Text);
             int quantityProduct = Int32.Parse(quantity.Text);
             string descriptionProduct = Request.Form["description"];
             string brandProduct = brand.SelectedValue;
-            float oldprice = float.Parse(oldPrice.Text);
+            int oldprice = Int32.Parse(oldPrice.Text);
             string CPU = cpu.Text;
             string RAM = ram.Text;
             string HardDrive = hardDrive.Text;
             float Weight = float.Parse(weight.Text);
             string Screen = screen.Text;
             string Type = type.Text;
+            string img_title ="";
+            if(FileUploadTitle.HasFile)
+            {
+                img_title = Path.GetFileName(FileUploadTitle.PostedFile.FileName);
+                FileUploadTitle.PostedFile.SaveAs(Server.MapPath("~/assets/images/") + img_title);
+            }    
 
-            int product_id = productDAO.insertProduct(categoryId, nameProduct, slugName, priceProduct, quantityProduct,descriptionProduct,brandProduct,oldprice,CPU,RAM,HardDrive,Weight,Screen,Type);
+            int product_id = productDAO.insertProduct(nameProduct, slugName, priceProduct, quantityProduct, descriptionProduct, brandProduct, oldprice, CPU, RAM, HardDrive, Weight, Screen, Type, img_title);
             if (product_id > 0)
             {
-                
+
                 if (UploadImages.HasFiles)
                 {
                     foreach (HttpPostedFile uploadedFile in UploadImages.PostedFiles)
