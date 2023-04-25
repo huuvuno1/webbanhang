@@ -2,6 +2,7 @@
   Inherits="WebBanLaptop.product_detail" %>
   <asp:Content ID="Header1" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
     <link rel="stylesheet" href="/assets/css/productDetailCss.css" />
+    <link rel="stylesheet" href="/assets/css/productDetailCssResponsive.css" />
     <link rel="stylesheet" href="/assets/css/modalCart.css" />
 
   </asp:Content>
@@ -91,7 +92,7 @@
             </div>
           </div>
         </div>
-        <div class="detail__contact">
+        <div class="detail__contact1">
           <div class="detail__contact-text">
             <p class="contact-header">GỌI NGAY ĐỂ CÓ GIÁ TỐT NHẤT</p>
             <p class="contact-content">- Laptopgame bao giá toàn thị trường</p>
@@ -115,8 +116,62 @@
             <a class="contact-hotline--tel" href="tel:+8439929922">0963.446.199</a>
           </div>
         </div>
-
+          
       </div>
+
+        <div class="contactResponsive">
+            <div class="detail__contact2">
+          <div class="detail__contact-text">
+            <p class="contact-header">GỌI NGAY ĐỂ CÓ GIÁ TỐT NHẤT</p>
+            <p class="contact-content">- Laptopgame bao giá toàn thị trường</p>
+            <p class="contact-header">QUÀ TẶNG VÀ KHUYẾN MẠI</p>
+            <p class="contact-content">- Tặng balo,chuột,bàn di, trị giá 650k</p>
+            <p class="contact-content">- Tặng win bản quyền theo máy</p>
+            <p class="contact-content">- Tặng gói cài đặt và vệ sinh trọn đời</p>
+            <p class="contact-content">- Tặng Voucher giảm giá 200k cho lần mua tiếp theo</p>
+            <p class="contact-header">YÊN TÂM MUA HÀNG</p>
+            <p class="contact-content">- Hệ thống mua bán laptop uy tín</p>
+            <p class="contact-content">- Hàng chính hãng nguyên bản 100%</p>
+            <p class="contact-content">- Lỗi đổi mới trong 15 ngày đầu</p>
+            <p class="contact-content">- Trả góp lãi suất 0% qua thẻ visa</p>
+            <p class="contact-content">- Free Ship Nội thành Hà Nội</p>
+            <p class="contact-content">- Ship cod toàn quốc nhận hàng kiểm tra mới thanh toán</p>
+          </div>
+          <div class="detail__contact-hotline">
+            <p class="contact-hotline--title">Gọi điện để được tư vấn:</p>
+            <a class="contact-hotline--tel" href="tel:+8439929922">0963.446.199</a>
+            <span>-</span>
+            <a class="contact-hotline--tel" href="tel:+8439929922">0963.446.199</a>
+          </div>
+        </div>
+            <div class="detail__des-parameter2">
+          <div class="parameter-title">
+            <span class="parameter-title--text">THÔNG SỐ KỸ THUẬT</span>
+          </div>
+          <div class="parameter-content">
+            <table class="parameter-table" border="1px">
+              <tr>
+                <td class="td-title">CPU</td>
+                <td class="td-value" id="cpu1" runat="server"></td>
+              </tr>
+              <tr>
+                <td class="td-title">RAM</td>
+                <td class="td-value" id="ram1" runat="server"></td>
+              </tr>
+              <tr>
+                <td class="td-title">Ổ cứng</td>
+                <td class="td-value" id="gpu1" runat="server"></td>
+              </tr>
+              <tr>
+                <td class="td-title">Màn hình</td>
+                <td class="td-value" id="screen1" runat="server"></td>
+              </tr>
+
+
+            </table>
+          </div>
+              </div>
+        </div>
       <div class="detail__des">
         <div class="detail__des-content">
           <div class="tab-title">
@@ -167,7 +222,7 @@
 
           </div>
         </div>
-        <div class="detail__des-parameter">
+        <div class="detail__des-parameter1">
           <div class="parameter-title">
             <span class="parameter-title--text">THÔNG SỐ KỸ THUẬT</span>
           </div>

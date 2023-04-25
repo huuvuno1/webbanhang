@@ -6,7 +6,7 @@
 
     <div class="trademark">
         <div class="trademark__title">THƯƠNG HIỆU LAPTOP</div>
-        <div class="flex justify-between">
+        <div class="trademark__list flex justify-between">
             <asp:Repeater ID="RepeaterBrand" runat="server">
                 <ItemTemplate>
                     <a href='category.aspx?brands=<%# Eval("Name") %>'
@@ -23,7 +23,7 @@
 
     <div class="trademark">
         <div class="trademark__title">LAPTOP THEO GIÁ</div>
-        <div class="flex justify-between">
+        <div class="trademark__list flex justify-between">
             <asp:Repeater ID="RepeaterPriceRange" runat="server">
                 <ItemTemplate>
                     <a href='/category.aspx?priceRange=<%# Eval("Value") %>'

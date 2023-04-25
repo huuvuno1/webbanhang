@@ -1,0 +1,21 @@
+﻿
+.nav__item{
+	min-width:120px;
+}
+.trademark__item{
+	min-width:145px;
+}
+.trademark__item--name{
+	text-align:center;
+}
+
+@media screen and (max-width: 1120px) {
+	nav {
+		overflow-y: hidden;
+		overflow-x: auto;
+	}
+	.trademark__list {
+		overflow-y: hidden;
+		overflow-x: auto;
+	}
+}
