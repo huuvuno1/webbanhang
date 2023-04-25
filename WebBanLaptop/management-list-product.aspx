@@ -47,12 +47,52 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Phân loại">
                         <ItemTemplate>
-                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("CategoryId") %>'></asp:Label>
+                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("CategoryName") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Mô tả">
                         <ItemTemplate>
                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Description") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Brand">
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Brand") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Gía nhập">
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("OldPrice") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="CPU">
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("CPU") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="RAM">
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("RAM") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="HARD DRIVE">
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("HardDrive") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Cân nặng">
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Weight") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Màn hình">
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Screen") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Loại">
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Type") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Giá tiền">
@@ -67,16 +107,15 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Trạng thái">
                         <ItemTemplate>
-                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Status") %>'></asp:Label>
+                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Status").ToString().Equals ("1") ? "Active" : "Inacrive" %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Action">
-                        <ItemTemplate >
+                        <ItemTemplate>
                             <div class="btn">
-
-                            <a class="btnEdit" href="edit-product.aspx?id=<%# Eval("Id") %>">Edit</a>
-                            <a class="btnDelete"  href="delete-product.aspx?id=<%# Eval("Id") %>">Delete</a>
-                            </div>
+                            <a href="edit-product.aspx?id=<%# Eval("Id") %>">Edit</a>
+                            <asp:LinkButton ID="LinkButton1" runat="server" Text="Delete" CommandArgument='<%# Bind("Id") %>' OnClick="Delete_Click"></asp:LinkButton>
+                        </div>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

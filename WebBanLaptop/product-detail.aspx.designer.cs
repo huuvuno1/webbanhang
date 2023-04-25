@@ -16,6 +16,7 @@ namespace WebBanLaptop
 
         /// <summary>
         /// ImageDetail control.
+        /// productName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -25,12 +26,17 @@ namespace WebBanLaptop
 
         /// <summary>
         /// ImageDetail2 control.
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl productName;
+
+        /// <summary>
+        /// product_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ImageDetail2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText product_id;
 
         /// <summary>
         /// price control.

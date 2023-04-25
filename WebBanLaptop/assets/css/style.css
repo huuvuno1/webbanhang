@@ -136,7 +136,9 @@ body {
 .header__cart--wraper {
   height: 50px;
   width: 50px;
-  background-color: #2a6ffa;
+  background-color: azure;
+  border: 1px solid red;
+  cursor: pointer;
 }
 
 .header__cart--quantity {

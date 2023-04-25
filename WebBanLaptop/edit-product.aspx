@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="container body-content" id="main">
-        <form id="form1" class="layout-form" method="post" runat="server">
+        <form id="form1" class="layout-form" method="post" runat="server" enctype="multipart/form-data" >
             <div>
                 <div class="header-form">
                     <h3>Chỉnh sửa sản phẩm</h3>
@@ -38,7 +38,19 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="label-login">Giá tiền:</td>
+                        <td class="label-login">Hình ảnh:</td>
+                        <td>
+                            <asp:FileUpload runat="server" ID="UploadImages" AllowMultiple="true" />
+                            <asp:Repeater ID="RepeaterImages" runat="server">
+                                <ItemTemplate>
+                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Value") %>'/>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Gía tiền:</td>
                         <td>
                             <asp:TextBox ID="price" CssClass="txtPrice" runat="server" TextMode="Number"></asp:TextBox>
                         </td>
@@ -55,6 +67,62 @@
                         <td class="label-login">Mô tả:</td>
                         <td>
                             <textarea id="description" class="txtDes" name="description" runat="server" style="height: 240px;"></textarea>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Brand:</td>
+                        <td>
+                            <asp:TextBox ID="brand" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Gía ban đầu:</td>
+                        <td>
+                            <asp:TextBox ID="oldPrice" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">CPU:</td>
+                        <td>
+                            <asp:TextBox ID="cpu" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">RAM:</td>
+                        <td>
+                            <asp:TextBox ID="ram" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Hard Drive:</td>
+                        <td>
+                            <asp:TextBox ID="hardDrive" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Cân nặng:</td>
+                        <td>
+                            <asp:TextBox ID="weight" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Màn hình:</td>
+                        <td>
+                            <asp:TextBox ID="screen" runat="server" CssClass="txtQuan"></asp:TextBox>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="label-login">Loại:</td>
+                        <td>
+                            <asp:TextBox ID="type" runat="server" CssClass="txtQuan"></asp:TextBox>
                         </td>
                         <td></td>
                     </tr>

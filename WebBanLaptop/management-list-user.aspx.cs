@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,9 +9,9 @@ using WebBanLaptop.DAO;
 
 namespace WebBanLaptop
 {
-    public partial class management_list_category : System.Web.UI.Page
+    public partial class management_list_user : System.Web.UI.Page
     {
-        private CategoryDAO category;
+        private UserDAO userDAO;
         protected void Page_Load(object sender, EventArgs e)
         {
             if ((bool)Session["admin"])
@@ -32,10 +33,26 @@ namespace WebBanLaptop
             BindData();
         }
 
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            var button = (IButtonControl)sender;
+            // grab the id from CommandArgument property
+            int id = Convert.ToInt32(button.CommandArgument, CultureInfo.InvariantCulture);
+            // call stored procedure based on id
+            userDAO = new UserDAO();
+            if (userDAO.deleteUser(id))
+            {
+                Response.Redirect("management-list-user.aspx");
+            }
+            else
+            {
+                Response.StatusCode = 200;
+            }
+        }
         protected void BindData()
         {
-            category = new CategoryDAO();
-            GridView1.DataSource = category.getListCategory();
+            userDAO = new UserDAO();
+            GridView1.DataSource = userDAO.getUsers();
             GridView1.DataBind();
         }
     }

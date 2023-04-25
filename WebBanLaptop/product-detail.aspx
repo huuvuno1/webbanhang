@@ -1,19 +1,24 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Common.Master" AutoEventWireup="true" CodeBehind="product-detail.aspx.cs" Inherits="WebBanLaptop.product_detail"
-  %>
-<asp:Content ID="Header1" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
+﻿<%@ Page Language="C#" MasterPageFile="~/Common.Master" AutoEventWireup="true" CodeBehind="product-detail.aspx.cs"
+  Inherits="WebBanLaptop.product_detail" %>
+  <asp:Content ID="Header1" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
     <link rel="stylesheet" href="/assets/css/productDetailCss.css" />
     <link rel="stylesheet" href="/assets/css/modalCart.css" />
 
-</asp:Content>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="product__detail">
+  </asp:Content>
+  <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="flex">
+      <h1 style="margin-top: 16px; margin-right: 10px;">Sản phẩm > </h1>
+      <h1 style="color: red; margin-top: 16px;" id="productName" runat="server"></h1>
+      <input id="product_id" runat="server" hidden="hidden" class="ContentPlaceHolder1_product_id" />
+    </div>
+    <div class="product__detail" style="margin-top: 12px;">
       <div class="detail__container">
         <div class="detail__media">
           <div class="detail__media--src">
-            <iframe class="detail-img 1" width='100%' height='100%'
-              src='https://www.youtube.com/embed/kT3j7VjHgqw' frameborder='0' allowfullscreen></iframe>
-            
-              <asp:Image ID="ImageDetail" CssClass="detail-img 2 active" runat="server" />
+            <iframe class="detail-img 1" width='100%' height='100%' src='https://www.youtube.com/embed/kT3j7VjHgqw'
+              frameborder='0' allowfullscreen></iframe>
+
+            <asp:Image ID="ImageDetail" CssClass="detail-img 2 active" runat="server" />
             <img src="/assets/images/2463-laptopaz-hp-victus-15-3.webp" alt="img" class="detail-img 3">
             <img src="/assets/images/2463-laptopaz-hp-victus-15-1s-1.webp" alt="img" class="detail-img 4">
             <img src="/assets/images/2463-laptopaz-hp-victus-15-3.webp" alt="img" class="detail-img 5">
@@ -24,7 +29,7 @@
                 <img src="/assets/images/iconVideo.png" alt="videoimg" class="select-item--img" />
               </div>
               <div onclick="handleChangeImg(this)" data-index="2" class="select-item  active">
-              <asp:Image ID="ImageDetail2" CssClass="select-item--img" runat="server" />
+                <asp:Image ID="ImageDetail2" CssClass="select-item--img" runat="server" />
 
               </div>
               <div onclick="handleChangeImg(this)" data-index="3" class="select-item">
@@ -42,9 +47,13 @@
         </div>
         <div class="detail__action">
           <div class="detail-price--box">
-            <div class="detail-price--top"><span class="special-price" id="price" runat="server"/></div>
-            <div class="detail-price--bottom"><span class="old-price">Giá thị trường <del
-                  class="old-price--value" id="oldPrice" runat="server"/>
+            <div class="detail-price--top">
+              <span class="special-price" id="price" runat="server">16.900.000Đ</span>
+              <span class="special-price">₫</span>
+
+            </div>
+            <div class="detail-price--bottom"><span class="old-price">Giá thị trường <del class="old-price--value"
+                  id="oldPrice" runat="server" />
               </span>
               <span class="save-price">Tiết kiệm <del class="save-prive--value">
                   4.900.000Đ
@@ -63,9 +72,9 @@
           </div>
           <div class="quan">
             <div class="quan__select">
-              <span onclick="handleSub()" class="quan__select-sub">-</span>
-              <input type="text" class="quan__select-value" value="1" name="txtQuantity"/>
-              <span onclick="handleAdd()" class="quan__select-add">+</span>
+              <span onclick="handleChangeQuantity(-1)" class="quan__select-sub">-</span>
+              <input type="text" class="quan__select-value" value="1" name="txtQuantity" id="quantity" />
+              <span onclick="handleChangeQuantity(1)" class="quan__select-add">+</span>
             </div>
             <div class="addToCart">
               <button class="btnAddToCart" onclick="showModal()">Mua Ngay</button>
@@ -115,8 +124,11 @@
           </div>
           <div class="des-contents">
             <div class="des-item">
-              <p class="des-item--title">Đánh giá chi tiết <span class="des-item--title" id="name" runat="server"/>.</p>
-              <p class="des-item--text"><%# Eval("Des") %> </p>
+              <p class="des-item--title">Đánh giá chi tiết <span class="des-item--title" id="name" runat="server" />.
+              </p>
+              <p class="des-item--text">
+                <%# Eval("Des") %>
+              </p>
             </div>
             <div class="des-item">
               <p class="des-item--title">Thiết kế đơn giản, mang âm hưởng từ dòng Omen cao cấp </p>
@@ -177,52 +189,16 @@
                 <td class="td-title">Màn hình</td>
                 <td class="td-value" id="screen" runat="server"></td>
               </tr>
-              
+
 
             </table>
           </div>
         </div>
       </div>
     </div>
-  
-  <div class="modal-cart">
-    <div class="wrapper-modal js-close">
-      <div class="modal-header">Bạn đã thêm <span class="nameProd" id="nameHeaderModal" runat="server"/> vào giỏ hàng</div>
-      <p class="modal-cart--total">Giỏ hàng của bạn có 1 sản phẩm</p>
-      <table class="modal-cart--table">
-        <tr class="table-header">
-          <td class="tdFirst">Sản phẩm</td>
-          <td>Đơn giá</td>
-          <td>Số lượng</td>
-          <td>Thành tiền</td>
-        </tr>
-        <tr>
-          <td class="modal-prod--des">
-              <asp:Image ID="Image" CssClass="img" runat="server" />
-            <p id="nameModal" runat="server"></p>
-          </td>
-          <td><span class="modal-price" id="priceModal" runat="server"></span>Đ</td>
-          <td>
-            <div class="modal_quan__select">
-              <span onclick="handleSub()" class="modal_quan__select-sub">-</span>
-              <input type="text" class="modal_quan__select-value" value="1" />
-              <span onclick="handleAdd()" class="modal_quan__select-add">+</span>
-            </div>
-          </td>
-          <td><span class="modal-totalPrice1"></span>Đ</td>
-        </tr>
-      </table>
-      <div class="totalPrice">
-        <p class="price">Thành tiền: <span class="modal-totalPrice2"></span>Đ</p>
-      </div>
-      <div class="modal-btnAdd">
-        <button class="btn-handle">Thanh toán đơn hàng</button>
-      </div>
-      <span class="close-modal" onclick="closeModal()">X</span>
-    </div>
-      </div>
-</asp:Content>
 
-<asp:Content ID="Script1" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">
-    <script src="/assets/js/productDetailJs.js" defer></script>
-</asp:Content>
+
+  </asp:Content>
+
+  <asp:Content ID="Script1" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">
+  </asp:Content>

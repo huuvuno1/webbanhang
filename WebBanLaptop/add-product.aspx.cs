@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebBanLaptop.DAO;
+using WebBanLaptop.Utils;
 
 namespace WebBanLaptop
 {
@@ -17,6 +18,8 @@ namespace WebBanLaptop
         {
             if ((bool)Session["admin"])
             {
+                brand.DataSource = Constant.Brands.Select(x => new { Value = x });
+                brand.DataBind();
                 return;
             }
             else
@@ -35,10 +38,29 @@ namespace WebBanLaptop
             int priceProduct = Int32.Parse(price.Text);
             int quantityProduct = Int32.Parse(quantity.Text);
             string descriptionProduct = Request.Form["description"];
+            string brandProduct = brand.SelectedValue;
+            float oldprice = float.Parse(oldPrice.Text);
+            string CPU = cpu.Text;
+            string RAM = ram.Text;
+            string HardDrive = hardDrive.Text;
+            float Weight = float.Parse(weight.Text);
+            string Screen = screen.Text;
+            string Type = type.Text;
 
-            bool check = productDAO.insertProduct(categoryId, nameProduct, slugName, priceProduct, quantityProduct,descriptionProduct);
-            if (check)
+            int product_id = productDAO.insertProduct(categoryId, nameProduct, slugName, priceProduct, quantityProduct,descriptionProduct,brandProduct,oldprice,CPU,RAM,HardDrive,Weight,Screen,Type);
+            if (product_id > 0)
             {
+                
+                if (UploadImages.HasFiles)
+                {
+                    foreach (HttpPostedFile uploadedFile in UploadImages.PostedFiles)
+                    {
+                        uploadedFile.SaveAs(System.IO.Path.Combine(Server.MapPath("~/assets/images/"), uploadedFile.FileName));
+                        listofuploadedfiles.Text += String.Format("{0}<br />", uploadedFile.FileName);
+                        string path = uploadedFile.FileName;
+                        productDAO.insertImages(product_id, path);
+                    }
+                }
                 Response.Redirect("management-list-product.aspx");
             }
         }
