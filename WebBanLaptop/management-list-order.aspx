@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/admin.css" />
     <link rel="stylesheet" href="/assets/css/order.css" />
-    <link rel="stylesheet" href="/assets/css/management-list-categoryCSS.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -54,7 +53,8 @@
 
             </script>
             <div class="content_order">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" GridLines="None" OnPageIndexChanging="GridView1_PageIndexChanging" CssClass="table" AllowPaging="True">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" 
+                    GridLines="None" OnPageIndexChanging="GridView1_PageIndexChanging" CssClass="table" AllowPaging="True" OnRowDataBound="GridView1_OnRowDataBound">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:TemplateField HeaderText="ID">
@@ -94,13 +94,23 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Trạng thái">
                             <ItemTemplate>
-                                <asp:Label ID="lb_status" class="lb_status" runat="server" Text='<%# Eval("Status").ToString().Equals ("0") ? "Chưa thanh toán" : "Đã thanh toán" %>'></asp:Label>
+                                <asp:Label ID="lb_status" class="lb_status" runat="server" Text='<%# Eval("Status") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Action">
                             <ItemTemplate>
                                 <div class="btn">
-                                <asp:LinkButton CssClass="btnEdit" ID="LinkButton1" runat="server" Text="Confirm" CommandArgument='<%# Bind("Id") %>' OnClick="Confirm_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButton(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+                                <asp:LinkButton CssClass="btnConfirm" ID="LinkButton1" runat="server" Text="Xác nhận" CommandArgument='<%# Bind("Id") %>' 
+                                    OnClick="Confirm_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButtonConfirm(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+
+                                    <asp:LinkButton CssClass="btnGiaoHang" ID="LinkButton2" runat="server" Text="Giao hàng" CommandArgument='<%# Bind("Id") %>' 
+                                    OnClick="GiaoHang_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButtonGiaoHang(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+
+                                    <asp:LinkButton CssClass="btnSuccess" ID="LinkButton3" runat="server" Text="Giao hàng thành công" CommandArgument='<%# Bind("Id") %>' 
+                                    OnClick="Success_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButtonSuccess(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+
+                                    <asp:LinkButton CssClass="btnPay" ID="LinkButton4" runat="server" Text="Hoàn thành" CommandArgument='<%# Bind("Id") %>'
+                                    OnClick="Pay_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButtonPay(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
                                 </div>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -127,7 +137,7 @@
             var ok = confirm("Xác nhận đã thanh toán đơn hàng này thành công?")
             return ok
         }
-        let status = document.getElementsByClassName('lb_status');
+        /*let status = document.getElementsByClassName('lb_status');
 
         for (var i = 0; i < status.length; i++) {
             if (status[i].innerHTML == "Chưa thanh toán") {
@@ -136,6 +146,6 @@
             else {
                 status[i].style.color = "green";
             }
-        }
+        }*/
     </script>
 </html>

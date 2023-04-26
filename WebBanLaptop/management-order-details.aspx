@@ -14,6 +14,77 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        <style>
+        .order_lookup_container {
+            background: white;
+            min-height: 500px;
+        }
+
+        .order_lookup_search {
+            width: 400px;
+        }
+
+        .order_status_item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+        }
+
+        .order_status_item_round {
+            width: 30px;
+            height: 30px;
+            border-radius: 999px;
+            border: 1px solid gray;
+            background-color: #C5C5C5;
+            margin-top: 10px;
+        }
+
+        .order_status_line {
+            border: 2px dashed gray;
+            height: 1px;
+            width: 130px;
+            display: flex;
+            position: relative;
+            top: 15px;
+            right: 30px;
+        }
+
+        .order_status__move_to_left {
+            position: relative;
+            right: 60px;
+        }
+
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                background-color: #45B08C;
+                color: white;
+            }
+    </style>
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -30,6 +101,66 @@
             <div class="txt-heading">
                 <h2>Quản lý đơn hàng</h2>
             </div>
+            <div class="flex justify-center" id="oderLookupContainer" style="justify-content: flex-end; padding: 20px 0 20px 35px;">
+                <%--<img src="assets/images/delivery.png" />--%>
+                <div class="flex justify-between item-center" style="position: relative; left: -60px">
+                    <div class="order_status_item">
+                        Chờ xác nhận
+                    <div class="order_status_item_round"></div>
+                    </div>
+                    <div class="order_status_line"></div>
+                    <div class="order_status_item order_status__move_to_left">
+                        Gọi xác nhận
+                    <div class="order_status_item_round"></div>
+                    </div>
+                    <div class="order_status_line" style="right: 90px;"></div>
+                    <div class="order_status_item order_status__move_to_left" style="right: 120px;">
+                        Đang giao
+                    <div class="order_status_item_round"></div>
+                    </div>
+                    <div class="order_status_line" style="right: 150px;"></div>
+                    <div class="order_status_item order_status__move_to_left" style="right: 180px;">
+                        Đã giao
+                    <div class="order_status_item_round"></div>
+                    </div>
+                    <div class="order_status_line" style="right: 210px;"></div>
+                    <div class="order_status_item order_status__move_to_left" style="right: 240px;">
+                        Đã hoàn thành
+                    <div class="order_status_item_round"></div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                (function () {
+                    const queryString = window.location.search;
+                    const urlParams = new URLSearchParams(queryString);
+                    const orderId = urlParams.get('order_id');
+                    console.log(orderId)
+                    if (orderId) {
+                        orderLookup(orderId)
+                    }
+                })()
+
+                function orderLookup(orderId) {
+                    const xhr = new XMLHttpRequest()
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            const urlParams = new URLSearchParams(xhr.responseText);
+                            const status = urlParams.get('status');
+                            if (status >= 0) {
+                                const roundIcons = document.querySelectorAll('.order_status_item_round')
+                                for (let i = 0; i <= status; i++) {
+                                    roundIcons[i].style = `border: 1px solid green;
+                                    background-color: #00FF00;`
+                                }
+                            }
+                        }
+                    }
+
+                    xhr.open('get', '/Api/getStatusOrderId.aspx?order_id=' + orderId)
+                    xhr.send()
+                }
+            </script>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" GridLines="None" OnPageIndexChanging="GridView1_PageIndexChanging">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>

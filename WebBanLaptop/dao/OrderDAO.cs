@@ -71,14 +71,15 @@ namespace WebBanLaptop.DAO
             }
             else { return null; }
         }
-        public bool updateStatusOrder(int id)
+        public bool updateStatusOrder(int id, int status)
         {
             string strcon = Config.getConnectionString();
             SqlConnection con = new SqlConnection(strcon);
 
-            string strQuery = @"update tbl_order set delivery_status = 2 where id = @id";
+            string strQuery = @"update tbl_order set delivery_status = @status where id = @id";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@status", status);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             try

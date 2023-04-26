@@ -28,3 +28,68 @@
     background-color: #d85d54;
     margin-top: 20px;
 }
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnConfirm {
+    font-size: 12px;
+    background: #ffd500;
+    width: 81px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+.btnGiaoHang {
+    font-size: 12px;
+    background: #d6bdcc;
+    width: 81px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+.btnSuccess {
+    font-size: 12px;
+    background: #acd5be;
+    width: 81px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+.btnPay {
+    font-size: 12px;
+    background: #00ff70;
+    width: 81px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0.1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
