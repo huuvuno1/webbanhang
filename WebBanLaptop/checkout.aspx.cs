@@ -52,7 +52,10 @@ namespace WebBanLaptop
 
             orderDAO.createOrder(ref order, carts);
 
-            Response.Redirect("/order_lookup?order_id=AA500BB" + order.Id);
+            // remove cart
+            Session["cart"] = new List<Cart>();
+
+            Response.Redirect("/order-lookup.aspx?order_id=AA500BB" + order.Id);
         }
     }
 }

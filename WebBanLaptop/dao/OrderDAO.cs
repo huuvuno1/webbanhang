@@ -58,6 +58,7 @@ namespace WebBanLaptop.DAO
                     order.NumberPhone = Convert.ToString(reader["phone_number"]);
                     order.Address = Convert.ToString(reader["address"]);
                     order.Status = Convert.ToInt32(reader["delivery_status"]);
+                    order.CreatedAt = reader["createdAt"].ToString();
                 }
                 return order;
             }
