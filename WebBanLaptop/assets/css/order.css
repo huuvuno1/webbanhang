@@ -18,3 +18,13 @@
     position: absolute;
     right: 15px;
 }
+.txt_sum {
+    position: relative;
+    left: 55%;
+    display: flex;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 5px;
+    background-color: #d85d54;
+    margin-top: 20px;
+}

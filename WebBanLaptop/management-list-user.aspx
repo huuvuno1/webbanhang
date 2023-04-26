@@ -10,6 +10,7 @@
     <title>Quản lý</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/admin.css" />
+    <link rel="stylesheet" href="/assets/css/management-list-categoryCSS.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -22,6 +23,7 @@
         <a href="management-list-product.aspx" class="">Sản phẩm</a>
         <a href="management-list-order.aspx" class="">Đơn hàng</a>
         <a href="management-list-user.aspx" class="">Người dùng</a>
+        <a href="index.aspx" class="">Quay lại trang chủ</a>
     </div>
     <div class="container body-content" id="main">
         <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
@@ -44,7 +46,9 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Action">
                         <ItemTemplate>
-                            <asp:LinkButton ID="LinkButton1" runat="server" Text="Delete" CommandArgument='<%# Bind("Id") %>' OnClick="Delete_Click"></asp:LinkButton>
+                            <div class="btn">
+                            <asp:LinkButton CssClass="btnDelete" ID="LinkButton1" runat="server" Text="Delete" CommandArgument='<%# Bind("Id") %>' OnClick="Delete_Click"></asp:LinkButton>
+                            </div>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

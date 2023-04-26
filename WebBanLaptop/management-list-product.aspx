@@ -92,14 +92,15 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Trạng thái">
                         <ItemTemplate>
-                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Status").ToString().Equals ("1") ? "Active" : "Inacrive" %>'></asp:Label>
+                            <asp:Label ID="Label5" class="lb_status" runat="server" Text='<%# Eval("Status").ToString().Equals ("1") ? "Active" : "Inactive" %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Action">
                         <ItemTemplate>
                             <div class="btn">
-                            <a href="edit-product.aspx?id=<%# Eval("Id") %>">Edit</a>
-                            <asp:LinkButton ID="LinkButton1" runat="server" Text="Delete" CommandArgument='<%# Bind("Id") %>' OnClick="Delete_Click"></asp:LinkButton>
+                            <a class="btnEdit" href="edit-product.aspx?id=<%# Eval("Id") %>">Edit</a>
+                            <asp:LinkButton ID="LinkButton1" CssClass="btnDelete" runat="server" Text="Delete" CommandArgument='<%# Bind("Id") %>' 
+                                OnClick="Delete_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButton(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
                         </div>
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -120,4 +121,20 @@
     </form>
 </body>
     <script type="text/javascript" src="/assets/js/admin.js"></script>
+    <script type="text/javascript">
+        function Xacnhan(){
+            var ok = confirm("Xác nhận muốn xóa sản phẩm này?")
+            return ok
+        }
+        let status = document.getElementsByClassName('lb_status');
+
+        for (var i = 0; i < status.length; i++) {
+            if (status[i].innerHTML == "Inactive") {
+                status[i].style.color = 'red';
+            }
+            else {
+                status[i].style.color = "green";
+            }
+        }
+    </script>
 </html>

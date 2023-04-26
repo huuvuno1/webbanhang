@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/admin.css" />
     <link rel="stylesheet" href="/assets/css/order.css" />
+    <link rel="stylesheet" href="/assets/css/management-list-categoryCSS.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -23,6 +24,7 @@
         <a href="management-list-product.aspx" class="">Sản phẩm</a>
         <a href="management-list-order.aspx" class="">Đơn hàng</a>
         <a href="management-list-user.aspx" class="">Người dùng</a>
+        <a href="index.aspx" class="">Quay lại trang chủ</a>
     </div>
     <div class="container body-content" id="main">
         <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
@@ -65,6 +67,11 @@
                                 <asp:Label ID="lb_name" runat="server" Text='<%# Eval("CustomerName") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Email">
+                            <ItemTemplate>
+                                <asp:Label ID="lb_email" runat="server" Text='<%# Eval("Email") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Số điện thoại">
                             <ItemTemplate>
                                 <asp:Label ID="lb_phone" runat="server" Text='<%# Eval("NumberPhone") %>'></asp:Label>
@@ -75,14 +82,26 @@
                                 <asp:Label ID="lb_address" runat="server" Text='<%# Eval("Address") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Ghi chú">
+                            <ItemTemplate>
+                                <asp:Label ID="lb_note" runat="server" Text='<%# Eval("Note") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Thời gian">
+                            <ItemTemplate>
+                                <asp:Label ID="lb_createdAt" runat="server" Text='<%# Eval("CreatedAt") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Trạng thái">
                             <ItemTemplate>
-                                <asp:Label ID="lb_status" runat="server" Text='<%# Eval("Status").ToString().Equals ("1") ? "Chưa thanh toán" : "Đã thanh toán" %>'></asp:Label>
+                                <asp:Label ID="lb_status" class="lb_status" runat="server" Text='<%# Eval("Status").ToString().Equals ("0") ? "Chưa thanh toán" : "Đã thanh toán" %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Action">
                             <ItemTemplate>
-                                <asp:LinkButton ID="LinkButton1" runat="server" Text="Confirm" CommandArgument='<%# Bind("Id") %>' OnClick="Confirm_Click"></asp:LinkButton>
+                                <div class="btn">
+                                <asp:LinkButton CssClass="btnEdit" ID="LinkButton1" runat="server" Text="Confirm" CommandArgument='<%# Bind("Id") %>' OnClick="Confirm_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButton(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+                                </div>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -103,4 +122,20 @@
     </form>
 </body>
     <script type="text/javascript" src="/assets/js/admin.js"></script>
+    <script type="text/javascript">
+        function Xacnhan(){
+            var ok = confirm("Xác nhận đã thanh toán đơn hàng này thành công?")
+            return ok
+        }
+        let status = document.getElementsByClassName('lb_status');
+
+        for (var i = 0; i < status.length; i++) {
+            if (status[i].innerHTML == "Chưa thanh toán") {
+                status[i].style.color = 'red';
+            }
+            else {
+                status[i].style.color = "green";
+            }
+        }
+    </script>
 </html>

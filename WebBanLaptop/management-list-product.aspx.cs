@@ -57,5 +57,14 @@ namespace WebBanLaptop
             GridView1.DataSource = productDAO.getProducts();
             GridView1.DataBind();
         }
+        protected bool ShowButton(Object DataItem)
+        {
+            //Here you can place as many conditions as you like 
+            //Provided you always return either true or false
+            if ((string)DataItem == "1")
+                return true;
+            else
+                return false;
+        }
     }
 }
