@@ -103,6 +103,7 @@
     <Content Include="assets\images\laptop_white_new.webp" />
     <Content Include="assets\images\search.svg" />
     <Content Include="assets\js\admin.js" />
+    <Content Include="assets\js\searchDetail.js" />
     <Content Include="assets\js\index.js" />
     <Content Include="assets\js\category.js" />
     <Content Include="assets\js\checkout.js" />
@@ -126,6 +127,7 @@
     <Content Include="order-lookup.aspx" />
     <Content Include="product-detail.aspx" />
     <Content Include="register.aspx" />
+    <Content Include="searchDetail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -327,6 +329,13 @@
     </Compile>
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="searchDetail.aspx.cs">
+      <DependentUpon>searchDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchDetail.aspx.designer.cs">
+      <DependentUpon>searchDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utils\Config.cs" />
     <Compile Include="Utils\Constant.cs" />

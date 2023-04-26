@@ -29,14 +29,31 @@
             <a href="/index.aspx" class="header__logo flex item-center justify-center" style="color: white;">LOGO
             </a>
             <div class="header__search flex item-center relative">
-                <input id="txtSearch" oninput="search()" name="txtSearch" />
-                <img class="header__search--icon absolute cursor-pointer" src="/assets/images/search.svg" />
+                <input id="txtSearch" onkeypress="EnterKey(event)"  oninput="search()" name="txtSearch" />
+                <img id="icon-search" onclick="redirect()" class="header__search--icon absolute cursor-pointer" src="/assets/images/search.svg" />
                 <div class="search"></div>
             </div>
             <script>
+                document.getElementById('txtSearch').onkeypress()
+
+                function EnterKey(e) {
+                    var key;
+
+                    if (window.event)
+                        key = window.event.keyCode;     //Trình duyệt IE
+                    else
+                        key = e.which;     //trình duyệt firefox
+
+                    if (key == 13)
+                        redirect();
+                   
+                }
                 function search() {
-                    // change url
                     const value = document.getElementById('txtSearch').value;
+
+                    
+
+                    // change url
 
                     const xhr = new XMLHttpRequest()
                     xhr.onreadystatechange = function () {
@@ -46,6 +63,17 @@
                     }
                     xhr.open('get', '/Api/Search.aspx?name=' + value)
                     xhr.send()
+                }
+                function redirect() {
+                    const valueSearch = document.getElementById('txtSearch').value;
+
+                    window.location = `searchDetail.aspx?search=${valueSearch}`
+
+
+                }
+
+                function handleSearch() {
+                    iconSearch.innerHTML="sss"
                 }
 
             </script>
