@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Xml.Linq;
 using WebBanLaptop.DAO;
 
 namespace WebBanLaptop
@@ -42,8 +38,10 @@ namespace WebBanLaptop
                 var details = detailDAO.getOrderDetailByOrderId(order_id);
                 if (details != null)
                 {
+                    
                     GridView1.DataSource = details;
                     GridView1.DataBind();
+                    lb_sum.Text = Convert.ToString(detailDAO.GetSumOrderDetailByOrderId(order_id));
                 }
                 else
                 {

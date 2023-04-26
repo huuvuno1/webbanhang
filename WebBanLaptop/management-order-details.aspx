@@ -10,6 +10,7 @@
     <title>Quản lý</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/admin.css" />
+    <link rel="stylesheet" href="/assets/css/order.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -64,6 +65,10 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
+            <div class="txt_sum">
+                <h3 style="padding-right: 5px;">Tổng hóa đơn: </h3>
+                <asp:Label ID="lb_sum" runat="server"></asp:Label>
+            </div>
         </div>
     </div>
     </form>

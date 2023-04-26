@@ -58,5 +58,19 @@ namespace WebBanLaptop.DAO
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public int GetSumOrderDetailByOrderId(string orderId)
+        {
+            int sum = 0;
+            string strcon = Config.getConnectionString();
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand("sumPriceOrder", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@order_id", orderId);
+            con.Open();
+            sum = Convert.ToInt32(cmd.ExecuteScalar());
+            return sum;
+        }
     }
 }
