@@ -83,6 +83,7 @@
     <Content Include="assets\css\login.css" />
     <Content Include="assets\css\management-list-categoryCss.css" />
     <Content Include="assets\css\management-list-productCss.css" />
+    <Content Include="assets\css\order.css" />
     <Content Include="assets\css\order_lookup.css" />
     <Content Include="assets\css\product.css" />
     <Content Include="assets\css\productDetailCssResponsive.css" />

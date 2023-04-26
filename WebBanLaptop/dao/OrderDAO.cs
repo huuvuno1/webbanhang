@@ -33,6 +33,10 @@ namespace WebBanLaptop.DAO
                         NumberPhone = reader["phone_number"].ToString(),
                         Address = reader["address"].ToString(),
                         Status = int.Parse(reader["delivery_status"].ToString()),
+                        Note = reader["note"].ToString(),
+                        Email= reader["email"].ToString(),
+                        CreatedAt = reader["createdAt"].ToString(),
+                        UpdatedAt = reader["updatedAt"].ToString(),
                     });
                 }
             }
@@ -47,7 +51,7 @@ namespace WebBanLaptop.DAO
             SqlConnection con = new SqlConnection(strcon);
             con.Open();
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = $@"SELECT * FROM tbl_order where id = {id}";
+            cmd.CommandText = $@"SELECT * FROM tbl_order where id = {id} order by createdAt desc";
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader != null && reader.HasRows)
             {
@@ -58,7 +62,10 @@ namespace WebBanLaptop.DAO
                     order.NumberPhone = Convert.ToString(reader["phone_number"]);
                     order.Address = Convert.ToString(reader["address"]);
                     order.Status = Convert.ToInt32(reader["delivery_status"]);
-                    order.CreatedAt = reader["createdAt"].ToString();
+                    order.Note = Convert.ToString(reader["note"]);
+                    order.Email = Convert.ToString(reader["email"]);
+                    order.CreatedAt = Convert.ToString(reader["createdAt"]);
+                    order.UpdatedAt = Convert.ToString(reader["updatedAt"]);
                 }
                 return order;
             }
@@ -138,6 +145,10 @@ namespace WebBanLaptop.DAO
                         NumberPhone = reader["phone_number"].ToString(),
                         Address = reader["address"].ToString(),
                         Status = int.Parse(reader["delivery_status"].ToString()),
+                        Note = reader["note"].ToString(),
+                        Email = reader["email"].ToString(),
+                        CreatedAt = reader["createdAt"].ToString(),
+                        UpdatedAt = reader["updatedAt"].ToString(),
                     });
                 }
                 return orders;
