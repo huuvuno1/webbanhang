@@ -37,7 +37,7 @@
             <div class="dvAddNew">
                     <a class="btnAdd" href="add-product.aspx" class="link-add-new">&#43; Thêm mới</a>
                 </div>
-            <asp:GridView ID="GridView1"  runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" GridLines="None" Height="200px" OnPageIndexChanging="GridView1_PageIndexChanging" Width="1000px" CssClass="table">
+            <asp:GridView ID="GridView1"  runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" GridLines="None" Height="200px" OnPageIndexChanging="GridView1_PageIndexChanging" Width="1000px" CssClass="table" BackColor="#6699FF">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Ảnh tiêu đề">
@@ -62,27 +62,27 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Gía nhập">
                         <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("OldPrice") %>'></asp:Label>
+                            <asp:Label ID="lb_oldPrice" runat="server" Text='<%# Eval("OldPrice") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Cân nặng">
                         <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Weight") %>'></asp:Label>
+                            <asp:Label ID="lb_weight" runat="server" Text='<%# Eval("Weight") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Màn hình">
                         <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Screen") %>'></asp:Label>
+                            <asp:Label ID="lb_screen" runat="server" Text='<%# Eval("Screen") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Loại">
                         <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Type") %>'></asp:Label>
+                            <asp:Label ID="lb_type" runat="server" Text='<%# Eval("Type") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Giá tiền">
                         <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
+                            <asp:Label ID="lb_price" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderStyle-CssClass="headerCss" ItemStyle-CssClass="contentCss" HeaderText="Số lượng">

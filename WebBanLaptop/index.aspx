@@ -56,7 +56,7 @@
                         <div class="product__img">
                             <a href="product-detail.aspx?id=<%# Eval(" Id") %>" class="product__img--link flex
                                     justify-center">
-                                <img class="product__img--src" src='<%# Eval("Image") %>' alt="laptop" />
+                                <img class="product__img--src" src='assets/images/<%# Eval("Image") %>' alt="laptop" />
                             </a>
                         </div>
                         <div class="product__name">
@@ -115,7 +115,7 @@
                         <div class="product__img">
                             <a href="product-detail.aspx?id=<%# Eval(" Id") %>" class="product__img--link flex
                                     justify-center">
-                                <img class="product__img--src" src='<%# Eval("Image") %>' alt="laptop" />
+                                <img class="product__img--src" src='assets/images/<%# Eval("Image") %>' alt="laptop" />
                             </a>
                         </div>
                         <div class="product__name">
@@ -178,7 +178,7 @@
                         <div class="product__img">
                             <a href="product-detail.aspx?id=<%# Eval(" Id") %>" class="product__img--link flex
                                     justify-center">
-                                <img class="product__img--src" src='<%# Eval("Image") %>' alt="laptop" />
+                                <img class="product__img--src" src='assets/images/<%# Eval("Image") %>' alt="laptop" />
                             </a>
                         </div>
                         <div class="product__name">

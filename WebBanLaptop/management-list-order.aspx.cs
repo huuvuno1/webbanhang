@@ -80,22 +80,28 @@ namespace WebBanLaptop
                 if (intValue == 0)
                 {
                     e.Row.Cells[7].Text = "Chờ xác nhận";
+                    e.Row.Cells[7].ForeColor = System.Drawing.Color.Red;
                 }
                 if (intValue == 1)
                 {
                     e.Row.Cells[7].Text = "Gọi xác nhận";
+                    e.Row.Cells[7].ForeColor = System.Drawing.Color.YellowGreen;
+
                 }
                 if (intValue == 2)
                 {
                     e.Row.Cells[7].Text = "Đang giao";
+                    e.Row.Cells[7].ForeColor = System.Drawing.Color.DarkViolet;
                 }
                 if (intValue == 3)
                 {
                     e.Row.Cells[7].Text = "Đã giao";
+                    e.Row.Cells[7].ForeColor = System.Drawing.Color.Green;
                 }
                 if (intValue == 4)
                 {
                     e.Row.Cells[7].Text = "Đã hoàn thành";
+                    e.Row.Cells[7].ForeColor = System.Drawing.Color.Teal;
                 }
             }
         }
@@ -170,6 +176,22 @@ namespace WebBanLaptop
                 return true;
             else
                 return false;
+        }
+        protected void Search(object sender, EventArgs e)
+        {
+            orderDAO = new OrderDAO();
+            string input = txtSearch.Text;
+            if (String.IsNullOrEmpty(input))
+            {
+                GridView1.DataSource = orderDAO.getOrders();
+                GridView1.DataBind();
+            }
+            else
+            {
+                GridView1.DataSource = orderDAO.getOrdersByNamOrPhone(input);
+                GridView1.DataBind();
+            } 
+
         }
 
     }

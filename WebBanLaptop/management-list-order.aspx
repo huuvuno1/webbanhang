@@ -32,26 +32,10 @@
                 <h2>Quản lý đơn hàng</h2>
             </div>
             <div class="header-search-order flex item-center relative">
-                <input id="txtSearch" oninput="search()" name="txtSearch" />
-                <img class="header-search-order-icon absolute cursor-pointer" src="/assets/images/search.svg" />
-                <div class="search"></div>
+                <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                <asp:Button Text="Search" runat="server" CssClass="btnConfirm" OnClick="Search"/>
             </div>
-            <script>
-                function search() {
-                    // change url
-                    const value = document.getElementById('txtSearch').value;
-
-                    const xhr = new XMLHttpRequest()
-                    xhr.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            document.querySelector('.content_order').innerHTML = xhr.responseText;
-                        }
-                    }
-                    xhr.open('get', '/Api/searchOrder.aspx?input=' + value)
-                    xhr.send()
-                }
-
-            </script>
+            
             <div class="content_order">
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" 
                     GridLines="None" OnPageIndexChanging="GridView1_PageIndexChanging" CssClass="table" AllowPaging="True" OnRowDataBound="GridView1_OnRowDataBound">
@@ -104,13 +88,13 @@
                                     OnClick="Confirm_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButtonConfirm(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
 
                                     <asp:LinkButton CssClass="btnGiaoHang" ID="LinkButton2" runat="server" Text="Giao hàng" CommandArgument='<%# Bind("Id") %>' 
-                                    OnClick="GiaoHang_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButtonGiaoHang(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+                                    OnClick="GiaoHang_Click" OnClientClick="return GiaoHang()" Visible='<%# ShowButtonGiaoHang(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
 
                                     <asp:LinkButton CssClass="btnSuccess" ID="LinkButton3" runat="server" Text="Giao hàng thành công" CommandArgument='<%# Bind("Id") %>' 
-                                    OnClick="Success_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButtonSuccess(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+                                    OnClick="Success_Click" OnClientClick="return Success()" Visible='<%# ShowButtonSuccess(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
 
                                     <asp:LinkButton CssClass="btnPay" ID="LinkButton4" runat="server" Text="Hoàn thành" CommandArgument='<%# Bind("Id") %>'
-                                    OnClick="Pay_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButtonPay(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+                                    OnClick="Pay_Click" OnClientClick="return Pay()" Visible='<%# ShowButtonPay(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
                                 </div>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -134,7 +118,19 @@
     <script type="text/javascript" src="/assets/js/admin.js"></script>
     <script type="text/javascript">
         function Xacnhan(){
-            var ok = confirm("Xác nhận đã thanh toán đơn hàng này thành công?")
+            var ok = confirm("Xác nhận duyệt đơn hàng này?")
+            return ok
+        }
+        function GiaoHang() {
+            var ok = confirm("Xác nhận đang giao đơn hàng này?")
+            return ok
+        }
+        function Success() {
+            var ok = confirm("Xác nhận giao đơn hàng này thành công?")
+            return ok
+        }
+        function Pay() {
+            var ok = confirm("Xác nhận hoàn tất đơn hàng?")
             return ok
         }
         /*let status = document.getElementsByClassName('lb_status');
