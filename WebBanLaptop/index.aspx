@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs"
     Inherits="WebBanLaptop.index" %>
 
+<asp:Content ID="contenheader" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
+    <title>Trang chủ</title>
+</asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 

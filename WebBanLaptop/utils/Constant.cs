@@ -80,5 +80,7 @@ namespace WebBanLaptop.Utils
                 Image = "/assets/images/p1.webp"
             },
         };
+
+        public static string[] OrderStatus = new string[] { "Chờ xác nhận", "Gọi xác nhận", "Đang giao", "Đã giao", "Đã hoàn thành" };
     }
 }

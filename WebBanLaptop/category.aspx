@@ -2,6 +2,7 @@
 
 <asp:Content ID="header1" runat="server" ContentPlaceHolderID="HeaderPlaceHolder">
     <link rel="stylesheet" href="/assets/css/category.css" />
+    <title>Sản phẩm theo danh mục</title>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="category">

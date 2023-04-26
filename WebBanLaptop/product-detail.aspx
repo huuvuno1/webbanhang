@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/assets/css/productDetailCss.css" />
     <link rel="stylesheet" href="/assets/css/productDetailCssResponsive.css" />
     <link rel="stylesheet" href="/assets/css/modalCart.css" />
+    <title id="title" runat="server"></title>
 
   </asp:Content>
   <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

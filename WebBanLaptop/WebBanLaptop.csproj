@@ -70,6 +70,7 @@
     <Content Include="admin-management.aspx" />
     <Content Include="Api\FilterProduct.aspx" />
     <Content Include="Api\getLaptop.aspx" />
+    <Content Include="Api\OrderLookup.aspx" />
     <Content Include="Api\Search.aspx" />
     <Content Include="Api\searchOrder.aspx" />
     <Content Include="Api\UpdateCart.aspx" />
@@ -121,6 +122,7 @@
     <Content Include="management-list-user.aspx" />
     <Content Include="management-order-details.aspx" />
     <Content Include="Model\db\weblaptop.sql" />
+    <Content Include="order-lookup.aspx" />
     <Content Include="product-detail.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Web.config" />
@@ -160,6 +162,13 @@
     </Compile>
     <Compile Include="Api\getLaptop.aspx.designer.cs">
       <DependentUpon>getLaptop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\OrderLookup.aspx.cs">
+      <DependentUpon>OrderLookup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Api\OrderLookup.aspx.designer.cs">
+      <DependentUpon>OrderLookup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Api\Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>
@@ -289,6 +298,13 @@
     <Compile Include="Model\OrderDetail.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="order-lookup.aspx.cs">
+      <DependentUpon>order-lookup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order-lookup.aspx.designer.cs">
+      <DependentUpon>order-lookup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="product-detail.aspx.cs">
       <DependentUpon>product-detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

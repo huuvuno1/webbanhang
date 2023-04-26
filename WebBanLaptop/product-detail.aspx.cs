@@ -37,6 +37,7 @@ namespace WebBanLaptop
             screen1.InnerText = data.Screen.ToString();
             ImageDetail.ImageUrl = data.Image.ToString();
             ImageDetail2.ImageUrl = data.Image.ToString();
+            title.InnerText = data.Name;
             
 
             Product product = productDAO.getProductById(id);
