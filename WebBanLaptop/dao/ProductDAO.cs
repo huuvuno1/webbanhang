@@ -120,6 +120,7 @@ namespace WebBanLaptop.DAO
                         Gpu = reader["hardDrive"].ToString(),
                         Ram = reader["ram"].ToString(),
                         OldPrice = oldPrice == "" ? int.Parse(reader["price"].ToString()) : int.Parse(oldPrice),
+                        ImageSrc = "~/assets/images/" + reader["img"].ToString(),
 
                     });
                 }

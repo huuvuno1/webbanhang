@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/admin.css" />
     <link rel="stylesheet" href="/assets/css/order.css" />
-    <link rel="stylesheet" href="/assets/css/management-list-categoryCSS.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -33,28 +32,13 @@
                 <h2>Quản lý đơn hàng</h2>
             </div>
             <div class="header-search-order flex item-center relative">
-                <input id="txtSearch" oninput="search()" name="txtSearch" />
-                <img class="header-search-order-icon absolute cursor-pointer" src="/assets/images/search.svg" />
-                <div class="search"></div>
+                <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                <asp:Button Text="Search" runat="server" CssClass="btnConfirm" OnClick="Search"/>
             </div>
-            <script>
-                function search() {
-                    // change url
-                    const value = document.getElementById('txtSearch').value;
-
-                    const xhr = new XMLHttpRequest()
-                    xhr.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            document.querySelector('.content_order').innerHTML = xhr.responseText;
-                        }
-                    }
-                    xhr.open('get', '/Api/searchOrder.aspx?input=' + value)
-                    xhr.send()
-                }
-
-            </script>
+            
             <div class="content_order">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" GridLines="None" OnPageIndexChanging="GridView1_PageIndexChanging" CssClass="table" AllowPaging="True">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" ForeColor="#333333" 
+                    GridLines="None" OnPageIndexChanging="GridView1_PageIndexChanging" CssClass="table" AllowPaging="True" OnRowDataBound="GridView1_OnRowDataBound">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:TemplateField HeaderText="ID">
@@ -94,13 +78,23 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Trạng thái">
                             <ItemTemplate>
-                                <asp:Label ID="lb_status" class="lb_status" runat="server" Text='<%# Eval("Status").ToString().Equals ("0") ? "Chưa thanh toán" : "Đã thanh toán" %>'></asp:Label>
+                                <asp:Label ID="lb_status" class="lb_status" runat="server" Text='<%# Eval("Status") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Action">
                             <ItemTemplate>
                                 <div class="btn">
-                                <asp:LinkButton CssClass="btnEdit" ID="LinkButton1" runat="server" Text="Confirm" CommandArgument='<%# Bind("Id") %>' OnClick="Confirm_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButton(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+                                <asp:LinkButton CssClass="btnConfirm" ID="LinkButton1" runat="server" Text="Xác nhận" CommandArgument='<%# Bind("Id") %>' 
+                                    OnClick="Confirm_Click" OnClientClick="return Xacnhan()" Visible='<%# ShowButtonConfirm(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+
+                                    <asp:LinkButton CssClass="btnGiaoHang" ID="LinkButton2" runat="server" Text="Giao hàng" CommandArgument='<%# Bind("Id") %>' 
+                                    OnClick="GiaoHang_Click" OnClientClick="return GiaoHang()" Visible='<%# ShowButtonGiaoHang(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+
+                                    <asp:LinkButton CssClass="btnSuccess" ID="LinkButton3" runat="server" Text="Giao hàng thành công" CommandArgument='<%# Bind("Id") %>' 
+                                    OnClick="Success_Click" OnClientClick="return Success()" Visible='<%# ShowButtonSuccess(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
+
+                                    <asp:LinkButton CssClass="btnPay" ID="LinkButton4" runat="server" Text="Hoàn thành" CommandArgument='<%# Bind("Id") %>'
+                                    OnClick="Pay_Click" OnClientClick="return Pay()" Visible='<%# ShowButtonPay(Convert.ToString(Eval("Status"))) %>'></asp:LinkButton>
                                 </div>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -124,10 +118,22 @@
     <script type="text/javascript" src="/assets/js/admin.js"></script>
     <script type="text/javascript">
         function Xacnhan(){
-            var ok = confirm("Xác nhận đã thanh toán đơn hàng này thành công?")
+            var ok = confirm("Xác nhận duyệt đơn hàng này?")
             return ok
         }
-        let status = document.getElementsByClassName('lb_status');
+        function GiaoHang() {
+            var ok = confirm("Xác nhận đang giao đơn hàng này?")
+            return ok
+        }
+        function Success() {
+            var ok = confirm("Xác nhận giao đơn hàng này thành công?")
+            return ok
+        }
+        function Pay() {
+            var ok = confirm("Xác nhận hoàn tất đơn hàng?")
+            return ok
+        }
+        /*let status = document.getElementsByClassName('lb_status');
 
         for (var i = 0; i < status.length; i++) {
             if (status[i].innerHTML == "Chưa thanh toán") {
@@ -136,6 +142,6 @@
             else {
                 status[i].style.color = "green";
             }
-        }
+        }*/
     </script>
 </html>

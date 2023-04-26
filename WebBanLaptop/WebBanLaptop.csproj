@@ -70,6 +70,7 @@
     <Content Include="admin-management.aspx" />
     <Content Include="Api\FilterProduct.aspx" />
     <Content Include="Api\getLaptop.aspx" />
+    <Content Include="Api\getStatusOrderId.aspx" />
     <Content Include="Api\OrderLookup.aspx" />
     <Content Include="Api\Search.aspx" />
     <Content Include="Api\searchOrder.aspx" />
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="Api\getLaptop.aspx.designer.cs">
       <DependentUpon>getLaptop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\getStatusOrderId.aspx.cs">
+      <DependentUpon>getStatusOrderId.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Api\getStatusOrderId.aspx.designer.cs">
+      <DependentUpon>getStatusOrderId.aspx</DependentUpon>
     </Compile>
     <Compile Include="Api\OrderLookup.aspx.cs">
       <DependentUpon>OrderLookup.aspx</DependentUpon>
